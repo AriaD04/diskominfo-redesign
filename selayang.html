@@ -1,0 +1,1357 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Galeri Kelurahan - Kelurahan Tanjungpinang Kota</title>
+    <meta name="description" content="Galeri foto kegiatan dan pembangunan di Kelurahan Tanjungpinang Kota" />
+
+    <!-- CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico" />
+
+ <style>
+    :root {
+        --primary-color: #f44336; /* Merah utama */
+        --primary-dark: #d32f2f; /* Merah lebih gelap untuk hover/active */
+        --primary-light: #ffcdd2; /* Merah lebih terang */
+        --secondary-color: #6c757d;
+        --secondary-dark: #5a6268;
+        --secondary-light: #e2e3e5;
+        --dark-color: #212529;
+        --light-color: #f8f9fa;
+        --white: #ffffff;
+        --gray-100: #f8f9fa;
+        --gray-200: #e9ecef;
+        --gray-300: #dee2e6;
+        --gray-400: #ced4da;
+        --gray-500: #adb5bd;
+        --gray-600: #6c757d;
+        --gray-700: #495057;
+        --gray-800: #343a40;
+        --gray-900: #212529;
+        --transition: all 0.3s ease;
+        --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.1);
+        --shadow-md: 0 5px 20px rgba(0, 0, 0, 0.1);
+        --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.15);
+        --gradient-primary: linear-gradient(135deg, #f44336 0%, #ff6e40 100%);
+        --border-radius: 8px;
+        --border-radius-lg: 12px;
+    }
+
+      /* Perbaikan tipografi */
+    body {
+        padding-top: 70px;
+        background-color: var(--gray-100);
+        font-family: "Poppins", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        color: var(--gray-700);
+        line-height: 1.7;
+        scroll-behavior: smooth;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        font-weight: 700;
+        color: var(--dark-color);
+        margin-bottom: 1.25rem;
+    }
+
+    a {
+        color: var(--primary-color);
+        text-decoration: none;
+        transition: var(--transition);
+    }
+
+    a:hover {
+        color: var(--primary-dark);
+    }
+
+     /* Navbar lebih modern */
+    .navbar {
+        background: rgba(244, 67, 54, 0.98) !important;
+        backdrop-filter: blur(5px);
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+        transition: var(--transition);
+        padding: 0.75rem 0;
+    }
+
+    .navbar.scrolled {
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.navbar-brand-text {
+    color: white;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: var(--transition);
+}
+
+.navbar-brand:hover .navbar-brand-text {
+    color: var(--white);
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+     .nav-link {
+    position: relative;
+    overflow: hidden;
+    color: rgba(255,255,255,0.9);
+    transition: var(--transition);
+}
+.nav-link::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, #ffd700, #ffcc00, #ffd700);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+}
+
+.nav-link:hover::before,
+.nav-link.active::before {
+    transform: translateX(0);
+}
+
+    .nav-link:hover {
+        color: var(--white);
+    }
+
+      /* Hapus efek yang tidak diperlukan */
+.nav-link::after {
+    display: none;
+}
+
+
+    
+
+    .nav-link:hover::after, .nav-link.active::after {
+        width: 60%;
+    }
+
+    /* Article Container Enhancements */
+    .article-container {
+        background: var(--white);
+        border-radius: var(--border-radius-lg);
+        box-shadow: var(--shadow-md);
+        overflow: hidden;
+        transition: var(--transition);
+        border: none;
+        margin-bottom: 2rem;
+    }
+
+    .article-container:hover {
+        box-shadow: var(--shadow-lg);
+        transform: translateY(-5px);
+    }
+
+    /* Header artikel lebih menarik */
+    .article-header {
+        background: var(--gradient-primary);
+        color: var(--white);
+        padding: 4rem 2rem;
+        margin-bottom: 2rem;
+        position: relative;
+        overflow: hidden;
+        text-align: center;
+    }
+
+    .article-header::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 L0,100 Z" fill="none" stroke="white" stroke-width="2" stroke-dasharray="10,10" opacity="0.2"/></svg>');
+        background-size: cover;
+        opacity: 0.1;
+    }
+
+/* Hapus atau komentari bagian ini */
+/*
+.article-header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjA1KSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNwYXR0ZXJuKSIvPjwvc3ZnPg==");
+}
+*/
+
+   .article-title {
+        font-size: 2.2rem;
+        font-weight: 800;
+        line-height: 1.3;
+        margin-bottom: 1.5rem;
+        position: relative;
+        display: inline-block;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .article-title::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        background: var(--white);
+        border-radius: 2px;
+    }
+
+
+    .article-meta {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+        flex-wrap: wrap;
+    }
+
+    .article-meta .badge {
+        font-size: 0.9rem;
+        padding: 0.35rem 0.75rem;
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(5px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        font-weight: 500;
+    }
+
+    .article-meta .date {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.9rem;
+        color: rgba(255, 255, 255, 0.9);
+    }
+
+    /* Konten artikel lebih rapi */
+    .article-content {
+        padding: 2.5rem;
+    }
+
+    .article-body {
+        font-size: 1.05rem;
+        line-height: 1.8;
+    }
+
+    .article-body p {
+        margin-bottom: 1.5rem;
+        text-align: justify;
+    }
+
+    .article-body h4 {
+        margin-top: 2.5rem;
+        margin-bottom: 1.5rem;
+        color: var(--dark-color);
+        font-weight: 700;
+        position: relative;
+        padding-bottom: 0.75rem;
+    }
+
+    .article-body h4::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 60px;
+        height: 4px;
+        background: var(--primary-color);
+        border-radius: 3px;
+    }
+
+   
+
+    .article-body ul {
+        margin: 1.5rem 0;
+        padding-left: 1.5rem;
+    }
+
+    .article-body li {
+        margin-bottom: 0.75rem;
+        position: relative;
+        padding-left: 1.75rem;
+    }
+
+    .article-body li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0.7em;
+        width: 10px;
+        height: 10px;
+        background: var(--primary-color);
+        border-radius: 50%;
+    }
+
+    /* Card Enhancements */
+    .card {
+        border: none;
+        border-radius: var(--border-radius);
+        box-shadow: var(--shadow-sm);
+        transition: var(--transition);
+    }
+
+    .card:hover {
+        box-shadow: var(--shadow-md);
+        transform: translateY(-3px);
+    }
+
+    .alert {
+        border-radius: var(--border-radius);
+        border: none;
+        box-shadow: var(--shadow-sm);
+    }
+
+    /* Gallery Section Enhancements */
+    
+/* Gallery section lebih menarik */
+    .gallery-section {
+        margin: 3rem 0;
+        padding-top: 2.5rem;
+        border-top: 1px solid var(--gray-200);
+    }
+
+    .gallery-title {
+        font-size: 1.75rem;
+        font-weight: 700;
+        margin-bottom: 2rem;
+        color: var(--dark-color);
+        position: relative;
+        display: inline-block;
+    }
+
+    .gallery-title::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        width: 60px;
+        height: 4px;
+        background: var(--primary-color);
+        border-radius: 3px;
+    }
+
+    .gallery-item {
+        position: relative;
+        height: 240px;
+        border-radius: var(--border-radius);
+        overflow: hidden;
+        transition: var(--transition);
+        margin-bottom: 1.5rem;
+        box-shadow: var(--shadow-sm);
+        border: none;
+    }
+
+    .gallery-item:hover {
+        transform: translateY(-8px);
+        box-shadow: var(--shadow-lg);
+    }
+
+    .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+
+    .gallery-item:hover img {
+        transform: scale(1.05);
+    }
+
+    .gallery-item .overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+        color: var(--white);
+        padding: 1.5rem;
+        opacity: 0;
+        transition: var(--transition);
+        transform: translateY(20px);
+    }
+
+    .gallery-item:hover .overlay {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+
+    
+
+    
+
+    /* Share Section Enhancements */
+    .share-section {
+        margin: 3rem 0;
+        padding: 2rem;
+        background: var(--gray-100);
+        border-radius: var(--border-radius-lg);
+        box-shadow: var(--shadow-sm);
+        border: none;
+    }
+
+    .share-title {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+        color: var(--dark-color);
+    }
+
+    .share-buttons .btn {
+        margin-right: 0.75rem;
+        margin-bottom: 0.75rem;
+        border-radius: 50px;
+        padding: 0.6rem 1.25rem;
+        font-size: 0.95rem;
+        transition: var(--transition);
+        border-width: 2px;
+        font-weight: 500;
+    }
+
+    .share-buttons .btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Tags Section Enhancements */
+    .tags-section {
+        margin: 3rem 0;
+    }
+
+    .tags-title {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+        color: var(--dark-color);
+    }
+
+    .tags-section .badge {
+        padding: 0.6rem 1rem;
+        margin-right: 0.75rem;
+        margin-bottom: 0.75rem;
+        border-radius: 50px;
+        background: var(--gray-200);
+        color: var(--dark-color);
+        font-weight: 500;
+        transition: var(--transition);
+        border: none;
+    }
+
+    .tags-section .badge:hover {
+        background: var(--primary-color);
+        color: var(--white);
+        transform: translateY(-3px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Sidebar Enhancements */
+    .sidebar {
+        position: sticky;
+        top: 90px;
+    }
+
+    
+
+    .sidebar-widget:hover {
+        box-shadow: var(--shadow-lg);
+        transform: translateY(-5px);
+    }
+
+     /* Sidebar lebih menarik */
+    .sidebar-widget {
+        background: var(--white);
+        border-radius: var(--border-radius-lg);
+        padding: 2rem;
+        margin-bottom: 2rem;
+        box-shadow: var(--shadow-md);
+        transition: var(--transition);
+        border: none;
+        border-top: 4px solid var(--primary-color);
+    }
+
+    .widget-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+        color: var(--dark-color);
+        position: relative;
+        padding-bottom: 0.75rem;
+    }
+
+    .widget-title::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 50px;
+        height: 3px;
+        background: var(--primary-color);
+        border-radius: 3px;
+    }
+
+
+    .related-item {
+    padding: 1.2rem 0;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.related-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    transition: var(--transition);
+    z-index: 1;
+}
+
+.related-item:hover {
+    padding-left: 15px;
+    transform: translateX(5px);
+}
+
+.related-item:hover::before {
+    width: 100%;
+}
+
+.related-item:last-child {
+    border-bottom: none;
+}
+
+.related-item a {
+    text-decoration: none;
+    color: var(--dark-color);
+    transition: var(--transition);
+    display: block;
+    position: relative;
+    z-index: 2;
+}
+
+.related-item a:hover {
+    color: var(--primary-color);
+}
+
+.related-item h5 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+    position: relative;
+    padding-left: 20px;
+    transition: var(--transition);
+}
+
+.related-item h5::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 8px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.related-item:hover h5::before {
+    opacity: 1;
+    left: 5px;
+    animation: pulse 1s infinite alternate;
+}
+
+.related-item .date {
+    font-size: 0.85rem;
+    color: var(--secondary-color);
+    display: flex;
+    align-items: center;
+    transition: var(--transition);
+    padding-left: 20px;
+}
+
+.related-item:hover .date {
+    color: var(--primary-color);
+}
+
+.related-item .date::before {
+    content: '\f133';
+    font-family: 'bootstrap-icons';
+    margin-right: 5px;
+    font-size: 0.8rem;
+}
+
+@keyframes pulse {
+    0% {
+        transform: translateY(-50%) scale(1);
+        box-shadow: 0 0 0 0 rgba(244, 67, 54, 0.4);
+    }
+    100% {
+        transform: translateY(-50%) scale(1.2);
+        box-shadow: 0 0 0 5px rgba(244, 67, 54, 0);
+    }
+}
+    .contact-info {
+  list-style: none;
+  padding: 0;
+}
+
+.contact-info li {
+  margin-bottom: 1.5rem;
+  padding-left: 2.5rem;
+  position: relative;
+}
+
+.contact-info li i {
+  position: absolute;
+  left: 0;
+  top: 0.25rem;
+  width: 2rem;
+  height: 2rem;
+  background: var(--gradient-primary);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  box-shadow: 0 3px 10px rgba(244, 67, 54, 0.2);
+}
+
+.contact-info li strong {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--dark-color);
+}
+
+.contact-info li a {
+  color: var(--secondary-color);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.contact-info li a:hover {
+  color: var(--primary-color);
+  text-decoration: underline;
+}
+    /* Breadcrumb Enhancements */
+    .breadcrumb {
+        background: var(--white);
+        padding: 1rem 1.25rem;
+        border-radius: var(--border-radius);
+        margin-bottom: 2rem !important;
+        box-shadow: var(--shadow-sm);
+        border: none;
+    }
+
+    .breadcrumb-item a {
+        color: var(--primary-color);
+        text-decoration: none;
+        transition: var(--transition);
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+    }
+
+    .breadcrumb-item a i {
+        margin-right: 0.5rem;
+    }
+
+    .breadcrumb-item a:hover {
+        color: var(--primary-dark);
+        text-decoration: underline;
+    }
+
+    .breadcrumb-item.active {
+        color: var(--gray-600);
+        font-weight: 500;
+    }
+
+    .breadcrumb-item + .breadcrumb-item::before {
+        content: "›";
+        color: var(--gray-600);
+        font-size: 1.3rem;
+        line-height: 1;
+        vertical-align: middle;
+        padding: 0 0.75rem;
+    }
+
+    /* Back to Top Button Enhancements */
+    .back-to-top {
+        position: fixed;
+        bottom: 40px;
+        right: 40px;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background: var(--primary-color);
+        color: var(--white);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 8px 25px rgba(244, 67, 54, 0.3);
+        z-index: 99;
+        opacity: 0;
+        visibility: hidden;
+        transition: var(--transition);
+        border: none;
+        font-size: 1.5rem;
+    }
+
+    .back-to-top.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .back-to-top:hover {
+        background: var(--primary-dark);
+        transform: translateY(-5px);
+        box-shadow: 0 12px 30px rgba(244, 67, 54, 0.4);
+    }
+
+    /* Footer Enhancements */
+    footer {
+        background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+        position: relative;
+        overflow: hidden;
+        margin-top: 6rem;
+        padding-top: 4rem !important;
+    }
+
+    footer::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+        animation: shimmer 3s ease-in-out infinite;
+    }
+
+    @keyframes shimmer {
+        0%, 100% {
+            opacity: 0.5;
+        }
+        50% {
+            opacity: 1;
+        }
+    }
+
+    .footer-brand {
+        position: relative;
+        z-index: 2;
+    }
+
+    .footer-brand img {
+        filter: brightness(0) invert(1);
+        transition: var(--transition);
+        animation: float 4s ease-in-out infinite;
+    }
+
+    @keyframes float {
+        0%, 100% {
+            transform: translateY(0px);
+        }
+        50% {
+            transform: translateY(-8px);
+        }
+    }
+
+    .footer-brand:hover img {
+        transform: scale(1.1) rotate(5deg);
+        animation: none;
+    }
+
+    .footer-links {
+        list-style: none;
+        padding: 0;
+    }
+
+    .footer-links li {
+        margin-bottom: 1rem;
+        transform: translateX(-15px);
+        opacity: 0;
+        animation: slideInLeft 0.6s ease forwards;
+    }
+
+    .footer-links li:nth-child(1) { animation-delay: 0.1s; }
+    .footer-links li:nth-child(2) { animation-delay: 0.2s; }
+    .footer-links li:nth-child(3) { animation-delay: 0.3s; }
+    .footer-links li:nth-child(4) { animation-delay: 0.4s; }
+    .footer-links li:nth-child(5) { animation-delay: 0.5s; }
+    .footer-links li:nth-child(6) { animation-delay: 0.6s; }
+
+    @keyframes slideInLeft {
+        to {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+
+    .footer-links a {
+        color: rgba(255, 255, 255, 0.85);
+        text-decoration: none;
+        transition: var(--transition);
+        position: relative;
+        display: inline-block;
+        padding: 0.25rem 0;
+        font-weight: 400;
+    }
+
+    .footer-links a::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: var(--primary-color);
+        transition: width 0.3s ease;
+    }
+
+    .footer-links a:hover {
+        color: var(--white);
+        transform: translateX(8px);
+    }
+
+    .footer-links a:hover::before {
+        width: 100%;
+    }
+
+    .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding-top: 2rem;
+        margin-top: 2rem;
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 1199.98px) {
+        .article-title {
+            font-size: 2rem;
+        }
+    }
+
+    @media (max-width: 991.98px) {
+        .sidebar {
+            margin-top: 3rem;
+            position: static;
+        }
+        
+        .article-content {
+            padding: 2rem;
+        }
+        
+        .gallery-item {
+            height: 220px;
+        }
+    }
+
+    @media (max-width: 767.98px) {
+        body {
+            padding-top: 60px;
+        }
+        
+        .article-title {
+            font-size: 1.8rem;
+        }
+
+        .article-header {
+            padding: 2.5rem 1.5rem;
+        }
+
+        .article-content {
+            padding: 1.75rem;
+        }
+
+        .gallery-item {
+            height: 200px;
+        }
+
+        .back-to-top {
+            width: 50px;
+            height: 50px;
+            bottom: 30px;
+            right: 30px;
+            font-size: 1.25rem;
+        }
+    }
+
+    @media (max-width: 575.98px) {
+        .article-title {
+            font-size: 1.6rem;
+        }
+
+        .article-meta {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0.75rem;
+        }
+
+        .breadcrumb {
+            padding: 0.75rem;
+            font-size: 0.9rem;
+        }
+        
+        .gallery-item {
+            height: 180px;
+        }
+        
+        .sidebar-widget {
+            padding: 1.5rem;
+        }
+    }
+</style>
+       
+</style>
+</head>
+<body>
+    <!-- Navigation -->
+    <header id="navbar-placeholder"></header>
+
+    <!-- Main Content -->
+    <div class="container my-5">
+      <div class="row">
+        <!-- Main Article Content -->
+        <div class="col-lg-8">
+          <!-- Breadcrumb -->
+          <nav
+            aria-label="breadcrumb"
+            class="animate__animated animate__fadeIn"
+          >
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="index.html">Beranda</a></li>
+              <li class="breadcrumb-item"><a href="index.html">Profil</a></li>
+              <li class="breadcrumb-item active" aria-current="page">
+                Selayang Pandang
+              </li>
+            </ol>
+          </nav>
+
+          <!-- Article Container -->
+          <div class="article-container animate__animated animate__fadeInUp">
+            <!-- Article Header -->
+            <div class="article-header">
+              <div class="article-meta">
+                <span class="badge bg-danger">Profil</span>
+                <span class="date">
+                  <i class="bi bi-calendar"></i>
+                  Terakhir diperbarui: 17 Oktober 2022
+                </span>
+                <span class="date">
+                  <i class="bi bi-eye"></i>
+                  1,245 Dilihat
+                </span>
+              </div>
+              <h1 class="article-title">
+                Selayang Pandang Kelurahan Tanjungpinang Kota
+              </h1>
+            </div>
+
+            <!-- Article Content -->
+            <div class="article-content">
+              <div class="article-body">
+                <h4>SEJARAH PEMBENTUKAN</h4>
+                <p>
+                  Sejak tahun 1983 melalui Peraturan Pemerintah Nomor 31 Tahun
+                  1983, Tanjungpinang berstatus sebagai kota administratif
+                  bagian dari Kabupaten Kepulauan Riau, Provinsi Riau. Bersama
+                  dengan Dumai yang telah lebih dulu menjadi kota administratif
+                  pada tahun 1979, Tanjungpinang merupakan kota administratif
+                  kedua di Provinsi Riau.
+                </p>
+
+                <p>
+                  Pada tahun 1999 pemerintah mengeluarkan undang-undang baru
+                  tentang pemerintahan daerah yaitu Undang-Undang Nomor 22 Tahun
+                  1999 tentang Pemerintahan Daerah. Undang-undang yang dikenal
+                  dengan undang-undang otonomi daerah itu lantas membagi wilayah
+                  pemerintahan daerah di Indonesia hanya dengan wilayah
+                  provinsi, dan wilayah kabupaten atau kota.
+                </p>
+
+                <div class="alert alert-info mt-4">
+                  <i class="bi bi-info-circle-fill me-2"></i>
+                  <strong>Fakta Menarik:</strong> Tanjungpinang merupakan pusat
+                  pemerintahan dan budaya Provinsi Kepulauan Riau, dengan
+                  warisan sejarah yang kaya sebagai bekas pusat Kesultanan
+                  Riau-Lingga.
+                </div>
+
+                <h4>PEMBENTUKAN KOTA TANJUNGPINANG</h4>
+                <p>
+                  Kota Tanjungpinang dibentuk melalui Undang-Undang Nomor 5
+                  Tahun 2001 yang ditandatangani oleh Presiden RI Abdurrahman
+                  Wahid pada tanggal 21 Juni 2001, dan dicatat dalam Lembaran
+                  Negara Republik Indonesia Tahun 2001 Nomor 85. Peresmian Kota
+                  Tanjungpinang oleh Menteri Dalam Negeri Dan Otonomi Daerah
+                  Hari Sabarno, dilaksanakan secara serentak bersama 11 kota
+                  lainnya pada tanggal 17 Oktober 2001 di Jakarta.
+                </p>
+
+                <p>
+                  Tanggal peresmian Kota Tanjungpinang inilah yang dijadikan
+                  sebagai momen peringatan ulang tahun Kota Tanjungpinang
+                  sebagai kota otonom. Seminggu kemudian, atau tepatnya pada
+                  tanggal 23 Oktober 2001, Gubernur Riau H. Saleh Djasit, SH
+                  melantik Dra. Hj. Suryatati A Manan sebagai caretaker atau
+                  Penjabat Walikota Tanjungpinang di gedung yang kini menjadi
+                  kantor Dinas Perpustakaan Dan Arsip Kota Tanjungpinang.
+                </p>
+
+                <div class="card bg-light border-danger mt-4 mb-4">
+                  <div class="card-body">
+                    <h5 class="card-title text-danger">
+                      <i class="bi bi-lightbulb me-2"></i>Did You Know?
+                    </h5>
+                    <p class="card-text">
+                      Nama Tanjungpinang berasal dari dua kata: "Tanjung" yang
+                      berarti daratan yang menjorok ke laut, dan "Pinang" yang
+                      diambil dari nama pohon pinang yang banyak tumbuh di
+                      daerah ini.
+                    </p>
+                  </div>
+                </div>
+
+                <h4>PEMBENTUKAN KELURAHAN</h4>
+                <p>
+                  Pembentukan Kelurahan Tanjungpinang Kota, Kecamatan
+                  Tanjungpinang Kota, Pemerintah Kota Tanjungpinang berdasarkan
+                  Keputusan Walikota Tanjungpinang Nomor 04 Tahun 2001 Tanggal 1
+                  November 2001.
+                </p>
+
+                <p>
+                  Kelurahan Tanjungpinang Kota memiliki peran strategis sebagai
+                  pusat pemerintahan kota dengan berbagai fasilitas publik
+                  seperti kantor pemerintahan, pusat perbelanjaan, dan tempat
+                  wisata sejarah yang menarik.
+                </p>
+              </div>
+
+              <!-- Gallery Section -->
+              <div class="gallery-section">
+                <h5 class="gallery-title">Dokumentasi Kelurahan</h5>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="gallery-item">
+                      <img
+                        src="https://icms.tanjungpinangkota.go.id/image/posting/galeri/7243000000/original/1666663650_f5738cffca40b42ce268.jpg"
+                        alt="Peta Wilayah"
+                      />
+                      <div class="overlay">Peta Wilayah Kelurahan</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Share Buttons -->
+              <div class="share-section">
+                <h6 class="share-title">Bagikan Halaman Ini:</h6>
+                <div class="share-buttons">
+                  <a
+                    href="#"
+                    class="btn btn-outline-primary btn-sm me-2"
+                    id="shareWhatsapp"
+                  >
+                    <i class="bi bi-whatsapp me-1"></i>WhatsApp
+                  </a>
+                  <a
+                    href="#"
+                    class="btn btn-outline-primary btn-sm me-2"
+                    id="shareTwitter"
+                  >
+                    <i class="bi bi-twitter me-1"></i>Twitter
+                  </a>
+                  <a
+                    href="#"
+                    class="btn btn-outline-primary btn-sm me-2"
+                    id="shareFacebook"
+                  >
+                    <i class="bi bi-facebook me-1"></i>Facebook
+                  </a>
+                  <button class="btn btn-outline-primary btn-sm" id="copyLink">
+                    <i class="bi bi-link me-1"></i>Salin Link
+                  </button>
+                </div>
+              </div>
+
+              <!-- Tags -->
+              <div class="tags-section">
+                <h6 class="tags-title">Tags:</h6>
+                <a href="#" class="badge">Profil</a>
+                <a href="#" class="badge">Sejarah</a>
+                <a href="#" class="badge">Kelurahan</a>
+                <a href="#" class="badge">Tanjungpinang</a>
+                <a href="#" class="badge">Pemerintahan</a>
+                <a href="#" class="badge">Kepulauan Riau</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="col-lg-4">
+          <div class="sidebar">
+            <!-- About Widget -->
+            <div
+              class="sidebar-widget animate__animated animate__fadeIn"
+              style="animation-delay: 0.2s"
+            >
+              <h5 class="widget-title">Tentang Kelurahan</h5>
+              <p>
+                Kelurahan Tanjungpinang Kota merupakan salah satu kelurahan di
+                Kecamatan Tanjungpinang Kota yang memiliki peran penting sebagai
+                pusat pemerintahan Kota Tanjungpinang.
+              </p>
+              
+            </div>
+
+            <!-- Related Articles -->
+                    <div class="sidebar-widget animate__animated animate__fadeIn">
+                        <h5 class="widget-title"><i class="bi bi-link-45deg me-2"></i>Profil Terkait</h5>
+                        <div class="related-item">
+                            <a href="selayang.html">
+                                <h5>Selayang Pandang</h5>
+                                <p class="date"><i class="bi bi-calendar me-1"></i>17 Oktober 2022</p>
+                            </a>
+                        </div>
+                        <div class="related-item">
+                            <a href="organisasi.html">
+                                <h5>Struktur Organisasi</h5>
+                                <p class="date"><i class="bi bi-calendar me-1"></i>20 Maret 2023</p>
+                            </a>
+                        </div>
+                       
+                        <div class="related-item">
+                            <a href="OPD.html">
+                                <h5>Profile OPD</h5>
+                                <p class="date"><i class="bi bi-calendar me-1"></i>12 Januari 2023</p>
+                            </a>
+                        </div>
+                    </div>
+
+                <!-- Contact Info -->
+                    <div class="sidebar-widget">
+                        <h5 class="widget-title">Kontak Kami</h5>
+                        <ul class="contact-info">
+                            <li>
+                                <i class="bi bi-geo-alt"></i>
+                                <strong>Alamat Kantor</strong>
+                                Jl. Mesjid No.7, Tanjungpinang Kota
+                            </li>
+                            <li>
+                                <i class="bi bi-telephone"></i>
+                                <strong>Telepon</strong>
+                                <a href="tel:07711234567">(0771) 1234567</a>
+                            </li>
+                            <li>
+                                <i class="bi bi-envelope"></i>
+                                <strong>Email</strong>
+                                <a href="mailto:tpitimurkotakel@tanjungpinangkota.go.id">tpitimurkotakel@tanjungpinangkota.go.id</a>
+                            </li>
+                            <li>
+                                <i class="bi bi-clock"></i>
+                                <strong>Jam Operasional</strong>
+                                Senin-Jumat: 08:00-16:00 WIB
+                            </li>
+                        </ul>
+                    </div>
+          </div>
+        </div>
+      </div>
+    </div>  
+                
+    <!-- Footer -->
+    <footer class="bg-dark text-light pt-5 pb-4  mt-auto">
+        <div class="container">
+            <div class="row justify-content-between align-items-start">
+                <!-- Contact Info -->
+                <div class="col-md-4 mb-4">
+                    <h5 class="fw-bold text-danger mb-3">Hubungi Kami</h5>
+                    <div class="d-flex align-items-start mb-4">
+                        <div class="me-3">
+                            <img src="assets/images/logo-tanjungpinang.png" alt="Logo" style="width: 80px; height: auto" class="img-fluid" />
+                        </div>
+                        <div class="small">
+                            <p class="fw-bold mb-1">Kelurahan Tanjungpinang Kota</p>
+                            <p class="mb-1">Kecamatan Tanjungpinang Kota</p>
+                        </div>
+                    </div>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2">
+                            <i class="bi bi-geo-alt-fill me-2 text-danger"></i>
+                            Jl. Mesjid No.7, Tanjungpinang Kota, Kota Tanjungpinang, Kepulauan Riau
+                        </li>
+                        <li class="mb-2">
+                            <i class="bi bi-envelope-fill me-2 text-danger"></i>
+                            tpitimurkotakel@tanjungpinangkota.go.id
+                        </li>
+                        <li class="mb-3">
+                            <i class="bi bi-telephone-fill me-2 text-danger"></i>
+                            (0771) 1234567
+                        </li>
+                        <li>
+                            <div class="d-flex gap-2">
+                                <a href="#" class="btn btn-outline-light btn-sm rounded-circle">
+                                    <i class="bi bi-facebook"></i>
+                                </a>
+                                <a href="#" class="btn btn-outline-light btn-sm rounded-circle">
+                                    <i class="bi bi-instagram"></i>
+                                </a>
+                                <a href="#" class="btn btn-outline-light btn-sm rounded-circle">
+                                    <i class="bi bi-twitter"></i>
+                                </a>
+                                <a href="#" class="btn btn-outline-light btn-sm rounded-circle">
+                                    <i class="bi bi-youtube"></i>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Main Menu -->
+                <div class="col-md-3 mb-4">
+                    <h5 class="fw-bold text-danger border-bottom pb-2 mb-3">Menu Utama</h5>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2">
+                            <a href="index.html" class="text-light text-decoration-none d-flex align-items-center">
+                                <i class="bi bi-house-door-fill me-2"></i> Beranda
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="berita.html" class="text-light text-decoration-none d-flex align-items-center">
+                                <i class="bi bi-newspaper me-2"></i> Berita
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="download-area.html" class="text-light text-decoration-none d-flex align-items-center">
+                                <i class="bi bi-download me-2"></i> Download
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="galeri.html" class="text-light text-decoration-none d-flex align-items-center">
+                                <i class="bi bi-images me-2"></i> Galeri
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="data-statistik.html" class="text-light text-decoration-none d-flex align-items-center">
+                                <i class="bi bi-bar-chart-fill me-2"></i> Data Statistik
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="peta-kelurahan.html" class="text-light text-decoration-none d-flex align-items-center">
+                                <i class="bi bi-map-fill me-2"></i> Peta Kelurahan
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Popular News -->
+                <div class="col-md-4 mb-4">
+                    <h5 class="fw-bold text-danger border-bottom pb-2 mb-3">Berita Populer</h5>
+                    <div class="mb-4">
+                        <h6 class="fw-bold mb-1">
+                            <a href="#" class="text-light text-decoration-none">Selamat Datang di Website Kelurahan Tanjungpinang Kota</a>
+                        </h6>
+                        <p class="text-secondary small mb-0">
+                            <i class="bi bi-calendar me-2"></i>Rabu, 31 Agustus 2025
+                        </p>
+                    </div>
+                    <div class="mb-4">
+                        <h6 class="fw-bold mb-1">
+                            <a href="#" class="text-light text-decoration-none">Penghargaan Kepala Daerah Perempuan Inspiratif dari Tempo Media Grup</a>
+                        </h6>
+                        <p class="text-secondary small mb-0">
+                            <i class="bi bi-calendar me-2"></i>Rabu, 28 September 2025
+                        </p>
+                    </div>
+                    <div class="mb-4">
+                        <h6 class="fw-bold mb-1">
+                            <a href="#" class="text-light text-decoration-none">Penyerahan Simbolis Kartu Identitas Anak (KIA)</a>
+                        </h6>
+                        <p class="text-secondary small mb-0">
+                            <i class="bi bi-calendar me-2"></i>Kamis, 15 Desember 2025
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <hr class="border-secondary" />
+            <div class="text-center pt-2">
+                <small>Design by <a href="#" class="text-danger fw-bold">Diskominfo Tanjungpinang</a> &copy;2025</small>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="btn btn-danger btn-lg back-to-top" id="backToTop">
+        <i class="bi bi-arrow-up"></i>
+    </a>
+
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+    <script src="assets/js/nav.js"></script>
+    
+    <script>
+      // Copy link functionality
+      document
+        .getElementById("copyLink")
+        .addEventListener("click", function () {
+          navigator.clipboard.writeText(window.location.href).then(function () {
+            // Create and show a toast notification
+            const toast = document.createElement("div");
+            toast.className = "position-fixed bottom-0 end-0 p-3";
+            toast.style.zIndex = "11";
+            toast.innerHTML = `
+                    <div class="toast show" role="alert" aria-live="assertive" aria-atomic="true">
+                        <div class="toast-header bg-primary text-white">
+                            <strong class="me-auto">Sukses</strong>
+                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast" aria-label="Close"></button>
+                        </div>
+                        <div class="toast-body">
+                            Link berhasil disalin!
+                        </div>
+                    </div>
+                `;
+            document.body.appendChild(toast);
+
+            // Remove toast after 3 seconds
+            setTimeout(() => {
+              toast.remove();
+            }, 3000);
+          });
+        });
+    </script>
+    <script src="assets/js/nav.js"></script>
+   
+</body>
+</html>

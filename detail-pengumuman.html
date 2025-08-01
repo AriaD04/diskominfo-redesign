@@ -1,0 +1,1273 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title id="pageTitle">
+      Detail Pengumuman - Kelurahan Tanjungpinang Barat
+    </title>
+    <meta
+      name="description"
+      content="Detail pengumuman dari Kelurahan Tanjungpinang Barat"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap Icons -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+
+    <style>
+      .article-content {
+        background: white;
+        border-radius: 15px;
+        padding: 2rem;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .article-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        line-height: 1.2;
+        color: #212529;
+      }
+
+      .article-meta {
+        border-bottom: 1px solid #eee;
+        padding-bottom: 1rem;
+      }
+
+      .article-body {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: #495057;
+      }
+
+      .article-body h4 {
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        color: #212529;
+        font-weight: 600;
+      }
+
+      .article-body ul {
+        margin: 1.5rem 0;
+        padding-left: 2rem;
+      }
+
+      .article-body li {
+        margin-bottom: 0.5rem;
+      }
+
+      .share-buttons a,
+      .share-buttons button {
+        margin-bottom: 0.5rem;
+      }
+
+      .sidebar {
+        position: sticky;
+        top: 100px;
+      }
+
+      .sidebar-widget {
+        background: white;
+        border-radius: 15px;
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .widget-title {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+        color: #212529;
+        border-bottom: 2px solid #dc3545;
+        padding-bottom: 0.5rem;
+      }
+
+      .related-news-item,
+      .popular-news-item {
+        padding: 1rem 0;
+        border-bottom: 1px solid #eee;
+      }
+
+      .related-news-item:last-child,
+      .popular-news-item:last-child {
+        border-bottom: none;
+      }
+
+      .related-news-item h6,
+      .popular-news-item h6 {
+        font-size: 0.9rem;
+        margin-bottom: 0.25rem;
+      }
+
+      .related-news-item a,
+      .popular-news-item a {
+        text-decoration: none;
+        color: #212529;
+      }
+
+      .related-news-item a:hover,
+      .popular-news-item a:hover {
+        color: #dc3545;
+      }
+
+      .popular-number {
+        width: 30px;
+        height: 30px;
+        background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        margin-right: 1rem;
+        flex-shrink: 0;
+        font-size: 0.9rem;
+      }
+
+      .quick-links {
+        list-style: none;
+        padding: 0;
+      }
+
+      .quick-links li {
+        margin-bottom: 0.75rem;
+      }
+
+      .quick-links a {
+        text-decoration: none;
+        color: #6c757d;
+        transition: color 0.3s ease;
+      }
+
+      .quick-links a:hover {
+        color: #dc3545;
+      }
+
+      .contact-widget {
+        background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
+        color: #000000;
+      }
+
+      .contact-widget .widget-title {
+        color: #ffffff;
+        border-bottom-color: rgba(255, 255, 255, 0.3);
+      }
+
+      .contact-widget .contact-info p {
+        margin-bottom: 0.75rem;
+        color: #000000;
+      }
+
+      @media (max-width: 768px) {
+        .article-title {
+          font-size: 1.8rem;
+        }
+
+        .sidebar {
+          position: static;
+          margin-top: 2rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar Placeholder -->
+    <header id="navbar-placeholder"></header>
+
+    <!-- Article Content -->
+    <main class="detail-page-content">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8">
+            <!-- Breadcrumb -->
+            <nav aria-label="breadcrumb" class="mb-4">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                  <a href="index.html">Beranda</a>
+                </li>
+                <li class="breadcrumb-item">
+                  <a href="info.html">Pengumuman</a>
+                </li>
+                <li
+                  class="breadcrumb-item active"
+                  aria-current="page"
+                  id="breadcrumbTitle"
+                >
+                  Detail Pengumuman
+                </li>
+              </ol>
+            </nav>
+
+            <!-- Article Header -->
+            <article class="article-content">
+              <div class="article-meta mb-3">
+                <span class="badge bg-primary" id="articleCategory"
+                  >Kategori</span
+                >
+                <span class="text-muted ms-3">
+                  <i class="bi bi-calendar me-1"></i>
+                  <span id="articleDate">Tanggal</span>
+                </span>
+                <span class="text-muted ms-3">
+                  <i class="bi bi-person me-1"></i>
+                  <span id="articleAuthor">Penulis</span>
+                </span>
+                <span class="text-muted ms-3">
+                  <i class="bi bi-eye me-1"></i>
+                  <span id="articleViews">0</span> views
+                </span>
+              </div>
+
+              <h1 class="article-title mb-4" id="articleTitle">
+                Judul Pengumuman
+              </h1>
+
+              <div class="article-image mb-4">
+                <img
+                  id="articleImage"
+                  src=""
+                  alt=""
+                  class="img-fluid rounded"
+                />
+              </div>
+
+              <div class="article-body" id="articleBody">
+                <!-- Content will be loaded by JavaScript -->
+              </div>
+
+              <!-- Share Buttons -->
+              <div class="share-section mt-5 pt-4 border-top">
+                <h6>Bagikan Pengumuman Ini:</h6>
+                <div class="share-buttons">
+                  <a
+                    href="#"
+                    class="btn btn-outline-primary btn-sm me-2"
+                    id="shareWhatsapp"
+                  >
+                    <i class="bi bi-whatsapp me-1"></i>WhatsApp
+                  </a>
+                  <a
+                    href="#"
+                    class="btn btn-outline-primary btn-sm me-2"
+                    id="shareTwitter"
+                  >
+                    <i class="bi bi-twitter me-1"></i>Twitter
+                  </a>
+                  <a
+                    href="#"
+                    class="btn btn-outline-primary btn-sm me-2"
+                    id="shareFacebook"
+                  >
+                    <i class="bi bi-facebook me-1"></i>Facebook
+                  </a>
+                  <button class="btn btn-outline-primary btn-sm" id="copyLink">
+                    <i class="bi bi-link me-1"></i>Salin Link
+                  </button>
+                </div>
+              </div>
+
+              <!-- Tags -->
+              <div class="tags-section mt-4">
+                <h6>Tags:</h6>
+                <div id="articleTags">
+                  <!-- Tags will be loaded by JavaScript -->
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Sidebar -->
+          <div class="col-lg-4">
+            <div class="sidebar">
+              <!-- Related Announcements -->
+              <div class="sidebar-widget">
+                <h5 class="widget-title">Pengumuman Terkait</h5>
+                <div id="relatedAnnouncements">
+                  <!-- Related announcements will be loaded by JavaScript -->
+                </div>
+              </div>
+
+              <!-- Popular Announcements -->
+              <div class="sidebar-widget">
+                <h5 class="widget-title">Pengumuman Populer</h5>
+                <div id="popularAnnouncements">
+                  <!-- Popular announcements will be loaded by JavaScript -->
+                </div>
+              </div>
+
+              <!-- Quick Links -->
+              <div class="sidebar-widget">
+                <h5 class="widget-title">Link Cepat</h5>
+                <ul class="quick-links">
+                  <li>
+                    <a href="pelayanan.html"
+                      ><i class="bi bi-arrow-right me-2"></i>Pelayanan Publik</a
+                    >
+                  </li>
+                  <li>
+                    <a href="download-area.html"
+                      ><i class="bi bi-arrow-right me-2"></i>Download Area</a
+                    >
+                  </li>
+                  <li>
+                    <a href="galeri.html"
+                      ><i class="bi bi-arrow-right me-2"></i>Galeri Kegiatan</a
+                    >
+                  </li>
+                  <li>
+                    <a href="data-statistik.html"
+                      ><i class="bi bi-arrow-right me-2"></i>Data Statistik</a
+                    >
+                  </li>
+                  <li>
+                    <a href="peta-kelurahan.html"
+                      ><i class="bi bi-arrow-right me-2"></i>Peta Kelurahan</a
+                    >
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Contact Info -->
+              <div class="sidebar-widget contact-widget">
+                <h5 class="widget-title">Hubungi Kami</h5>
+                <div class="contact-info">
+                  <p>
+                    <i class="bi bi-geo-alt me-2"></i>Jl. Bali No. 2,
+                    Tanjungpinang Barat
+                  </p>
+                  <p><i class="bi bi-telephone me-2"></i>(0771) 123456</p>
+                  <p>
+                    <i class="bi bi-envelope me-2"></i
+                    >keltpbarat@tanjungpinangkota.go.id
+                  </p>
+                  <p>
+                    <i class="bi bi-clock me-2"></i>Senin-Jumat: 08:00-16:00 WIB
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light pt-5 pb-4">
+      <div class="container">
+        <div class="row justify-content-between align-items-start">
+          <!-- Hubungi Kami -->
+          <div class="col-md-4 mb-4">
+            <h5 class="fw-bold text-danger mb-3">Hubungi Kami</h5>
+            <div class="d-flex align-items-start mb-4">
+              <div class="me-3">
+                <img
+                  src="assets/images/logo-tanjungpinang.png"
+                  alt="Logo"
+                  style="width: 80px; height: auto"
+                  class="img-fluid"
+                />
+              </div>
+              <div class="small">
+                <p class="fw-bold mb-1 text-white">
+                  Kelurahan Tanjungpinang Kota
+                </p>
+                <p class="mb-1 text-white">Kecamatan Tanjungpinang Kota</p>
+              </div>
+            </div>
+            <ul class="list-unstyled small">
+              <li class="mb-2">
+                <i class="bi bi-geo-alt-fill me-2 text-danger"></i>
+                Jl. Mesjid No.7, Tanjungpinang Kota, Kota Tanjungpinang,
+                Kepulauan Riau
+              </li>
+              <li class="mb-2">
+                <i class="bi bi-envelope-fill me-2 text-danger"></i>
+                tpitimurkotakel@tanjungpinangkota.go.id
+              </li>
+              <li class="mb-3">
+                <i class="bi bi-telephone-fill me-2 text-danger"></i>
+                (0771) 1234567
+              </li>
+              <li>
+                <div class="d-flex gap-2">
+                  <a
+                    href="#"
+                    class="btn btn-outline-light btn-sm rounded-circle"
+                  >
+                    <i class="bi bi-facebook"></i>
+                  </a>
+                  <a
+                    href="#"
+                    class="btn btn-outline-light btn-sm rounded-circle"
+                  >
+                    <i class="bi bi-instagram"></i>
+                  </a>
+                  <a
+                    href="#"
+                    class="btn btn-outline-light btn-sm rounded-circle"
+                  >
+                    <i class="bi bi-twitter"></i>
+                  </a>
+                  <a
+                    href="#"
+                    class="btn btn-outline-light btn-sm rounded-circle"
+                  >
+                    <i class="bi bi-youtube"></i>
+                  </a>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Menu Utama -->
+          <div class="col-md-3 mb-4">
+            <h5 class="fw-bold text-danger border-bottom pb-2 mb-3">
+              Menu Utama
+            </h5>
+            <ul class="list-unstyled small">
+              <li class="mb-2">
+                <a
+                  href="index.html"
+                  class="text-light text-decoration-none d-flex align-items-center"
+                >
+                  <i class="bi bi-house-door-fill me-2"></i> Beranda
+                </a>
+              </li>
+              <li class="mb-2">
+                <a
+                  href="berita.html"
+                  class="text-light text-decoration-none d-flex align-items-center"
+                >
+                  <i class="bi bi-newspaper me-2"></i> Berita
+                </a>
+              </li>
+              <li class="mb-2">
+                <a
+                  href="download-area.html"
+                  class="text-light text-decoration-none d-flex align-items-center"
+                >
+                  <i class="bi bi-download me-2"></i> Download
+                </a>
+              </li>
+              <li class="mb-2">
+                <a
+                  href="galeri.html"
+                  class="text-light text-decoration-none d-flex align-items-center"
+                >
+                  <i class="bi bi-images me-2"></i> Galeri
+                </a>
+              </li>
+              <li class="mb-2">
+                <a
+                  href="data-statistik.html"
+                  class="text-light text-decoration-none d-flex align-items-center"
+                >
+                  <i class="bi bi-bar-chart-fill me-2"></i> Data Statistik
+                </a>
+              </li>
+              <li class="mb-2">
+                <a
+                  href="peta-kelurahan.html"
+                  class="text-light text-decoration-none d-flex align-items-center"
+                >
+                  <i class="bi bi-map-fill me-2"></i> Peta Kelurahan
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Berita Populer -->
+          <div class="col-md-4 mb-4">
+            <h5 class="fw-bold text-danger border-bottom pb-2 mb-3">
+              Berita Populer
+            </h5>
+            <div class="mb-4">
+              <h6 class="fw-bold mb-1 text-white">
+                Selamat Datang di Website Kelurahan Tanjungpinang Kota
+              </h6>
+              <p class="text-secondary small mb-0">
+                <i class="bi bi-calendar me-2"></i>Rabu, 31 Agustus 2022
+              </p>
+            </div>
+            <div class="mb-4">
+              <h6 class="fw-bold mb-1 text-white">
+                Penghargaan Kepala Daerah Perempuan Inspiratif dari Tempo Media
+                Grup
+              </h6>
+              <p class="text-secondary small mb-0">
+                <i class="bi bi-calendar me-2"></i>Rabu, 28 September 2022
+              </p>
+            </div>
+            <div class="mb-4">
+              <h6 class="fw-bold mb-1 text-white">
+                Penyerahan Simbolis Kartu Identitas Anak (KIA)
+              </h6>
+              <p class="text-secondary small mb-0">
+                <i class="bi bi-calendar me-2"></i>Kamis, 15 Desember 2022
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer Bottom Tengah -->
+        <hr class="border-secondary" />
+        <div class="text-center pt-2">
+          <small
+            >Design by
+            <a href="#" class="text-danger fw-bold"
+              >Mahasiswa Teknik Informatika</a
+            >
+            &copy;2025</small
+          >
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Article Detail Script -->
+    <script>
+      // Announcement data (sinkronisasi dengan info.html)
+      const announcementData = [
+        {
+          id: 1,
+          title: "PENUTUPAN JALAN SEMENTARA UNTUK PERBAIKAN DRAINASE",
+          excerpt:
+            "Diberitahukan kepada seluruh warga bahwa Jalan Merdeka akan ditutup sementara pada tanggal 20-25 Juli 2024 untuk perbaikan sistem drainase. Mohon perhatian dan pengertiannya.",
+          content: `
+                    <p>Diberitahukan kepada seluruh warga Kelurahan Tanjungpinang Barat bahwa <strong>Jalan Merdeka akan ditutup sementara</strong> untuk keperluan perbaikan sistem drainase yang rusak akibat hujan deras beberapa waktu lalu.</p>
+                    
+                    <h4>Detail Penutupan Jalan:</h4>
+                    <ul>
+                        <li><strong>Lokasi:</strong> Jalan Merdeka (dari perempatan Pasar hingga Jembatan Sungai)</li>
+                        <li><strong>Tanggal:</strong> 20-25 Juli 2024</li>
+                        <li><strong>Waktu:</strong> 24 jam penuh</li>
+                        <li><strong>Alasan:</strong> Perbaikan sistem drainase dan saluran air</li>
+                    </ul>
+                    
+                    <h4>Rute Alternatif:</h4>
+                    <ul>
+                        <li>Dari arah Utara: Gunakan Jalan Kartini - Jalan Diponegoro</li>
+                        <li>Dari arah Selatan: Gunakan Jalan Ahmad Yani - Jalan Sudirman</li>
+                        <li>Kendaraan berat dialihkan melalui Jalan Bypass</li>
+                    </ul>
+                    
+                    <p>Pekerjaan perbaikan ini dilakukan untuk mengatasi masalah banjir yang sering terjadi di kawasan tersebut. Kami mohon pengertian dan kerja sama dari seluruh warga untuk menggunakan rute alternatif yang telah disediakan.</p>
+                    
+                    <p>Untuk informasi lebih lanjut, silakan hubungi kantor kelurahan di nomor (0771) 123456 atau datang langsung ke kantor kelurahan pada jam kerja.</p>
+                `,
+          category: "Darurat",
+          date: "2024-07-15",
+          image:
+            "https://icms.tanjungpinangkota.go.id/image/posting/berita/7243000000/original/1718954728_47d9af74ec712bd51c9a.jpg",
+          views: 245,
+          author: "Kelurahan Tanjungpinang Barat",
+          tags: ["darurat", "jalan", "drainase", "perbaikan"],
+        },
+        {
+          id: 2,
+          title: "PEMADAMAN LISTRIK BERGILIR WILAYAH RT 05-08",
+          excerpt:
+            "Diberitahukan bahwa akan dilakukan pemadaman listrik bergilir pada wilayah RT 05-08 pada tanggal 18 Juli 2024 pukul 08.00-16.00 WIB untuk perbaikan jaringan.",
+          content: `
+                    <p>PLN Cabang Tanjungpinang bersama Kelurahan Tanjungpinang Barat memberitahukan kepada seluruh warga bahwa akan dilakukan <strong>pemadaman listrik bergilir</strong> untuk perbaikan dan peningkatan kualitas jaringan listrik.</p>
+                    
+                    <h4>Jadwal Pemadaman:</h4>
+                    <ul>
+                        <li><strong>Tanggal:</strong> 18 Juli 2024</li>
+                        <li><strong>Waktu:</strong> 08.00 - 16.00 WIB</li>
+                        <li><strong>Wilayah:</strong> RT 05, RT 06, RT 07, RT 08</li>
+                        <li><strong>Durasi:</strong> Maksimal 8 jam</li>
+                    </ul>
+                    
+                    <h4>Area yang Terdampak:</h4>
+                    <ul>
+                        <li>RT 05: Jalan Melati, Jalan Mawar, Jalan Kenanga</li>
+                        <li>RT 06: Jalan Anggrek, Jalan Dahlia, Perumahan Taman Sari</li>
+                        <li>RT 07: Jalan Cempaka, Jalan Bougenville, Komplek Griya Asri</li>
+                        <li>RT 08: Jalan Flamboyan, Jalan Kamboja, Kawasan Industri Kecil</li>
+                    </ul>
+                    
+                    <h4>Pekerjaan yang Dilakukan:</h4>
+                    <ul>
+                        <li>Penggantian kabel jaringan yang sudah tua</li>
+                        <li>Perbaikan trafo distribusi</li>
+                        <li>Pemasangan sistem proteksi baru</li>
+                        <li>Pemeliharaan rutin peralatan listrik</li>
+                    </ul>
+                    
+                    <p>Pemadaman ini bertujuan untuk meningkatkan keandalan dan kualitas pasokan listrik di wilayah tersebut. Setelah pekerjaan selesai, diharapkan gangguan listrik akan berkurang signifikan.</p>
+                    
+                    <p><strong>Himbauan kepada warga:</strong></p>
+                    <ul>
+                        <li>Matikan semua peralatan elektronik sebelum pemadaman</li>
+                        <li>Siapkan penerangan darurat (senter, lilin)</li>
+                        <li>Simpan makanan yang mudah basi di tempat yang aman</li>
+                        <li>Charge perangkat komunikasi sebelum pemadaman</li>
+                    </ul>
+                    
+                    <p>Untuk informasi lebih lanjut atau keluhan, hubungi PLN Call Center 123 atau kantor kelurahan.</p>
+                `,
+          category: "Darurat",
+          date: "2024-07-10",
+          image:
+            "https://icms.tanjungpinangkota.go.id/image/posting/berita/7243000000/original/1698135311_4d9ad52f32bb9cf5522d.jpg",
+          views: 189,
+          author: "PLN Cabang Tanjungpinang",
+          tags: ["darurat", "listrik", "pemadaman", "perbaikan"],
+        },
+        {
+          id: 3,
+          title: "PENDAFTARAN BANTUAN SOSIAL TAHAP II TAHUN 2024",
+          excerpt:
+            "Dibuka pendaftaran bantuan sosial tahap II tahun 2024. Pendaftaran dapat dilakukan di kantor kelurahan mulai tanggal 5-20 Juli 2024 dengan membawa persyaratan yang diperlukan.",
+          content: `
+                    <p>Pemerintah Kelurahan Tanjungpinang Barat dengan ini membuka <strong>pendaftaran bantuan sosial tahap II tahun 2024</strong> untuk membantu masyarakat yang membutuhkan, khususnya yang terdampak ekonomi.</p>
+                    
+                    <h4>Periode Pendaftaran:</h4>
+                    <ul>
+                        <li><strong>Tanggal:</strong> 5 - 20 Juli 2024</li>
+                        <li><strong>Waktu:</strong> 08.00 - 15.00 WIB (Senin-Kamis), 08.00 - 11.30 WIB (Jumat)</li>
+                        <li><strong>Tempat:</strong> Kantor Kelurahan Tanjungpinang Barat</li>
+                        <li><strong>Kuota:</strong> 200 keluarga penerima manfaat</li>
+                    </ul>
+                    
+                    <h4>Jenis Bantuan:</h4>
+                    <ul>
+                        <li>Bantuan Sembako (beras 10kg, minyak goreng, gula, dll)</li>
+                        <li>Bantuan Tunai Rp 300.000 per keluarga</li>
+                        <li>Bantuan Alat Tulis Sekolah untuk anak sekolah</li>
+                        <li>Bantuan Kesehatan (vitamin, masker, hand sanitizer)</li>
+                    </ul>
+                    
+                    <h4>Persyaratan Pendaftaran:</h4>
+                    <ul>
+                        <li>Fotokopi KTP dan KK (masing-masing 2 lembar)</li>
+                        <li>Surat Keterangan Tidak Mampu dari RT/RW</li>
+                        <li>Surat Keterangan Penghasilan (jika ada)</li>
+                        <li>Fotokopi rekening bank atau buku tabungan</li>
+                        <li>Pas foto 3x4 sebanyak 2 lembar</li>
+                    </ul>
+                    
+                    <h4>Kriteria Penerima:</h4>
+                    <ul>
+                        <li>Keluarga dengan penghasilan di bawah Rp 1.500.000/bulan</li>
+                        <li>Tidak sedang menerima bantuan sosial lainnya</li>
+                        <li>Memiliki KTP dan berdomisili di Kelurahan Tanjungpinang Barat</li>
+                        <li>Prioritas untuk janda/duda, lansia, dan penyandang disabilitas</li>
+                    </ul>
+                    
+                    <p>Pengumuman hasil seleksi akan diumumkan pada tanggal 25 Juli 2024 melalui papan pengumuman kelurahan dan website resmi. Penyaluran bantuan dijadwalkan pada awal Agustus 2024.</p>
+                    
+                    <p>Untuk informasi lebih lanjut, silakan hubungi Bidang Sosial Kelurahan di nomor (0771) 123456 ext. 3.</p>
+                `,
+          category: "Resmi",
+          date: "2024-07-05",
+          image:
+            "https://icms.tanjungpinangkota.go.id/image/posting/berita/7243000000/original/1698381393_c4ea38defc01379b740e.jpg",
+          views: 156,
+          author: "Bidang Sosial",
+          tags: [
+            "bantuan sosial",
+            "pendaftaran",
+            "kesejahteraan",
+            "masyarakat",
+          ],
+        },
+        {
+          id: 4,
+          title: "LELANG PEMBANGUNAN TAMAN KELURAHAN TAHAP II",
+          excerpt:
+            "Diumumkan lelang pembangunan Taman Kelurahan Tahap II dengan nilai pagu Rp. 250.000.000. Pendaftaran sampai dengan 30 Juli 2024.",
+          content: `
+                    <p>Pemerintah Kelurahan Tanjungpinang Barat mengumumkan <strong>lelang terbuka pembangunan Taman Kelurahan Tahap II</strong> sebagai bagian dari program peningkatan fasilitas publik dan ruang terbuka hijau.</p>
+                    
+                    <h4>Detail Lelang:</h4>
+                    <ul>
+                        <li><strong>Nama Pekerjaan:</strong> Pembangunan Taman Kelurahan Tahap II</li>
+                        <li><strong>Nilai Pagu:</strong> Rp 250.000.000 (Dua Ratus Lima Puluh Juta Rupiah)</li>
+                        <li><strong>Sumber Dana:</strong> APBD Kota Tanjungpinang</li>
+                        <li><strong>Waktu Pelaksanaan:</strong> 90 hari kalender</li>
+                    </ul>
+                    
+                    <h4>Ruang Lingkup Pekerjaan:</h4>
+                    <ul>
+                        <li>Pembangunan taman dengan luas 2.000 m²</li>
+                        <li>Pemasangan paving block dan pedestrian</li>
+                        <li>Pembuatan gazebo dan bangku taman</li>
+                        <li>Penanaman pohon peneduh dan tanaman hias</li>
+                        <li>Instalasi sistem penerangan taman</li>
+                        <li>Pembuatan kolam air mancur</li>
+                        <li>Pemasangan playground anak</li>
+                    </ul>
+                    
+                    <h4>Persyaratan Peserta:</h4>
+                    <ul>
+                        <li>Badan usaha yang berbadan hukum</li>
+                        <li>Memiliki izin usaha bidang konstruksi</li>
+                        <li>Pengalaman minimal 3 tahun di bidang landscaping</li>
+                        <li>Memiliki tenaga ahli bersertifikat</li>
+                        <li>Tidak sedang dalam sanksi atau blacklist</li>
+                    </ul>
+                    
+                    <h4>Jadwal Lelang:</h4>
+                    <ul>
+                        <li><strong>Pendaftaran:</strong> 15 - 30 Juli 2024</li>
+                        <li><strong>Pemasukan Dokumen:</strong> 31 Juli - 5 Agustus 2024</li>
+                        <li><strong>Pembukaan Penawaran:</strong> 7 Agustus 2024</li>
+                        <li><strong>Evaluasi Teknis:</strong> 8 - 12 Agustus 2024</li>
+                        <li><strong>Pengumuman Pemenang:</strong> 15 Agustus 2024</li>
+                    </ul>
+                    
+                    <p>Dokumen lelang dapat diunduh melalui website resmi kelurahan atau diambil langsung di Bidang Pembangunan Kelurahan pada jam kerja. Biaya dokumen lelang sebesar Rp 500.000.</p>
+                    
+                    <p>Pembukaan penawaran akan dilakukan secara terbuka di Aula Kelurahan pada tanggal 7 Agustus 2024 pukul 10.00 WIB. Peserta lelang atau kuasa yang sah wajib hadir.</p>
+                    
+                    <p>Untuk informasi lebih lanjut, hubungi Bidang Pembangunan Kelurahan di nomor (0771) 123456 ext. 2.</p>
+                `,
+          category: "Lelang",
+          date: "2024-07-01",
+          image:
+            "https://icms.tanjungpinangkota.go.id/image/posting/berita/7243000000/original/1698380085_9b925f0b8a64f1cd0589.jpg",
+          views: 134,
+          author: "Bidang Pembangunan",
+          tags: ["lelang", "pembangunan", "taman", "fasilitas umum"],
+        },
+        {
+          id: 5,
+          title: "LOWONGAN TENAGA KEBERSIHAN KELURAHAN",
+          excerpt:
+            "Dibuka lowongan tenaga kebersihan kelurahan untuk 5 orang. Persyaratan: usia maksimal 45 tahun, sehat jasmani rohani. Pendaftaran di kantor kelurahan.",
+          content: `
+                    <p>Kelurahan Tanjungpinang Barat membuka <strong>lowongan pekerjaan untuk tenaga kebersihan</strong> sebanyak 5 orang untuk membantu menjaga kebersihan dan kerapihan lingkungan kantor serta fasilitas umum kelurahan.</p>
+                    
+                    <h4>Detail Lowongan:</h4>
+                    <ul>
+                        <li><strong>Posisi:</strong> Tenaga Kebersihan Kelurahan</li>
+                        <li><strong>Jumlah:</strong> 5 orang</li>
+                        <li><strong>Status:</strong> Pegawai Kontrak</li>
+                        <li><strong>Masa Kontrak:</strong> 1 tahun (dapat diperpanjang)</li>
+                    </ul>
+                    
+                    <h4>Persyaratan Umum:</h4>
+                    <ul>
+                        <li>Warga Negara Indonesia</li>
+                        <li>Usia maksimal 45 tahun</li>
+                        <li>Pendidikan minimal SD/sederajat</li>
+                        <li>Sehat jasmani dan rohani</li>
+                        <li>Tidak sedang menjalani hukuman pidana</li>
+                        <li>Berdomisili di Kota Tanjungpinang</li>
+                        <li>Bersedia bekerja dengan sistem shift</li>
+                    </ul>
+                    
+                    <h4>Tugas dan Tanggung Jawab:</h4>
+                    <ul>
+                        <li>Membersihkan ruangan kantor kelurahan</li>
+                        <li>Membersihkan toilet dan fasilitas umum</li>
+                        <li>Menyapu dan mengepel lantai</li>
+                        <li>Membersihkan jendela dan kaca</li>
+                        <li>Mengelola sampah dan limbah kantor</li>
+                        <li>Merawat taman dan area hijau kantor</li>
+                        <li>Tugas kebersihan lainnya sesuai arahan atasan</li>
+                    </ul>
+                    
+                    <h4>Fasilitas yang Diberikan:</h4>
+                    <ul>
+                        <li>Gaji pokok Rp 2.500.000/bulan</li>
+                        <li>Tunjangan transport Rp 300.000/bulan</li>
+                        <li>Seragam kerja dan alat kebersihan</li>
+                        <li>BPJS Kesehatan dan Ketenagakerjaan</li>
+                        <li>Cuti tahunan sesuai ketentuan</li>
+                    </ul>
+                    
+                    <h4>Dokumen yang Diperlukan:</h4>
+                    <ul>
+                        <li>Surat lamaran tulis tangan</li>
+                        <li>Daftar riwayat hidup (CV)</li>
+                        <li>Fotokopi KTP dan KK</li>
+                        <li>Fotokopi ijazah terakhir</li>
+                        <li>Surat keterangan sehat dari dokter</li>
+                        <li>Surat keterangan catatan kepolisian (SKCK)</li>
+                        <li>Pas foto 4x6 sebanyak 3 lembar</li>
+                    </ul>
+                    
+                    <h4>Jadwal Pendaftaran:</h4>
+                    <ul>
+                        <li><strong>Pendaftaran:</strong> 28 Juni - 10 Juli 2024</li>
+                        <li><strong>Seleksi Berkas:</strong> 11 - 13 Juli 2024</li>
+                        <li><strong>Tes Wawancara:</strong> 15 Juli 2024</li>
+                        <li><strong>Pengumuman:</strong> 18 Juli 2024</li>
+                        <li><strong>Mulai Kerja:</strong> 1 Agustus 2024</li>
+                    </ul>
+                    
+                    <p>Pendaftaran dilakukan dengan menyerahkan berkas langsung ke Bidang Umum Kelurahan Tanjungpinang Barat pada jam kerja. Tidak dipungut biaya apapun dalam proses seleksi ini.</p>
+                    
+                    <p>Untuk informasi lebih lanjut, hubungi Bidang Umum di nomor (0771) 123456 ext. 1.</p>
+                `,
+          category: "Lowongan",
+          date: "2024-06-28",
+          image:
+            "https://icms.tanjungpinangkota.go.id/image/posting/berita/7243000000/original/1698139006_720de976749805e4c099.jpg",
+          views: 98,
+          author: "Bidang Umum",
+          tags: ["lowongan kerja", "tenaga kebersihan", "kontrak", "kelurahan"],
+        },
+        {
+          id: 6,
+          title: "JADWAL POSYANDU BULAN JULI 2024",
+          excerpt:
+            "Berikut jadwal posyandu bulan Juli 2024: RT 01 (5 Juli), RT 02 (6 Juli), RT 03 (7 Juli), RT 04 (8 Juli), RT 05 (9 Juli). Pukul 08.00-12.00 WIB.",
+          content: `
+                    <p>Bidang Kesehatan Kelurahan Tanjungpinang Barat mengumumkan <strong>jadwal kegiatan Posyandu bulan Juli 2024</strong> untuk seluruh wilayah RT di kelurahan. Kegiatan ini rutin dilaksanakan setiap bulan untuk memantau kesehatan ibu dan anak.</p>
+                    
+                    <h4>Jadwal Posyandu Juli 2024:</h4>
+                    <ul>
+                        <li><strong>RT 01:</strong> Jumat, 5 Juli 2024 - Balai RT 01</li>
+                        <li><strong>RT 02:</strong> Sabtu, 6 Juli 2024 - Balai RT 02</li>
+                        <li><strong>RT 03:</strong> Minggu, 7 Juli 2024 - Balai RT 03</li>
+                        <li><strong>RT 04:</strong> Senin, 8 Juli 2024 - Balai RT 04</li>
+                        <li><strong>RT 05:</strong> Selasa, 9 Juli 2024 - Balai RT 05</li>
+                        <li><strong>RT 06:</strong> Rabu, 10 Juli 2024 - Balai RT 06</li>
+                        <li><strong>RT 07:</strong> Kamis, 11 Juli 2024 - Balai RT 07</li>
+                        <li><strong>RT 08:</strong> Jumat, 12 Juli 2024 - Balai RT 08</li>
+                    </ul>
+                    
+                    <p><strong>Waktu Pelaksanaan:</strong> 08.00 - 12.00 WIB (semua lokasi)</p>
+                    
+                    <h4>Layanan yang Tersedia:</h4>
+                    <ul>
+                        <li>Penimbangan dan pengukuran balita</li>
+                        <li>Pemberian vitamin A dan tablet tambah darah</li>
+                        <li>Imunisasi dasar dan lanjutan</li>
+                        <li>Pemeriksaan kesehatan ibu hamil</li>
+                        <li>Konsultasi gizi dan kesehatan</li>
+                        <li>Penyuluhan kesehatan</li>
+                        <li>Pemberian makanan tambahan (PMT)</li>
+                    </ul>
+                    
+                    <h4>Yang Perlu Dibawa:</h4>
+                    <ul>
+                        <li>Buku KIA (Kesehatan Ibu dan Anak)</li>
+                        <li>Kartu identitas (KTP/KK)</li>
+                        <li>Buku catatan kesehatan anak</li>
+                        <li>Kartu BPJS Kesehatan (jika ada)</li>
+                    </ul>
+                    
+                    <h4>Sasaran Kegiatan:</h4>
+                    <ul>
+                        <li>Bayi dan balita (0-5 tahun)</li>
+                        <li>Ibu hamil dan menyusui</li>
+                        <li>Pasangan usia subur (PUS)</li>
+                        <li>Lansia (di atas 60 tahun)</li>
+                    </ul>
+                    
+                    <h4>Protokol Kesehatan:</h4>
+                    <ul>
+                        <li>Wajib menggunakan masker</li>
+                        <li>Menjaga jarak minimal 1 meter</li>
+                        <li>Mencuci tangan dengan sabun</li>
+                        <li>Tidak hadir jika sedang sakit</li>
+                        <li>Membawa hand sanitizer pribadi</li>
+                    </ul>
+                    
+                    <p>Kegiatan posyandu ini didukung oleh kader kesehatan yang telah terlatih dan tenaga medis dari Puskesmas Tanjungpinang Barat. Semua layanan diberikan secara gratis.</p>
+                    
+                    <p>Bagi ibu-ibu yang memiliki balita, diharapkan dapat hadir tepat waktu untuk mendapatkan pelayanan kesehatan yang optimal. Kehadiran rutin di posyandu sangat penting untuk memantau tumbuh kembang anak.</p>
+                    
+                    <p>Untuk informasi lebih lanjut, hubungi Bidang Kesehatan Kelurahan di nomor (0771) 123456 ext. 4.</p>
+                `,
+          category: "Jadwal",
+          date: "2024-06-25",
+          image:
+            "https://icms.tanjungpinangkota.go.id/image/posting/berita/7243000000/original/1698120844_9fb65b9809f72a2b7661.jpg",
+          views: 87,
+          author: "Bidang Kesehatan",
+          tags: ["posyandu", "kesehatan", "jadwal", "balita"],
+        },
+        {
+          id: 7,
+          title: "PENGUMUMAN HASIL SELEKSI BANTUAN UMKM",
+          excerpt:
+            "Diinformasikan hasil seleksi bantuan UMKM tahun 2024 dapat dilihat di kantor kelurahan mulai tanggal 22 Juni 2024. Penerima bantuan diharapkan hadir pada pengarahan tanggal 25 Juni 2024.",
+          content: `
+                    <p>Bidang Ekonomi Kelurahan Tanjungpinang Barat dengan ini mengumumkan <strong>hasil seleksi bantuan UMKM tahun 2024</strong> yang telah dilaksanakan pada bulan Mei 2024. Dari 150 pendaftar, telah terpilih 50 UMKM yang berhak menerima bantuan.</p>
+                    
+                    <h4>Pengumuman Hasil:</h4>
+                    <ul>
+                        <li><strong>Tanggal Pengumuman:</strong> 22 Juni 2024</li>
+                        <li><strong>Lokasi:</strong> Papan pengumuman Kantor Kelurahan</li>
+                        <li><strong>Online:</strong> Website resmi kelurahan</li>
+                        <li><strong>Jumlah Penerima:</strong> 50 UMKM</li>
+                    </ul>
+                    
+                    <h4>Jenis Bantuan yang Diberikan:</h4>
+                    <ul>
+                        <li>Bantuan modal usaha Rp 5.000.000 - Rp 15.000.000</li>
+                        <li>Pelatihan manajemen usaha dan keuangan</li>
+                        <li>Pendampingan usaha selama 6 bulan</li>
+                        <li>Bantuan pemasaran melalui platform digital</li>
+                        <li>Sertifikat halal dan izin usaha gratis</li>
+                    </ul>
+                    
+                    <h4>Kategori UMKM Penerima:</h4>
+                    <ul>
+                        <li>Kuliner dan makanan: 20 UMKM</li>
+                        <li>Kerajinan tangan: 15 UMKM</li>
+                        <li>Fashion dan tekstil: 10 UMKM</li>
+                        <li>Jasa dan perdagangan: 5 UMKM</li>
+                    </ul>
+                    
+                    <h4>Jadwal Kegiatan Selanjutnya:</h4>
+                    <ul>
+                        <li><strong>Pengarahan Penerima:</strong> 25 Juni 2024, 09.00 WIB</li>
+                        <li><strong>Tempat:</strong> Aula Kelurahan Tanjungpinang Barat</li>
+                        <li><strong>Pelatihan Tahap I:</strong> 1-3 Juli 2024</li>
+                        <li><strong>Pencairan Bantuan:</strong> 8-10 Juli 2024</li>
+                        <li><strong>Pendampingan:</strong> Juli - Desember 2024</li>
+                    </ul>
+                    
+                    <h4>Yang Harus Dibawa Saat Pengarahan:</h4>
+                    <ul>
+                        <li>KTP dan KK asli + fotokopi</li>
+                        <li>Surat keterangan usaha dari RT/RW</li>
+                        <li>Proposal usaha yang telah disetujui</li>
+                        <li>Buku tabungan atas nama pemilik usaha</li>
+                        <li>Pas foto 4x6 sebanyak 2 lembar</li>
+                    </ul>
+                    
+                    <h4>Kewajiban Penerima Bantuan:</h4>
+                    <ul>
+                        <li>Mengikuti seluruh rangkaian pelatihan</li>
+                        <li>Menggunakan bantuan sesuai proposal</li>
+                        <li>Membuat laporan perkembangan usaha bulanan</li>
+                        <li>Mengikuti monitoring dan evaluasi</li>
+                        <li>Menjadi mitra kelurahan dalam pengembangan UMKM</li>
+                    </ul>
+                    
+                    <p>Bagi UMKM yang namanya tercantum dalam daftar penerima, <strong>wajib hadir</strong> pada acara pengarahan tanggal 25 Juni 2024. Ketidakhadiran tanpa alasan yang jelas dapat mengakibatkan pembatalan bantuan.</p>
+                    
+                    <p>Program bantuan UMKM ini merupakan bagian dari upaya kelurahan untuk meningkatkan perekonomian masyarakat dan menciptakan lapangan kerja baru. Diharapkan bantuan ini dapat dimanfaatkan dengan baik untuk mengembangkan usaha.</p>
+                    
+                    <p>Untuk UMKM yang belum terpilih, jangan berkecil hati. Program bantuan akan dilanjutkan pada tahap berikutnya dengan kuota yang lebih besar.</p>
+                    
+                    <p>Informasi lebih lanjut dapat menghubungi Bidang Ekonomi Kelurahan di nomor (0771) 123456 ext. 5.</p>
+                `,
+          category: "Resmi",
+          date: "2024-06-20",
+          image:
+            "https://icms.tanjungpinangkota.go.id/image/posting/berita/7243000000/original/1698125718_e3284ad15346da7f4714.jpg",
+          views: 76,
+          author: "Bidang Ekonomi",
+          tags: ["UMKM", "bantuan", "hasil seleksi", "ekonomi"],
+        },
+        {
+          id: 8,
+          title: "PENYULUHAN HUKUM GRATIS BAGI WARGA",
+          excerpt:
+            "Akan diselenggarakan penyuluhan hukum gratis bagi warga pada tanggal 15 Juli 2024 pukul 09.00 WIB di Aula Kelurahan. Materi: Hak dan Kewajiban Warga Negara.",
+          content: `
+                    <p>Bidang Hukum Kelurahan Tanjungpinang Barat bekerja sama dengan Fakultas Hukum Universitas Maritim Raja Ali Haji akan menyelenggarakan <strong>penyuluhan hukum gratis</strong> untuk meningkatkan pemahaman masyarakat tentang hukum dan peraturan perundang-undangan.</p>
+                    
+                    <h4>Detail Acara:</h4>
+                    <ul>
+                        <li><strong>Tanggal:</strong> Senin, 15 Juli 2024</li>
+                        <li><strong>Waktu:</strong> 09.00 - 12.00 WIB</li>
+                        <li><strong>Tempat:</strong> Aula Kelurahan Tanjungpinang Barat</li>
+                        <li><strong>Peserta:</strong> Seluruh warga kelurahan (gratis)</li>
+                    </ul>
+                    
+                    <h4>Materi Penyuluhan:</h4>
+                    <ul>
+                        <li>Hak dan Kewajiban Warga Negara</li>
+                        <li>Hukum Keluarga dan Perkawinan</li>
+                        <li>Hukum Pidana dalam Kehidupan Sehari-hari</li>
+                        <li>Hak Konsumen dan Perlindungan Konsumen</li>
+                        <li>Penyelesaian Sengketa di Luar Pengadilan</li>
+                        <li>Bantuan Hukum dan Akses Keadilan</li>
+                    </ul>
+                    
+                    <h4>Narasumber:</h4>
+                    <ul>
+                        <li>Dr. Ahmad Fauzi, S.H., M.H. (Dekan Fakultas Hukum UMRAH)</li>
+                        <li>Drs. Budi Santoso, S.H. (Praktisi Hukum)</li>
+                        <li>Siti Aminah, S.H., M.H. (Dosen Hukum Pidana)</li>
+                        <li>Rahmat Hidayat, S.H. (Advokat)</li>
+                    </ul>
+                    
+                    <h4>Rundown Acara:</h4>
+                    <ul>
+                        <li><strong>09.00 - 09.15:</strong> Registrasi peserta</li>
+                        <li><strong>09.15 - 09.30:</strong> Pembukaan dan sambutan</li>
+                        <li><strong>09.30 - 10.30:</strong> Materi I - Hak dan Kewajiban Warga Negara</li>
+                        <li><strong>10.30 - 10.45:</strong> Coffee break</li>
+                        <li><strong>10.45 - 11.45:</strong> Materi II - Hukum dalam Kehidupan Sehari-hari</li>
+                        <li><strong>11.45 - 12.00:</strong> Tanya jawab dan penutupan</li>
+                    </ul>
+                    
+                    <h4>Fasilitas yang Diberikan:</h4>
+                    <ul>
+                        <li>Materi penyuluhan dalam bentuk booklet</li>
+                        <li>Sertifikat keikutsertaan</li>
+                        <li>Konsumsi (snack dan minuman)</li>
+                        <li>Konsultasi hukum gratis</li>
+                        <li>Doorprize menarik</li>
+                    </ul>
+                    
+                    <h4>Manfaat Mengikuti Penyuluhan:</h4>
+                    <ul>
+                        <li>Memahami hak dan kewajiban sebagai warga negara</li>
+                        <li>Mengetahui cara menyelesaikan masalah hukum</li>
+                        <li>Mendapat pengetahuan tentang perlindungan konsumen</li>
+                        <li>Memahami prosedur hukum yang benar</li>
+                        <li>Mendapat akses bantuan hukum gratis</li>
+                    </ul>
+                    
+                    <h4>Sasaran Peserta:</h4>
+                    <ul>
+                        <li>Ketua RT/RW dan tokoh masyarakat</li>
+                        <li>Pelaku usaha dan UMKM</li>
+                        <li>Ibu-ibu PKK dan organisasi masyarakat</li>
+                        <li>Pemuda dan mahasiswa</li>
+                        <li>Masyarakat umum yang berminat</li>
+                    </ul>
+                    
+                    <p>Acara ini terbuka untuk umum dan tidak dipungut biaya. Peserta yang hadir akan mendapat kesempatan untuk berkonsultasi langsung dengan para ahli hukum mengenai permasalahan hukum yang dihadapi.</p>
+                    
+                    <p>Diharapkan dengan adanya penyuluhan ini, masyarakat akan lebih memahami hukum dan dapat menerapkannya dalam kehidupan sehari-hari, sehingga tercipta masyarakat yang sadar hukum.</p>
+                    
+                    <p>Bagi yang berminat mengikuti penyuluhan, dapat mendaftar langsung di kantor kelurahan atau hadir langsung pada hari pelaksanaan. Tempat terbatas, jadi datanglah lebih awal.</p>
+                    
+                    <p>Untuk informasi lebih lanjut, hubungi Bidang Hukum Kelurahan di nomor (0771) 123456 ext. 6.</p>
+                `,
+          category: "Jadwal",
+          date: "2024-06-15",
+          image:
+            "https://icms.tanjungpinangkota.go.id/ckeditor/posting/7243000000/berita/small/small_1681717692_4a2288e37b684590c669.jpg",
+          views: 65,
+          author: "Bidang Hukum",
+          tags: ["penyuluhan", "hukum", "gratis", "edukasi"],
+        },
+      ];
+
+      // Function to load navbar
+      function loadNavbar() {
+        const navbarPlaceholder = document.getElementById("navbar-placeholder");
+        if (navbarPlaceholder) {
+          fetch("header.html")
+            .then((response) => response.text())
+            .then((data) => {
+              navbarPlaceholder.innerHTML = data;
+            })
+            .catch((error) => {
+              console.error("Error loading navbar:", error);
+            });
+        }
+      }
+
+      // Function to get URL parameter
+      function getUrlParameter(name) {
+        name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+        var regex = new RegExp("[\\?&]" + name + "=([^&#]*)");
+        var results = regex.exec(location.search);
+        return results === null
+          ? ""
+          : decodeURIComponent(results[1].replace(/\+/g, " "));
+      }
+
+      // Function to format date
+      function formatDate(dateString) {
+        const options = { year: "numeric", month: "long", day: "numeric" };
+        return new Date(dateString).toLocaleDateString("id-ID", options);
+      }
+
+      // Function to get category badge class
+      function getCategoryBadgeClass(category) {
+        const classes = {
+          Resmi: "bg-primary",
+          Lelang: "bg-warning text-dark",
+          Lowongan: "bg-success",
+          Jadwal: "bg-info text-dark",
+          Darurat: "bg-danger",
+        };
+        return classes[category] || "bg-secondary";
+      }
+
+      // Function to load announcement details
+      function loadAnnouncementDetails() {
+        const announcementId = parseInt(getUrlParameter("id"));
+        const announcement = announcementData.find(
+          (item) => item.id === announcementId
+        );
+
+        if (announcement) {
+          // Update page title and meta
+          document.getElementById(
+            "pageTitle"
+          ).textContent = `${announcement.title} - Kelurahan Tanjungpinang Barat`;
+          document.getElementById("breadcrumbTitle").textContent =
+            announcement.title;
+
+          // Update article content
+          document.getElementById("articleCategory").textContent =
+            announcement.category;
+          document.getElementById(
+            "articleCategory"
+          ).className = `badge ${getCategoryBadgeClass(announcement.category)}`;
+          document.getElementById("articleDate").textContent = formatDate(
+            announcement.date
+          );
+          document.getElementById("articleAuthor").textContent =
+            announcement.author;
+          document.getElementById("articleViews").textContent =
+            announcement.views;
+          document.getElementById("articleTitle").textContent =
+            announcement.title;
+          document.getElementById("articleImage").src = announcement.image;
+          document.getElementById("articleImage").alt = announcement.title;
+          document.getElementById("articleBody").innerHTML =
+            announcement.content;
+
+          // Update share buttons
+          const currentUrl = window.location.href;
+          const shareText = `${announcement.title} - ${currentUrl}`;
+
+          document.getElementById(
+            "shareWhatsapp"
+          ).href = `https://wa.me/?text=${encodeURIComponent(shareText)}`;
+          document.getElementById(
+            "shareTwitter"
+          ).href = `https://twitter.com/intent/tweet?text=${encodeURIComponent(
+            announcement.title
+          )}&url=${encodeURIComponent(currentUrl)}`;
+          document.getElementById(
+            "shareFacebook"
+          ).href = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
+            currentUrl
+          )}`;
+
+          // Copy link functionality
+          document
+            .getElementById("copyLink")
+            .addEventListener("click", function () {
+              navigator.clipboard.writeText(currentUrl).then(function () {
+                alert("Link berhasil disalin!");
+              });
+            });
+
+          // Update tags
+          if (announcement.tags && announcement.tags.length > 0) {
+            const tagsContainer = document.getElementById("articleTags");
+            tagsContainer.innerHTML = "";
+            announcement.tags.forEach((tag) => {
+              const tagElement = document.createElement("span");
+              tagElement.className = "badge bg-secondary me-2 mb-2";
+              tagElement.textContent = tag;
+              tagsContainer.appendChild(tagElement);
+            });
+          }
+
+          // Load related announcements
+          loadRelatedAnnouncements(announcementId, announcement.category);
+
+          // Load popular announcements
+          loadPopularAnnouncements(announcementId);
+        } else {
+          // Handle announcement not found
+          document.getElementById("articleTitle").textContent =
+            "Pengumuman Tidak Ditemukan";
+          document.getElementById("articleBody").innerHTML =
+            "<p>Maaf, pengumuman yang Anda cari tidak ditemukan.</p>";
+          document.getElementById("breadcrumbTitle").textContent =
+            "Tidak Ditemukan";
+        }
+      }
+
+      // Function to load related announcements
+      function loadRelatedAnnouncements(currentId, category) {
+        const relatedContainer = document.getElementById(
+          "relatedAnnouncements"
+        );
+        const related = announcementData
+          .filter((item) => item.id !== currentId && item.category === category)
+          .slice(0, 5);
+
+        if (related.length > 0) {
+          relatedContainer.innerHTML = "";
+          related.forEach((item) => {
+            const relatedItem = document.createElement("div");
+            relatedItem.className = "related-news-item";
+            relatedItem.innerHTML = `
+                        <h6><a href="detail-pengumuman.html?id=${item.id}">${
+              item.title
+            }</a></h6>
+                        <small class="text-muted">
+                            <i class="bi bi-calendar me-1"></i>${formatDate(
+                              item.date
+                            )}
+                        </small>
+                    `;
+            relatedContainer.appendChild(relatedItem);
+          });
+        } else {
+          relatedContainer.innerHTML =
+            '<p class="text-muted">Tidak ada pengumuman terkait.</p>';
+        }
+      }
+
+      // Function to load popular announcements
+      function loadPopularAnnouncements(currentId) {
+        const popularContainer = document.getElementById(
+          "popularAnnouncements"
+        );
+        const popular = announcementData
+          .filter((item) => item.id !== currentId)
+          .sort((a, b) => b.views - a.views)
+          .slice(0, 5);
+
+        popularContainer.innerHTML = "";
+        popular.forEach((item, index) => {
+          const popularItem = document.createElement("div");
+          popularItem.className = "popular-news-item d-flex align-items-start";
+          popularItem.innerHTML = `
+                    <div class="popular-number">${index + 1}</div>
+                    <div>
+                        <h6><a href="detail-pengumuman.html?id=${item.id}">${
+            item.title
+          }</a></h6>
+                        <small class="text-muted">
+                            <i class="bi bi-calendar me-1"></i>${formatDate(
+                              item.date
+                            )} | 
+                            <i class="bi bi-eye me-1"></i>${item.views} views
+                        </small>
+                    </div>
+                `;
+          popularContainer.appendChild(popularItem);
+        });
+      }
+
+      // Initialize when DOM is loaded
+      document.addEventListener("DOMContentLoaded", function () {
+        loadNavbar();
+        loadAnnouncementDetails();
+      });
+    </script>
+
+    <!-- Custom JS -->
+    <script src="assets/js/nav.js"></script>
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>

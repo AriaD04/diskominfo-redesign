@@ -1,0 +1,3201 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kelurahan Tanjungpinang Barat - Kecamatan Tanjungpinang Barat</title>
+    <meta name="description" content="Website resmi Kelurahan Tanjungpinang Barat, Kecamatan Tanjungpinang Barat, Kota Tanjungpinang">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="loading-content">
+            <div class="loading-spinner"></div>
+            <h4>Memuat Website...</h4>
+            <p>Melayani dengan sepenuh hati untuk kemajuan masyarakat dan pembangunan daerah yang berkelanjutan</p>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <header id="navbar-placeholder"></header>
+
+  <style>
+      /* ==================== VISITOR WIDGET ==================== */
+#visitor-widget {
+    position: fixed;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 70px;
+    background-color: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 12px 0 0 12px;
+    padding: 15px 10px;
+    box-shadow: -4px 0 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    overflow: hidden;
+    z-index: 1000;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    backdrop-filter: blur(5px);
+    background-color: rgba(255, 255, 255, 0.95);
+}
+
+#visitor-widget.expanded {
+    width: 280px;
+    box-shadow: -8px 0 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Toggle Button */
+#visitor-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    background: linear-gradient(135deg, #4361ee, #3a0ca3);
+     background: var(
+          --gradient-primary
+        ); /* Menggunakan gradien merah dari root */
+    border-radius: 50%;
+    cursor: pointer;
+    position: absolute;
+    left: -22px;
+    top: 50%;
+    transform: translateY(-50%);
+    box-shadow: 0 4px 12px rgba(67, 97, 238, 0.3);
+    transition: all 0.3s ease;
+    border: none;
+    outline: none;
+    z-index: 2;
+}
+
+#visitor-toggle:hover {
+    transform: translateY(-50%) scale(1.08);
+    box-shadow: 0 6px 16px rgba(67, 97, 238, 0.4);
+}
+
+#visitor-toggle i {
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+#visitor-widget.expanded #visitor-toggle i {
+    transform: rotate(180deg);
+}
+
+/* Widget Content */
+.widget-content {
+    margin-left: 35px;
+    opacity: 0;
+    transition: opacity 0.3s ease 0.15s;
+    padding-right: 15px;
+}
+
+#visitor-widget.expanded .widget-content {
+    opacity: 1;
+}
+
+/* Header */
+#visitor-widget h5 {
+    font-size: 1.1rem;
+    color: #2b2d42;
+    margin: 0 0 18px 0;
+    padding: 0 0 12px 0;
+    text-align: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* Stats Items */
+.stat-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    padding: 6px 0;
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+}
+
+.stat-item:hover {
+    background-color: rgba(67, 97, 238, 0.05);
+}
+
+.stat-label {
+    font-weight: 500;
+    color: #4a5568;
+    font-size: 0.9rem;
+    flex: 1;
+}
+
+.stat-number {
+    font-size: 1.1rem;
+    color: #4361ee;
+    font-weight: 700;
+    min-width: 80px;
+    text-align: right;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.stat-number.loading {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite linear;
+    border-radius: 4px;
+    color: transparent;
+}
+
+@keyframes shimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+/* ==================== ANNOUNCEMENT MODAL ==================== */
+#announcementModal .modal-dialog {
+    max-width: 850px;
+    margin: 1.75rem auto;
+}
+
+#announcementModal .modal-content {
+    border: none;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    animation: fadeInScale 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+    transform-origin: center;
+}
+
+/* Modal Header */
+#announcementModal .modal-header {
+    background: linear-gradient(135deg, #4361ee, #3a0ca3);
+    color: white;
+    padding: 20px 25px;
+    border-bottom: none;
+    position: relative;
+}
+
+#announcementModal .modal-title {
+    font-weight: 700;
+    font-size: 1.5rem;
+    letter-spacing: -0.5px;
+}
+
+#announcementModal .close {
+    color: white;
+    opacity: 0.8;
+    text-shadow: none;
+    transition: opacity 0.2s ease;
+    padding: 5px;
+    margin: -5px -5px -5px auto;
+}
+
+#announcementModal .close:hover {
+    opacity: 1;
+}
+
+/* Modal Body */
+#announcementModal .modal-body {
+    padding: 30px;
+    line-height: 1.6;
+    color: #4a5568;
+}
+
+/* Modal Footer */
+#announcementModal .modal-footer {
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    padding: 15px 25px;
+    background-color: #f9fafc;
+}
+
+/* Animation */
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.95) translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    #visitor-widget {
+        width: 60px;
+        padding: 12px 8px;
+    }
+    
+    #visitor-widget.expanded {
+        width: 260px;
+    }
+    
+    #announcementModal .modal-dialog {
+        margin: 1rem auto;
+        max-width: 95%;
+    }
+    
+    #announcementModal .modal-body {
+        padding: 20px;
+    }
+}
+
+
+/*====================================
+  Announcement Modal Styles
+====================================*/
+
+/* Main Modal Container & Content */
+#announcementModal .modal-content {
+    border-radius: 15px; /* Sudut membulat untuk tampilan modern */
+    overflow: hidden; /* Memastikan konten dan border-radius bekerja dengan baik */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Bayangan yang dalam dan halus */
+    font-family: 'Segoe UI', Arial, sans-serif; /* Font bersih dan mudah dibaca */
+    animation: fadeInScale 0.3s ease-out; /* Animasi muncul saat modal dibuka */
+}
+
+/* Modal Dialog Sizing (to make it wider) */
+/* If modal-lg is not wide enough, uncomment the line below and adjust max-width */
+/*
+#announcementModal .modal-dialog {
+    max-width: 900px;
+    // For even wider, consider 1000px, 1100px, etc.
+}
+*/
+
+/* Keyframe for Modal Entry Animation */
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Modal Header Styling */
+#announcementModal .custom-modal-header {
+     background: var(
+          --gradient-primary
+        ); /* Menggunakan gradien merah dari root */
+    color: white; /* Warna teks putih */
+    padding: 20px 25px; /* Padding yang lebih luas */
+    border-bottom: none; /* Menghilangkan border bawah bawaan Bootstrap */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top-left-radius: 15px; /* Menyesuaikan radius dengan .modal-content */
+    border-top-right-radius: 15px;
+}
+
+/* Modal Title Styling */
+#announcementModal .modal-title {
+    font-weight: 700; /* Tebal untuk penekanan */
+    font-size: 1.45rem; /* Ukuran font judul yang menonjol */
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.5px; /* Sedikit jarak antar huruf untuk keterbacaan */
+}
+
+/* Icon in Modal Title */
+#announcementModal .modal-title i {
+    font-size: 1.8rem; /* Ukuran ikon lebih besar */
+    margin-right: 12px; /* Jarak lebih luas antara ikon dan teks judul */
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); /* Bayangan ringan pada ikon */
+}
+
+/* Close Button Styling (for white color) */
+#announcementModal .btn-close-white {
+    filter: brightness(0) invert(1); /* Membuat ikon silang menjadi putih */
+    opacity: 0.8; /* Sedikit transparan */
+    transition: opacity 0.2s ease; /* Transisi saat hover */
+}
+
+#announcementModal .btn-close-white:hover {
+    opacity: 1; /* Penuh saat di-hover */
+}
+
+/* Modal Body Styling */
+#announcementModal .custom-modal-body {
+    padding: 30px 35px; /* Padding lebih banyak untuk kenyamanan membaca */
+    color: #444; /* Warna teks body yang lembut */
+    line-height: 1.7; /* Jarak antar baris lebih longgar */
+    font-size: 0.95rem; /* Ukuran font standar untuk body */
+}
+
+/* First paragraph in Modal Body */
+#announcementModal .custom-modal-body p:first-of-type {
+    font-size: 1.05rem; /* Sedikit lebih besar untuk pengantar */
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+/* Strong text within Modal Body */
+#announcementModal .custom-modal-body strong {
+    color: #222; /* Kontras yang baik untuk teks penting */
+}
+
+/* Announcement List Styling */
+.announcement-list {
+    margin-top: 25px; /* Jarak atas daftar pengumuman */
+    padding-left: 0; /* Menghilangkan padding kiri bawaan list */
+}
+
+/* Individual Announcement List Item Styling */
+.announcement-list li {
+    margin-bottom: 18px; /* Jarak antar item daftar */
+    display: flex; /* Menggunakan Flexbox untuk penataan ikon dan teks */
+    align-items: baseline; /* Ikon sejajar di bagian atas teks */
+    list-style: none; /* Menghilangkan bullet point default */
+    background-color: #f8f9fa; /* Latar belakang ringan untuk setiap item */
+    padding: 12px 15px;
+    border-radius: 8px; /* Sudut membulat untuk setiap item */
+    border: 1px solid #e9ecef; /* Border lembut */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Bayangan tipis */
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Transisi untuk efek hover */
+}
+
+/* Hover Effect for List Item */
+.announcement-list li:hover {
+    transform: translateY(-3px); /* Mengangkat item sedikit saat di-hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Bayangan lebih jelas saat di-hover */
+}
+
+/* Icon within List Item */
+.announcement-list li i {
+    font-size: 1.3rem;
+    /* --- PERUBAHAN DI SINI --- */
+    margin-right: 20px; /* Meningkatkan jarak dari 15px menjadi 20px */
+    /* --- AKHIR PERUBAHAN --- */
+    margin-top: 2px; /* Penyesuaian vertikal ikon */
+    flex-shrink: 0; /* Mencegah ikon menyusut di ruang sempit */
+}
+
+/* Container for Strong and Span text */
+.announcement-text-content {
+    display: flex;
+    flex-direction: column; /* Membuat strong dan span di baris terpisah */
+    flex-grow: 1; /* Memungkinkan konten ini mengisi ruang yang tersisa */
+}
+
+/* Strong text within List Item */
+.announcement-list li strong {
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.3; /* Sesuaikan line-height agar pas dengan ikon */
+}
+
+/* Span text within List Item (for detailed info) */
+.announcement-list li span {
+    color: #555;
+    margin-top: 3px; /* Jarak antara judul pengumuman dan deskripsi */
+    line-height: 1.5; /* Line-height untuk deskripsi */
+}
+
+/* Muted text at the bottom of Modal Body */
+.custom-modal-body .text-muted {
+    margin-top: 30px;
+    font-size: 0.85rem;
+    color: #777 !important;
+}
+
+/* Modal Footer Styling */
+#announcementModal .custom-modal-footer {
+    border-top: 1px solid #f0f0f0;
+    padding: 20px 25px;
+    display: flex;
+    justify-content: center;
+}
+
+/* Button Styling in Modal Footer */
+#announcementModal .custom-modal-footer .btn {
+    padding: 10px 25px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 1.05rem;
+    transition: all 0.2s ease;
+}
+
+/* Primary Button Styling */
+#announcementModal .custom-modal-footer .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.25);
+}
+
+/* Primary Button Hover Effect */
+#announcementModal .custom-modal-footer .btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 123, 255, 0.35);
+}
+
+/* Icon Color Utilities */
+.text-primary { color: #007bff !important; }
+.text-warning { color: #ffc107 !important; }
+.text-success { color: #28a745 !important; }
+.text-info { color: #17a2b8 !important; }
+    </style>
+    
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+</head>
+<body>
+   
+
+  <div class="modal fade" id="announcementModal" tabindex="-1" aria-labelledby="announcementModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header custom-modal-header text-white">
+                <h5 class="modal-title" id="announcementModalLabel">
+                    <i class="bi bi-bullhorn me-2"></i>Pengumuman Penting
+                </h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body custom-modal-body">
+                <p>
+                    Selamat datang di website resmi Kelurahan Tanjungpinang Kota! Kami berkomitmen untuk menyediakan informasi terbaik dan terbaru untuk Anda.
+                </p>
+                <p>
+                    Mohon perhatiannya untuk beberapa pengumuman penting berikut ini:
+                </p>
+
+                <ul class="list-unstyled announcement-list">
+                    <li>
+                        <i class="bi bi-calendar-event me-2 text-primary"></i>
+                        <div class="announcement-text-content"> <strong>Jadwal Pelayanan Terbaru:</strong>
+                            <span>Pelayanan administrasi kelurahan akan beroperasi pada hari Senin-Jumat, pukul 08.00 - 15.00 WIB. Mohon datang sesuai jam operasional.</span>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="bi bi-exclamation-circle me-2 text-warning"></i>
+                        <div class="announcement-text-content">
+                            <strong>Program Vaksinasi Gratis:</strong>
+                            <span>Akan diselenggarakan pada tanggal 5-7 Agustus 2025 di Balai Pertemuan Kelurahan. Pendaftaran dibuka mulai **28 Juli 2025**. Harap membawa KTP.</span>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="bi bi-lightbulb me-2 text-success"></i>
+                        <div class="announcement-text-content">
+                            <strong>Sosialisasi Kebersihan Lingkungan:</strong>
+                            <span>Akan diadakan di setiap RT/RW mulai minggu depan. Mari jaga kebersihan lingkungan kita bersama!</span>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="bi bi-file-earmark-text me-2 text-info"></i>
+                        <div class="announcement-text-content">
+                            <strong>Pembaruan Persyaratan Administrasi:</strong>
+                            <span>Untuk pengurusan surat keterangan domisili, kini diperlukan fotokopi Kartu Keluarga terbaru.</span>
+                        </div>
+                    </li>
+                </ul>
+
+                <p class="mt-4 text-center text-muted">
+                    Untuk informasi lebih lanjut, silakan hubungi kantor kelurahan atau cek bagian Berita di website kami.
+                </p>
+            </div>
+
+            <div class="modal-footer custom-modal-footer">
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Mengerti</button>
+                <a href="info.html" class="btn btn-warning btn-lg me-3">
+                                <i class="bi bi-newspaper me-2"></i>lihat Pengumuman
+                            </a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const announcementModal = new bootstrap.Modal(document.getElementById('announcementModal'));
+
+        // Cek apakah modal sudah pernah ditampilkan di sesi ini
+        // Ini mencegah modal muncul berulang kali setiap kali halaman direfresh dalam satu sesi Browse
+        // const hasShownModal = sessionStorage.getItem('hasShownAnnouncementModal'); // Baris ini tidak perlu lagi
+
+        // Jika Anda ingin modal muncul SETIAP KALI halaman dimuat tanpa pengecualian sesi,
+        // Anda bisa mengganti blok if (!hasShownModal) di atas dengan baris ini:
+        announcementModal.show(); // Baris ini akan menampilkan modal setiap kali halaman dimuat
+        // sessionStorage.setItem('hasShownAnnouncementModal', 'true'); // Baris ini tidak perlu lagi
+    });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <div id="visitor-widget">
+        <div id="visitor-toggle">
+            <i id="toggle-icon" class="bi bi-chevron-right"></i>
+        </div>
+        <div class="widget-content">
+            <h5>Visitor Stats</h5>
+            <div class="stat-item">
+                <span class="stat-label">Total Visitors:</span>
+                <span id="total-visitors" class="stat-number">1,234,567</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">Online:</span>
+                <span id="online-count" class="stat-number">12</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">Total Views:</span>
+                <span id="total-views" class="stat-number">9,876,543</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const wrapper = document.getElementById("cardsWrapper");
+            const leftArrow = document.getElementById("leftArrow");
+            const rightArrow = document.getElementById("rightArrow");
+
+            let currentIndex = 0;
+            let cardWidth = 365; // 340px width + 25px gap
+            let totalCards = wrapper.children.length / 2; // Since we have duplicates
+            let autoSlideInterval;
+            let isPaused = false;
+
+            // Calculate actual card width on load
+            function calculateCardWidth() {
+                const card = wrapper.querySelector(".horizontal-card");
+                if (card) {
+                    const cardRect = card.getBoundingClientRect();
+                    cardWidth = cardRect.width + 25; // width + gap
+                }
+            }
+
+            // Function to move to specific index
+            function moveToIndex(index) {
+                const translateX = -(index * cardWidth);
+                wrapper.style.transform = `translateX(${translateX}px)`;
+                currentIndex = index;
+
+                // Reset to beginning if we've reached the duplicates
+                if (currentIndex >= totalCards) {
+                    setTimeout(() => {
+                        wrapper.style.transition = "none";
+                        currentIndex = 0;
+                        wrapper.style.transform = "translateX(0px)";
+                        setTimeout(() => {
+                            wrapper.style.transition =
+                                "transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)";
+                        }, 50);
+                    }, 800);
+                }
+            }
+
+            // Auto slide function
+            function startAutoSlide() {
+                if (autoSlideInterval) {
+                    clearInterval(autoSlideInterval);
+                }
+
+                autoSlideInterval = setInterval(() => {
+                    if (!isPaused) {
+                        currentIndex++;
+                        moveToIndex(currentIndex);
+                    }
+                }, 4000); // 4 second pause between moves
+            }
+
+            // Pause auto slide
+            function pauseAutoSlide() {
+                isPaused = true;
+            }
+
+            // Resume auto slide
+            function resumeAutoSlide() {
+                isPaused = false;
+            }
+
+            // Left arrow functionality - move one card backward
+            leftArrow.addEventListener("click", function () {
+                // Add visual feedback
+                this.style.transform = "translateY(-3px) scale(0.95)";
+                setTimeout(() => {
+                    this.style.transform = "";
+                }, 150);
+
+                pauseAutoSlide();
+
+                if (currentIndex > 0) {
+                    currentIndex--;
+                } else {
+                    // Jump to the end (before duplicates)
+                    currentIndex = totalCards - 1;
+                }
+
+                moveToIndex(currentIndex);
+
+                // Resume auto slide after 2 seconds
+                setTimeout(() => {
+                    resumeAutoSlide();
+                }, 2000);
+            });
+
+            // Right arrow functionality - move one card forward
+            rightArrow.addEventListener("click", function () {
+                // Add visual feedback
+                this.style.transform = "translateY(-3px) scale(0.95)";
+                setTimeout(() => {
+                    this.style.transform = "";
+                }, 150);
+
+                pauseAutoSlide();
+
+                currentIndex++;
+                moveToIndex(currentIndex);
+
+                // Resume auto slide after 2 seconds
+                setTimeout(() => {
+                    resumeAutoSlide();
+                }, 2000);
+            });
+
+            // Pause on hover
+            wrapper.addEventListener("mouseenter", function () {
+                pauseAutoSlide();
+            });
+
+            wrapper.addEventListener("mouseleave", function () {
+                resumeAutoSlide();
+            });
+
+            // Initialize
+            calculateCardWidth();
+
+            // Handle window resize
+            window.addEventListener("resize", function () {
+                calculateCardWidth();
+                moveToIndex(currentIndex);
+            });
+
+            // Start auto slide
+            startAutoSlide();
+
+            // Touch/swipe support for mobile
+            let touchStartX = 0;
+            let touchEndX = 0;
+
+            wrapper.addEventListener("touchstart", function (e) {
+                touchStartX = e.changedTouches[0].screenX;
+                pauseAutoSlide();
+            });
+
+            wrapper.addEventListener("touchend", function (e) {
+                touchEndX = e.changedTouches[0].screenX;
+                const swipeThreshold = 50;
+
+                if (touchStartX - touchEndX > swipeThreshold) {
+                    // Swipe left - next card
+                    currentIndex++;
+                    moveToIndex(currentIndex);
+                } else if (touchEndX - touchStartX > swipeThreshold) {
+                    // Swipe right - previous card
+                    if (currentIndex > 0) {
+                        currentIndex--;
+                    } else {
+                        currentIndex = totalCards - 1;
+                    }
+                    moveToIndex(currentIndex);
+                }
+
+                // Resume auto slide after swipe
+                setTimeout(() => {
+                    resumeAutoSlide();
+                }, 2000);
+            });
+
+            // Prevent default touch behavior
+            wrapper.addEventListener(
+                "touchmove",
+                function (e) {
+                    e.preventDefault();
+                },
+                { passive: false }
+            );
+
+            // Visitor Widget Functionality
+            const visitorWidget = document.getElementById('visitor-widget');
+            const visitorToggle = document.getElementById('visitor-toggle');
+            const toggleIcon = document.getElementById('toggle-icon');
+
+            // Initialize widget state
+            let isExpanded = false;
+
+            // Toggle function
+            function toggleVisitorWidget() {
+                isExpanded = !isExpanded;
+
+                if (isExpanded) {
+                    visitorWidget.classList.add('expanded');
+                    toggleIcon.classList.remove('bi-chevron-right');
+                    toggleIcon.classList.add('bi-chevron-left');
+                } else {
+                    visitorWidget.classList.remove('expanded');
+                    toggleIcon.classList.remove('bi-chevron-left');
+                    toggleIcon.classList.add('bi-chevron-right');
+                }
+
+                // Add click animation
+                visitorToggle.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    visitorToggle.style.transform = '';
+                }, 100);
+            }
+
+            // Add event listener to toggle button
+            visitorToggle.addEventListener('click', toggleVisitorWidget);
+
+            // Auto-expand widget after page load (optional)
+            setTimeout(() => {
+                if (!isExpanded) {
+                    toggleVisitorWidget();
+                }
+            }, 2000);
+
+
+            // Simulate real-time visitor count updates
+            function updateVisitorStats() {
+                const totalVisitorsElement = document.getElementById('total-visitors');
+                const onlineCountElement = document.getElementById('online-count');
+                const totalViewsElement = document.getElementById('total-views');
+
+                // Simulate visitor count changes
+                setInterval(() => {
+                    const currentVisitors = parseInt(totalVisitorsElement.textContent.replace(/[.,]/g, ''));
+                    const newVisitors = currentVisitors + Math.floor(Math.random() * 3);
+                    totalVisitorsElement.textContent = newVisitors.toLocaleString();
+
+                    const currentViews = parseInt(totalViewsElement.textContent.replace(/[.,]/g, ''));
+                    const newViews = currentViews + Math.floor(Math.random() * 5);
+                    totalViewsElement.textContent = newViews.toLocaleString();
+
+                    // Random online count between 8-15
+                    const onlineCount = 8 + Math.floor(Math.random() * 8);
+                    onlineCountElement.textContent = onlineCount;
+                }, 30000); // Update every 30 seconds
+            }
+
+            // Start visitor stats updates
+            updateVisitorStats();
+
+            // Add loading animation to numbers initially
+            const statNumbers = document.querySelectorAll('.stat-number');
+            statNumbers.forEach(number => {
+                number.classList.add('loading');
+                setTimeout(() => {
+                    number.classList.remove('loading');
+                }, 1500);
+            });
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Hero Section -->
+    <section class="hero-section" id="beranda">
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="row align-items-center min-vh-100">
+                <div class="col-lg-6">
+                    <div class="hero-content fade-in">
+                        <h1 class="hero-title">SELAMAT DATANG DI WEBSITE RESMI KAMI</h1>
+                        <h2 class="hero-subtitle">Melayani dengan sepenuh hati untuk kemajuan masyarakat dan pembangunan daerah yang berkelanjutan</h2>
+                      
+                        <div class="hero-buttons">
+                            <a href="berita.html" class="btn btn-warning btn-lg me-3">
+                                <i class="bi bi-newspaper me-2"></i>Berita Terkini
+                            </a>
+                            <a href="peta-kelurahan.html" class="btn btn-outline-light btn-lg">
+                                <i class="bi bi-geo-alt me-2"></i>Lokasi Kami
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="hero-stats">
+                        <div class="row g-3">
+                            <div class="col-6">
+                                <div class="stat-card">
+                                    <div class="stat-icon">
+                                        <i class="bi bi-people-fill"></i>
+                                    </div>
+                                    <div class="stat-number" data-count="9691">0</div>
+                                    <div class="stat-label">Total Penduduk</div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="stat-card">
+                                    <div class="stat-icon">
+                                        <i class="bi bi-house-fill"></i>
+                                    </div>
+                                    <div class="stat-number" data-count="2876">0</div>
+                                    <div class="stat-label">Kepala Keluarga</div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="stat-card">
+                                    <div class="stat-icon">
+                                        <i class="bi bi-geo-fill"></i>
+                                    </div>
+                                    <div class="stat-number" data-count="15">0</div>
+                                    <div class="stat-label">RT/RW</div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="stat-card">
+                                    <div class="stat-icon">
+                                        <i class="bi bi-eye-fill"></i>
+                                    </div>
+                                    <div class="stat-number" data-count="2591">0</div>
+                                    <div class="stat-label">Pengunjung</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <i class="bi bi-chevron-down"></i>
+        </div>
+    </section>
+
+  <!-- Services Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-5" data-aos="fade-up">
+                    <h2 class="section-title">Profil</h2>
+                    <p class="section-subtitle">Berbagai Macam Profil Kelurahan Tanjungpinang kota</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="bi bi-file-earmark-text"></i>
+                        </div>
+                        <h4>Selayang Pandang</h4>
+                        <p>Sejak tahun 1983 melalui Peraturan Pemerintah Nomor 31 Tahun 1983, Tanjungpinang berstatus sebagai... </p>
+                        <a href="selayang.html" class="service-link">Selengkapnya <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="bi bi-building"></i>
+                        </div>
+                        <h4>Profil OPD</h4>
+                        <p>Letak wilayah Keluraha Tanjungpinang Kota Kecamatan Tanjungpinang Kota berbatasan dengan...</p>
+                        <a href="OPD.html" class="service-link">Selengkapnya <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="bi bi-heart-pulse"></i>
+                        </div>
+                        <h4>Struktur Organisasi</h4>
+                        <p>Aparatur Kelurahan Tanjungpinang Kota berjumlah 18 orang, yaitu sebagai....</p>
+                        <a href="Organisasi.html" class="service-link">Selengkapnya <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+
+
+<section class="py-5" id="berita">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="row">
+          <div class="col-12 text-center mb-5">
+            <h2 class="section-title">Berita Terkini</h2>
+            <p class="section-subtitle">Informasi terbaru dari Kelurahan Tanjungpinang Kota</p>
+          </div>
+        </div>
+
+        <div class="row flex-column gap-4 mb-5">
+          <div class="news-card fade-in">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="https://icms.tanjungpinangkota.go.id/image/posting/berita/7243000000/original/1718954728_47d9af74ec712bd51c9a.jpg" alt="Berita 1" class="img-fluid rounded-start">
+              </div>
+              <div class="col-md-8">
+                <div class="p-3">
+                  <div class="news-category text-danger fw-bold mb-1">Hari Lanjut Usia Nasional</div>
+                  <h5 class="fw-bold">Penyerahan bingkisan dalam rangka hari lanjut usia Nasional</h5>
+                  <p>Kamis, 20 Juni 2024 Kelurahan Tanjungpinang menyalurkan Paket Bingkisan dalam rangka Hari Lanjut Usia Nasional Tahun 2024...</p>
+                  <a href="detail-berita.html?id=1" class="btn btn-outline-danger btn-sm">Baca Selengkapnya</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="news-card fade-in">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="https://icms.tanjungpinangkota.go.id/image/posting/berita/7243000000/original/1717577239_ba55e5551c63f1be75f7.jpg" alt="Berita 2" class="img-fluid rounded-start">
+              </div>
+              <div class="col-md-8">
+                <div class="p-3">
+                  <div class="news-category text-danger fw-bold mb-1">Perlombaan</div>
+                  <h5 class="fw-bold">Lomba Kelurahan Terbaik Se-Kota Tanjungpinang Tahun 2024</h5>
+                  <p>Tanjungpinang, Rabu 29 Mei 2024 Dalam Rangka Pelaksanaan Kegiatan Evaluasi Pengembangan...</p>
+                  <a href="detail-berita.html?id=2" class="btn btn-outline-danger btn-sm">Baca Selengkapnya</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="text-center mt-4">
+            <a href="berita.html" class="btn btn-danger btn-lg">
+              <i class="bi bi-newspaper me-2"></i>Lihat Semua Berita
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Enhanced Pranala Luar Section -->
+        <div class="col-12 mt-5">
+          <div class="pranala-luar-section">
+            <div class="container-fluid px-4">
+              <div class="row">
+                <div class="col-12">
+                  <!-- Section Header -->
+                  <div class="section-header">
+                    <h2 class="section-title">Pranala Luar</h2>
+                    <div class="controls-container">
+                      <a href="#" class="pranala-lainnya-btn">PRANALA LUAR LAINNYA</a>
+                      <div class="nav-arrows">
+                        <div class="nav-arrow" id="leftArrow">
+                          <i class="fas fa-chevron-left"></i>
+                        </div>
+                        <div class="nav-arrow" id="rightArrow">
+                          <i class="fas fa-chevron-right"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Horizontal Scroll Cards Section -->
+                  <div class="horizontal-cards-container">
+                    <div class="horizontal-cards-wrapper" id="cardsWrapper">
+                      <!-- Infografis Card -->
+                      <div class="horizontal-card">
+                        <div class="card">
+                          <div class="card-body">
+                            <h5 class="card-title">
+                              <i class="fas fa-chart-bar"></i>Infografis
+                            </h5>
+                            <img
+                              src="https://icms.tanjungpinangkota.go.id/image/posting/infografis/7243000000/small/small_1729582929_24ae13f6024ae1b0768c.jpg"
+                              alt="Infografis"
+                              class="infografis-img"
+                            />
+                            <p class="text-muted mb-0">
+                              Informasi visual terkini dari Pemerintah Kota
+                              Tanjungpinang dengan data statistik dan grafik yang
+                              mudah dipahami
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- GPR Kominfo Card -->
+                      <div class="horizontal-card">
+                        <div class="card">
+                          <div class="card-body">
+                            <h5 class="card-title">
+                              <i class="fas fa-broadcast-tower"></i>GPR Kominfo
+                            </h5>
+                            <div class="gpr-placeholder">
+                              <i class="fas fa-satellite-dish"></i>
+                              <p class="mb-0">
+                                Konten GPR Kominfo akan ditampilkan di sini
+                              </p>
+                              <small class="text-muted"
+                                >Sistem informasi komunikasi publik
+                                terintegrasi</small
+                              >
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Pranala Aplikasi Card -->
+                      <div class="horizontal-card">
+                        <div class="card">
+                          <div class="card-body">
+                            <h6 class="card-title">
+                              <i class="fas fa-mobile-alt"></i>Pranala Aplikasi
+                              Pemerintah Kota Tanjungpinang
+                            </h6>
+                            <ul class="list-unstyled mb-3">
+                              <li class="d-flex align-items-center">
+                                <div class="form-check">
+                                  <input
+                                    class="form-check-input"
+                                    type="checkbox"
+                                    id="app1"
+                                    checked
+                                    disabled
+                                  />
+                                </div>
+                                <label class="form-check-label ms-2" for="app1"
+                                  >Aplikasi Bea Perolehan Hak Atas Tanah dan Bangunan
+                                  oleh BPPRD Kota Tanjungpinang</label
+                                >
+                              </li>
+                              <li class="d-flex align-items-center">
+                                <div class="form-check">
+                                  <input
+                                    class="form-check-input"
+                                    type="checkbox"
+                                    id="app2"
+                                    checked
+                                    disabled
+                                  />
+                                </div>
+                                <label class="form-check-label ms-2" for="app2"
+                                  >Sistem Informasi Kualitas Pembangunan oleh DPUPR
+                                  Kota Tanjungpinang</label
+                                >
+                              </li>
+                              <li class="d-flex align-items-center">
+                                <div class="form-check">
+                                  <input
+                                    class="form-check-input"
+                                    type="checkbox"
+                                    id="app3"
+                                    checked
+                                    disabled
+                                  />
+                                </div>
+                                <label class="form-check-label ms-2" for="app3"
+                                  >Sistem Informasi Jaringan Dokumentasi dan Informasi
+                                  Hukum oleh Bag. Hukum SETDA kota
+                                  Tanjungpinang</label
+                                >
+                              </li>
+                              <li class="d-flex align-items-center">
+                                <div class="form-check">
+                                  <input
+                                    class="form-check-input"
+                                    type="checkbox"
+                                    id="app4"
+                                    checked
+                                    disabled
+                                  />
+                                </div>
+                                <label class="form-check-label ms-2" for="app4"
+                                  >Pejabat Pengelola Informasi dan Dokumentasi Kota
+                                  Tanjungpinang</label
+                                >
+                              </li>
+                            </ul>
+                            <a href="#" class="btn btn-sm btn-outline-danger w-100">
+                              <i class="fas fa-list me-2"></i>Daftar Pranala Aplikasi
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Pranala Web Internal Card -->
+                      <div class="horizontal-card">
+                        <div class="card">
+                          <div class="card-body">
+                            <h6 class="card-title">
+                              <i class="fas fa-link"></i>Pranala Web Internal
+                              Pemerintah Kota Tanjungpinang
+                            </h6>
+                            <ul class="list-unstyled mb-3">
+                              <li class="d-flex align-items-center">
+                                <div class="form-check">
+                                  <input
+                                    class="form-check-input"
+                                    type="checkbox"
+                                    id="web1"
+                                    checked
+                                    disabled
+                                  />
+                                </div>
+                                <label class="form-check-label ms-2" for="web1"
+                                  >Dinas Tenaga kerja, Koperasi, dan Usaha Mikro Kota
+                                  Tanjungpinang</label
+                                >
+                              </li>
+                              <li class="d-flex align-items-center">
+                                <div class="form-check">
+                                  <input
+                                    class="form-check-input"
+                                    type="checkbox"
+                                    id="web2"
+                                    checked
+                                    disabled
+                                  />
+                                </div>
+                                <label class="form-check-label ms-2" for="web2"
+                                  >Badan Perencanna, Penelitian, Pengembangan Kota
+                                  Tanjungpinang</label
+                                >
+                              </li>
+                              <li class="d-flex align-items-center">
+                                <div class="form-check">
+                                  <input
+                                    class="form-check-input"
+                                    type="checkbox"
+                                    id="web3"
+                                    checked
+                                    disabled
+                                  />
+                                </div>
+                                <label class="form-check-label ms-2" for="web3"
+                                  >Dinas Kepemudaan dan Olahraga</label
+                                >
+                              </li>
+                              <li class="d-flex align-items-center">
+                                <div class="form-check">
+                                  <input
+                                    class="form-check-input"
+                                    type="checkbox"
+                                    id="web4"
+                                    checked
+                                    disabled
+                                  />
+                                </div>
+                                <label class="form-check-label ms-2" for="web4"
+                                  >Dinas Kesehatan, Pengendalian Penduduk dan Keluarga
+                                  Berencana Kota Tanjungpinang</label
+                                >
+                              </li>
+                            </ul>
+                            <a href="#" class="btn btn-sm btn-outline-danger w-100">
+                              <i class="fas fa-external-link-alt me-2"></i>Daftar
+                              Pranala Internal
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Pranala Eksternal Card -->
+                      <div class="horizontal-card">
+                        <div class="card">
+                          <div class="card-body">
+                            <h6 class="card-title">
+                              <i class="fas fa-globe"></i>Pranala Eksternal Pemerintah
+                              Kota Tanjungpinang
+                            </h6>
+                            <ul class="list-unstyled mb-3">
+                              <li class="d-flex align-items-center">
+                                <div class="form-check">
+                                  <input
+                                    class="form-check-input"
+                                    type="checkbox"
+                                    id="ext1"
+                                    checked
+                                    disabled
+                                  />
+                                </div>
+                                <label class="form-check-label ms-2" for="ext1"
+                                  >Laman Resmi Kementrian Komunikasi dan Informatika
+                                  Republik Indonesia</label
+                                >
+                              </li>
+                              <li class="d-flex align-items-center">
+                                <div class="form-check">
+                                  <input
+                                    class="form-check-input"
+                                    type="checkbox"
+                                    id="ext2"
+                                    checked
+                                    disabled
+                                  />
+                                </div>
+                                <label class="form-check-label ms-2" for="ext2"
+                                  >Laman Resmi Pemerintah Kabupaten Natuna, Provinsi
+                                  Kepulauan Riau</label
+                                >
+                              </li>
+                              <li class="d-flex align-items-center">
+                                <div class="form-check">
+                                  <input
+                                    class="form-check-input"
+                                    type="checkbox"
+                                    id="ext3"
+                                    checked
+                                    disabled
+                                  />
+                                </div>
+                                <label class="form-check-label ms-2" for="ext3"
+                                  >Laman Resmi Pemerintah Kabupaten Anambas, Provinsi
+                                  Kepulauan Riau</label
+                                >
+                              </li>
+                              <li class="d-flex align-items-center">
+                                <div class="form-check">
+                                  <input
+                                    class="form-check-input"
+                                    type="checkbox"
+                                    id="ext4"
+                                    checked
+                                    disabled
+                                  />
+                                </div>
+                                <label class="form-check-label ms-2" for="ext4"
+                                  >Laman Resmi Pemerintah Kabupaten Bintan, Provinsi
+                                  Kepulauan Riau</label
+                                >
+                              </li>
+                            </ul>
+                            <a href="#" class="btn btn-sm btn-outline-danger w-100">
+                              <i class="fas fa-external-link-alt me-2"></i>Daftar Web
+                              Eksternal
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Duplicate cards for seamless scrolling -->
+                      <div class="horizontal-card">
+                        <div class="card">
+                          <div class="card-body">
+                            <h5 class="card-title">
+                              <i class="fas fa-chart-bar"></i>Infografis
+                            </h5>
+                            <img
+                              src="https://icms.tanjungpinangkota.go.id/image/posting/infografis/7243000000/small/small_1729582929_24ae13f6024ae1b0768c.jpg"
+                              alt="Infografis"
+                              class="infografis-img"
+                            />
+                            <p class="text-muted mb-0">
+                              Informasi visual terkini dari Pemerintah Kota
+                              Tanjungpinang dengan data statistik dan grafik yang
+                              mudah dipahami
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="horizontal-card">
+                        <div class="card">
+                          <div class="card-body">
+                            <h5 class="card-title">
+                              <i class="fas fa-broadcast-tower"></i>GPR Kominfo
+                            </h5>
+                            <div class="gpr-placeholder">
+                              <i class="fas fa-satellite-dish"></i>
+                              <p class="mb-0">
+                                Konten GPR Kominfo akan ditampilkan di sini
+                              </p>
+                              <small class="text-muted"
+                                >Sistem informasi komunikasi publik
+                                terintegrasi</small
+                              >
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="horizontal-card">
+                        <div class="card">
+                          <div class="card-body">
+                            <h6 class="card-title">
+                              <i class="fas fa-mobile-alt"></i>Pranala Aplikasi
+                              Pemerintah Kota Tanjungpinang
+                            </h6>
+                            <ul class="list-unstyled mb-3">
+                              <li class="d-flex align-items-center">
+                                <div class="form-check">
+                                  <input
+                                    class="form-check-input"
+                                    type="checkbox"
+                                    id="app1_dup"
+                                    checked
+                                    disabled
+                                  />
+                                </div>
+                                <label class="form-check-label ms-2" for="app1_dup"
+                                  >Aplikasi Bea Perolehan Hak Atas Tanah dan Bangunan
+                                  oleh BPPRD Kota Tanjungpinang</label
+                                >
+                              </li>
+                              <li class="d-flex align-items-center">
+                                <div class="form-check">
+                                  <input
+                                    class="form-check-input"
+                                    type="checkbox"
+                                    id="app2_dup"
+                                    checked
+                                    disabled
+                                  />
+                                </div>
+                                <label class="form-check-label ms-2" for="app2_dup"
+                                  >Sistem Informasi Kualitas Pembangunan oleh DPUPR
+                                  Kota Tanjungpinang</label
+                                >
+                              </li>
+                            </ul>
+                            <a href="#" class="btn btn-sm btn-outline-danger w-100">
+                              <i class="fas fa-list me-2"></i>Daftar Pranala Aplikasi
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+   <!-- Population Statistics Chart Section -->
+<section class="py-5" id="statistik" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-10 text-center mb-5">
+                <h2 class="display-5 fw-bold mb-3" style="color: #2c3e50;">Statistik Kependudukan</h2>
+                <p class="lead text-muted">Perkembangan Jumlah Penduduk Kelurahan Tanjungpinang Barat</p>
+                <div class="d-flex justify-content-center gap-3 mt-4">
+                    <span class="badge bg-danger px-3 py-2 rounded-pill">
+                        <i class="bi bi-people-fill me-2"></i>Total Penduduk
+                    </span>
+                    <span class="badge bg-success px-3 py-2 rounded-pill">
+                        <i class="bi bi-graph-up me-2"></i>Tren 4 Tahun
+                    </span>
+                    <span class="badge bg-info px-3 py-2 rounded-pill">
+                        <i class="bi bi-calendar-range me-2"></i>2020-2023
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center g-4">
+            <!-- Chart Column -->
+            <div class="col-lg-8">
+                <div class="card border-0 shadow-lg overflow-hidden">
+                    <div class="card-header bg-danger text-white py-3">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h5 class="mb-0">
+                                <i class="bi bi-bar-chart-line me-2"></i>Grafik Perkembangan Penduduk
+                            </h5>
+                            <div class="dropdown">
+                                <button class="btn btn-sm btn-light dropdown-toggle" type="button" id="chartDropdown" data-bs-toggle="dropdown">
+                                    <i class="bi bi-filter"></i> Tampilan
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#" data-chart-type="line">Grafik Garis</a></li>
+                                    <li><a class="dropdown-item" href="#" data-chart-type="bar">Grafik Batang</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body p-4">
+                        <div class="chart-container" style="position: relative; height: 300px;">
+                            <canvas id="populationChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="card-footer bg-light py-3">
+                        <small class="text-muted">
+                            <i class="bi bi-info-circle me-1"></i> Data berdasarkan registrasi kependudukan per Desember masing-masing tahun
+                        </small>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats Summary Column -->
+            <div class="col-lg-4">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-header bg-white py-3">
+                        <h5 class="mb-0">
+                            <i class="bi bi-clipboard-data me-2 text-primary"></i>Ringkasan Statistik
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="bg-primary bg-opacity-10 p-3 rounded-circle me-3">
+                                <i class="bi bi-people-fill fs-4 text-primary"></i>
+                            </div>
+                            <div>
+                                <h6 class="mb-0">Total Penduduk 2023</h6>
+                                <h3 class="mb-0 fw-bold">4,902</h3>
+                                <small class="text-muted">Jiwa</small>
+                            </div>
+                        </div>
+
+                        <div class="progress mb-4" style="height: 8px;">
+                            <div class="progress-bar bg-danger" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                            <div class="progress-bar bg-warning" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                            <div class="progress-bar bg-info" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                            <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+
+                        <div class="row g-3">
+                            <div class="col-6">
+                                <div class="stat-card p-3 rounded-3 border">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <i class="bi bi-arrow-down-circle text-danger me-2"></i>
+                                        <small class="text-muted">Penurunan</small>
+                                    </div>
+                                    <h5 class="mb-0 fw-bold">5.5%</h5>
+                                    <small class="text-muted">2020-2023</small>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="stat-card p-3 rounded-3 border">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <i class="bi bi-house-fill text-primary me-2"></i>
+                                        <small class="text-muted">KK</small>
+                                    </div>
+                                    <h5 class="mb-0 fw-bold">1,450</h5>
+                                    <small class="text-muted">Kepala Keluarga</small>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="stat-card p-3 rounded-3 border">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <i class="bi bi-gender-male text-info me-2"></i>
+                                        <small class="text-muted">Laki-laki</small>
+                                    </div>
+                                    <h5 class="mb-0 fw-bold">2,412</h5>
+                                    <small class="text-muted">49.2%</small>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="stat-card p-3 rounded-3 border">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <i class="bi bi-gender-female text-danger me-2"></i>
+                                        <small class="text-muted">Perempuan</small>
+                                    </div>
+                                    <h5 class="mb-0 fw-bold">2,490</h5>
+                                    <small class="text-muted">50.8%</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Yearly Stats Cards -->
+        <div class="row mt-4 g-4">
+            <div class="col-lg-3 col-md-6">
+                <div class="year-stat-card bg-white p-4 rounded-3 shadow-sm h-100">
+                    <div class="d-flex justify-content-between align-items-start mb-3">
+                        <h3 class="mb-0 fw-bold">2020</h3>
+                        <span class="badge bg-primary bg-opacity-10 text-primary">Tertinggi</span>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <div class="bg-primary bg-opacity-10 p-2 rounded-circle me-3">
+                            <i class="bi bi-people-fill text-primary"></i>
+                        </div>
+                        <div>
+                            <p class="mb-0 text-muted">Jumlah Penduduk</p>
+                            <h4 class="mb-0 fw-bold">5,188</h4>
+                            <small class="text-muted">Jiwa</small>
+                        </div>
+                    </div>
+                    <hr>
+                    <small class="text-muted d-block mb-2">
+                        <i class="bi bi-info-circle me-1"></i> Basis data awal
+                    </small>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="year-stat-card bg-white p-4 rounded-3 shadow-sm h-100">
+                    <h3 class="mb-3 fw-bold">2021</h3>
+                    <div class="d-flex align-items-center">
+                        <div class="bg-warning bg-opacity-10 p-2 rounded-circle me-3">
+                            <i class="bi bi-people-fill text-warning"></i>
+                        </div>
+                        <div>
+                            <p class="mb-0 text-muted">Jumlah Penduduk</p>
+                            <h4 class="mb-0 fw-bold">5,086</h4>
+                            <small class="text-muted">Jiwa</small>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="d-flex align-items-center">
+                        <i class="bi bi-arrow-down-circle text-danger me-2"></i>
+                        <small class="text-danger">Penurunan 2.0%</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="year-stat-card bg-white p-4 rounded-3 shadow-sm h-100">
+                    <h3 class="mb-3 fw-bold">2022</h3>
+                    <div class="d-flex align-items-center">
+                        <div class="bg-info bg-opacity-10 p-2 rounded-circle me-3">
+                            <i class="bi bi-people-fill text-info"></i>
+                        </div>
+                        <div>
+                            <p class="mb-0 text-muted">Jumlah Penduduk</p>
+                            <h4 class="mb-0 fw-bold">4,939</h4>
+                            <small class="text-muted">Jiwa</small>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="d-flex align-items-center">
+                        <i class="bi bi-arrow-down-circle text-danger me-2"></i>
+                        <small class="text-danger">Penurunan 2.9%</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="year-stat-card bg-white p-4 rounded-3 shadow-sm h-100">
+                    <div class="d-flex justify-content-between align-items-start mb-3">
+                        <h3 class="mb-0 fw-bold">2023</h3>
+                        <span class="badge bg-success bg-opacity-10 text-success">Terbaru</span>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <div class="bg-success bg-opacity-10 p-2 rounded-circle me-3">
+                            <i class="bi bi-people-fill text-success"></i>
+                        </div>
+                        <div>
+                            <p class="mb-0 text-muted">Jumlah Penduduk</p>
+                            <h4 class="mb-0 fw-bold">4,902</h4>
+                            <small class="text-muted">Jiwa</small>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="d-flex align-items-center">
+                        <i class="bi bi-arrow-down-circle text-danger me-2"></i>
+                        <small class="text-danger">Penurunan 0.7%</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Additional Info -->
+        <div class="row mt-5">
+            <div class="col-12">
+                <div class="alert alert-primary border-0 shadow-sm">
+                    <div class="d-flex align-items-center">
+                        <i class="bi bi-lightbulb fs-3 me-3"></i>
+                        <div>
+                            <h5 class="alert-heading mb-1">Analisis Data</h5>
+                            <p class="mb-0">Terdapat tren penurunan jumlah penduduk sebesar 5.5% dalam 4 tahun terakhir. Faktor utama diduga karena perpindahan penduduk ke wilayah sekitar.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Chart.js Script -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    // Population Chart Configuration
+    document.addEventListener('DOMContentLoaded', function() {
+        const populationCtx = document.getElementById('populationChart').getContext('2d');
+        
+        // Create gradient
+        const gradient = populationCtx.createLinearGradient(0, 0, 0, 300);
+        gradient.addColorStop(0, 'rgba(244, 67, 54, 0.3)');
+        gradient.addColorStop(1, 'rgba(244, 67, 54, 0.05)');
+        
+        let populationChart = new Chart(populationCtx, {
+            type: 'line',
+            data: {
+                labels: ['2020', '2021', '2022', '2023'],
+                datasets: [{
+                    label: 'Jumlah Penduduk',
+                    data: [5188, 5086, 4939, 4902],
+                    borderColor: '#f44336',
+                    backgroundColor: gradient,
+                    borderWidth: 3,
+                    fill: true,
+                    tension: 0.4,
+                    pointBackgroundColor: '#f44336',
+                    pointBorderColor: '#fff',
+                    pointBorderWidth: 2,
+                    pointRadius: 6,
+                    pointHoverRadius: 8
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        backgroundColor: '#2c3e50',
+                        titleFont: {
+                            size: 14,
+                            weight: 'bold'
+                        },
+                        bodyFont: {
+                            size: 13
+                        },
+                        callbacks: {
+                            label: function(context) {
+                                return `${context.parsed.y.toLocaleString()} jiwa`;
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: false,
+                        min: 4800,
+                        max: 5300,
+                        ticks: {
+                            callback: function(value) {
+                                return value.toLocaleString() + ' jiwa';
+                            },
+                            font: {
+                                weight: '600'
+                            }
+                        },
+                        grid: {
+                            color: 'rgba(0, 0, 0, 0.05)'
+                        }
+                    },
+                    x: {
+                        grid: {
+                            display: false
+                        },
+                        ticks: {
+                            font: {
+                                weight: '600'
+                            }
+                        }
+                    }
+                },
+                elements: {
+                    point: {
+                        hoverBackgroundColor: '#f44336'
+                    }
+                }
+            }
+        });
+
+        // Chart type switcher
+        document.querySelectorAll('[data-chart-type]').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                const type = this.getAttribute('data-chart-type');
+                populationChart.config.type = type;
+                populationChart.update();
+            });
+        });
+    });
+</script>
+
+    <!-- Peta Fokus Kantor Kelurahan -->
+<section class="py-5 bg-light" id="peta-kelurahan">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-10 text-center mb-5">
+                <h2 class="display-5 fw-bold mb-3">Lokasi Kantor Kelurahan Tanjungpinang Kota</h2>
+                <p class="lead text-muted">Jl. Mesjid No.7, Tanjungpinang Kota, Kepulauan Riau</p>
+                <div class="d-flex justify-content-center gap-3 mt-4">
+                    <span class="badge bg-primary px-3 py-2 rounded-pill">
+                        <i class="bi bi-geo-alt-fill me-2"></i>Peta Lokasi
+                    </span>
+                    <span class="badge bg-success px-3 py-2 rounded-pill">
+                        <i class="bi bi-signpost me-2"></i>Petunjuk Arah
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            <!-- Peta Utama -->
+            <div class="col-lg-8">
+                <div class="card border-0 shadow-lg overflow-hidden">
+                    <div class="card-header bg-danger text-white py-3">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h5 class="mb-0">
+                                <i class="bi bi-pin-map-fill me-2"></i>Peta Kantor Kelurahan
+                            </h5>
+                            <div class="dropdown">
+                                <button class="btn btn-sm btn-light dropdown-toggle" type="button" id="mapViewDropdown" data-bs-toggle="dropdown">
+                                    <i class="bi bi-eye-fill me-1"></i> Tampilan
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><h6 class="dropdown-header">Mode Peta</h6></li>
+                                    <li><a class="dropdown-item active" href="#" data-view="street">Jalan</a></li>
+                                    <li><a class="dropdown-item" href="#" data-view="satellite">Satelit</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><h6 class="dropdown-header">Layer</h6></li>
+                                    <li><a class="dropdown-item" href="#" data-view="service">Area Pelayanan</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body p-0 position-relative">
+                        <div id="kelurahanMap" style="height: 500px; width: 100%;"></div>
+                        <div class="map-controls">
+                            <button id="locateMeBtn" class="btn btn-sm btn-light">
+                                <i class="bi bi-geo me-1"></i>Lokasi Saya
+                            </button>
+                            <div class="btn-group-vertical">
+                                <button id="zoomInBtn" class="btn btn-sm btn-light rounded-circle">
+                                    <i class="bi bi-plus"></i>
+                                </button>
+                                <button id="zoomOutBtn" class="btn btn-sm btn-light rounded-circle">
+                                    <i class="bi bi-dash"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="map-legend bg-white p-3 shadow-sm rounded">
+                            <h6 class="mb-2"><i class="bi bi-key me-1"></i> Legenda:</h6>
+                            <div class="d-flex align-items-center mb-1">
+                                <div class="legend-color me-2" style="background-color: #dc3545;"></div>
+                                <small>Kantor Kelurahan</small>
+                            </div>
+                            <div class="d-flex align-items-center mb-1">
+                                <div class="legend-color me-2" style="background-color: #198754; opacity: 0.3;"></div>
+                                <small>Area Pelayanan</small>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <div class="legend-color me-2" style="background-color: #0d6efd;"></div>
+                                <small>Fasilitas Umum</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer bg-light py-3">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <small class="text-muted">
+                                <i class="bi bi-info-circle me-1"></i> Klik marker untuk informasi detail
+                            </small>
+                            <a href="https://www.google.com/maps?q=0.9268,104.4560" target="_blank" class="btn btn-sm btn-outline-danger">
+                                <i class="bi bi-google me-1"></i>Buka di Google Maps
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Informasi Kantor -->
+            <div class="col-lg-4">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-header bg-white">
+                        <h5 class="mb-0">
+                            <i class="bi bi-info-circle text-primary me-2"></i>Informasi Kantor
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="d-flex align-items-start mb-4">
+                            <div class="bg-primary bg-opacity-10 p-3 rounded-circle me-3">
+                                <i class="bi bi-building text-primary fs-4"></i>
+                            </div>
+                            <div>
+                                <h5>Kantor Kelurahan Tanjungpinang Kota</h5>
+                                <p class="text-muted mb-1">
+                                    <i class="bi bi-geo-alt me-1"></i> Jl. Mesjid No.7, Tanjungpinang Kota
+                                </p>
+                                <p class="text-muted mb-1">
+                                    <i class="bi bi-geo me-1"></i> Kec. Tanjungpinang Kota, Kota Tanjungpinang
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="border p-3 rounded-3 mb-3">
+                            <h6 class="fw-bold mb-3"><i class="bi bi-clock-history me-2"></i>Jam Pelayanan:</h6>
+                            <div class="row g-2">
+                                <div class="col-6">
+                                    <div class="bg-light p-2 rounded text-center">
+                                        <small class="text-muted">Senin-Kamis</small>
+                                        <p class="mb-0 fw-bold">08:00 - 16:00</p>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="bg-light p-2 rounded text-center">
+                                        <small class="text-muted">Jumat</small>
+                                        <p class="mb-0 fw-bold">08:00 - 16:30</p>
+                                    </div>
+                                </div>
+                                <div class="col-12 mt-2">
+                                    <div class="bg-light p-2 rounded text-center">
+                                        <small class="text-muted">Sabtu-Minggu</small>
+                                        <p class="mb-0 fw-bold text-danger">Libur</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="border p-3 rounded-3 mb-3">
+                            <h6 class="fw-bold mb-3"><i class="bi bi-telephone me-2"></i>Kontak:</h6>
+                            <ul class="list-unstyled">
+                                <li class="mb-2">
+                                    <i class="bi bi-telephone-fill text-success me-2"></i>
+                                    <span>(0771) 1234567</span>
+                                </li>
+                                <li class="mb-2">
+                                    <i class="bi bi-whatsapp text-success me-2"></i>
+                                    <span>0812 3456 7890</span>
+                                </li>
+                                <li>
+                                    <i class="bi bi-envelope-fill text-primary me-2"></i>
+                                    <span>kelurahan@tanjungpinangkota.go.id</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Leaflet CSS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+    // Focused Kelurahan Map
+    document.addEventListener('DOMContentLoaded', function() {
+        // Initialize map centered on Kelurahan office
+        const kelurahanMap = L.map('kelurahanMap', {
+            zoomControl: false,
+            scrollWheelZoom: true,
+            touchZoom: true,
+            doubleClickZoom: true
+        }).setView([0.9268, 104.4560], 17); // Higher zoom level
+
+        // Base layers
+        const streetLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+            maxZoom: 19
+        });
+
+        const satelliteLayer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+            attribution: 'Tiles &copy; Esri',
+            maxZoom: 19
+        });
+
+        // Add default layer
+        streetLayer.addTo(kelurahanMap);
+
+        // Service area polygon (more precise)
+        const serviceArea = L.circle([0.9268, 104.4560], {
+            color: '#198754',
+            fillColor: '#198754',
+            fillOpacity: 0.2,
+            radius: 200, // Smaller radius for more precise area
+            weight: 2
+        });
+
+        // Custom office icon
+        const officeIcon = L.divIcon({
+            html: '<div class="kelurahan-office-marker"><i class="bi bi-building"></i></div>',
+            iconSize: [50, 50],
+            iconAnchor: [25, 50],
+            popupAnchor: [0, -50],
+            className: 'kelurahan-office-div-icon'
+        });
+
+        // Office marker with pulse effect
+        const officeMarker = L.marker([0.9268, 104.4560], {
+            icon: officeIcon,
+            riseOnHover: true
+        }).addTo(kelurahanMap);
+
+        // Enhanced popup
+        officeMarker.bindPopup(`
+            <div class="kelurahan-popup">
+                <div class="d-flex align-items-center mb-2">
+                    <div class="bg-primary bg-opacity-10 p-2 rounded-circle me-2">
+                        <i class="bi bi-building text-primary"></i>
+                    </div>
+                    <h5 class="mb-0">Kantor Kelurahan</h5>
+                </div>
+                <p class="small mb-2">
+                    <i class="bi bi-geo-alt text-muted me-2"></i>Jl. Mesjid No.7, Tanjungpinang Kota
+                </p>
+                <hr class="my-2">
+                <div class="row g-2">
+                    <div class="col-6">
+                        <div class="bg-light p-2 rounded text-center">
+                            <small class="text-muted">Telepon</small>
+                            <p class="mb-0 fw-bold">(0771) 123456</p>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="bg-light p-2 rounded text-center">
+                            <small class="text-muted">Jam Buka</small>
+                            <p class="mb-0 fw-bold">08:00-16:00</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-2">
+                    <a href="https://www.google.com/maps?q=0.9268,104.4560" target="_blank" class="btn btn-sm btn-primary w-100">
+                        <i class="bi bi-signpost me-1"></i>Petunjuk Arah
+                    </a>
+                </div>
+            </div>
+        `);
+
+        // Nearby facilities
+        const facilities = [
+            {
+                name: "Masjid Raya",
+                position: [0.9275, 104.4565],
+                type: "mosque",
+                distance: "50 m"
+            },
+            {
+                name: "Puskesmas",
+                position: [0.9260, 104.4550],
+                type: "hospital",
+                distance: "200 m"
+            },
+            {
+                name: "Lapangan Serbaguna",
+                position: [0.9280, 104.4550],
+                type: "park",
+                distance: "150 m"
+            }
+        ];
+
+        facilities.forEach(facility => {
+            let icon, color;
+            switch(facility.type) {
+                case 'mosque':
+                    icon = 'bi-house-heart';
+                    color = '#20c997';
+                    break;
+                case 'hospital':
+                    icon = 'bi-hospital';
+                    color = '#dc3545';
+                    break;
+                case 'park':
+                    icon = 'bi-tree';
+                    color = '#198754';
+                    break;
+                default:
+                    icon = 'bi-geo';
+                    color = '#6c757d';
+            }
+
+            L.marker(facility.position, {
+                icon: L.divIcon({
+                    html: `<div class="facility-marker" style="color: ${color}"><i class="bi ${icon}"></i></div>`,
+                    iconSize: [30, 30],
+                    className: 'facility-div-icon'
+                })
+            }).addTo(kelurahanMap).bindPopup(`
+                <div class="facility-popup">
+                    <h6 class="fw-bold mb-1" style="color: ${color}">
+                        <i class="bi ${icon} me-1"></i>${facility.name}
+                    </h6>
+                    <small class="text-muted d-block mb-1">${facility.distance} dari Kantor Kelurahan</small>
+                    <small class="text-muted"><i class="bi bi-clock me-1"></i>24 Jam</small>
+                </div>
+            `);
+        });
+
+        // Map controls
+        document.getElementById('zoomInBtn').addEventListener('click', () => {
+            kelurahanMap.zoomIn();
+        });
+
+        document.getElementById('zoomOutBtn').addEventListener('click', () => {
+            kelurahanMap.zoomOut();
+        });
+
+        document.getElementById('locateMeBtn').addEventListener('click', () => {
+            kelurahanMap.locate({setView: true, maxZoom: 16})
+                .on('locationfound', function(e) {
+                    L.marker([e.latitude, e.longitude], {
+                        icon: L.divIcon({
+                            html: '<div class="user-location-marker"><i class="bi bi-person-fill"></i></div>',
+                            iconSize: [30, 30],
+                            className: 'user-location-div-icon'
+                        })
+                    }).addTo(kelurahanMap)
+                    .bindPopup("Lokasi Anda").openPopup();
+                    
+                    // Add line from user to office
+                    L.polyline([
+                        [e.latitude, e.longitude],
+                        [0.9268, 104.4560]
+                    ], {
+                        color: '#f44336',
+                        dashArray: '5, 5',
+                        weight: 2
+                    }).addTo(kelurahanMap);
+                })
+                .on('locationerror', function() {
+                    alert("Tidak dapat menemukan lokasi Anda. Pastikan GPS aktif.");
+                });
+        });
+
+        // Layer control
+        document.querySelectorAll('[data-view]').forEach(item => {
+            item.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Update active state
+                document.querySelectorAll('[data-view]').forEach(i => {
+                    i.classList.remove('active');
+                });
+                this.classList.add('active');
+                
+                const view = this.getAttribute('data-view');
+                
+                // Handle view switching
+                switch(view) {
+                    case 'satellite':
+                        kelurahanMap.removeLayer(streetLayer);
+                        satelliteLayer.addTo(kelurahanMap);
+                        break;
+                    case 'street':
+                        kelurahanMap.removeLayer(satelliteLayer);
+                        streetLayer.addTo(kelurahanMap);
+                        break;
+                    case 'service':
+                        if (kelurahanMap.hasLayer(serviceArea)) {
+                            kelurahanMap.removeLayer(serviceArea);
+                        } else {
+                            serviceArea.addTo(kelurahanMap);
+                        }
+                        break;
+                }
+            });
+        });
+
+        // Open popup by default
+        setTimeout(() => {
+            officeMarker.openPopup();
+        }, 1000);
+    });
+</script>
+
+   <footer class="bg-dark text-light pt-5 pb-4">
+        <div class="container">
+            <div class="row justify-content-between align-items-start">
+                <!-- Hubungi Kami -->
+                <div class="col-md-4 mb-4">
+                    <h5 class="fw-bold text-danger mb-3">Hubungi Kami</h5>
+                    <div class="d-flex align-items-start mb-4">
+                        <div class="me-3">
+                            <img src="assets/images/logo-tanjungpinang.png" alt="Logo" style="width: 80px; height: auto;" class="img-fluid">
+                        </div>
+                        <div class="small">
+                            <p class="fw-bold mb-1">Kelurahan Tanjungpinang Kota</p>
+                            <p class="mb-1">Kecamatan Tanjungpinang Kota</p>
+                        </div>
+                    </div>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2">
+                            <i class="bi bi-geo-alt-fill me-2 text-danger"></i>
+                            Jl. Mesjid No.7, Tanjungpinang Kota, Kota Tanjungpinang, Kepulauan Riau
+                        </li>
+                        <li class="mb-2">
+                            <i class="bi bi-envelope-fill me-2 text-danger"></i>
+                            tpitimurkotakel@tanjungpinangkota.go.id
+                        </li>
+                        <li class="mb-3">
+                            <i class="bi bi-telephone-fill me-2 text-danger"></i>
+                            (0771) 1234567
+                        </li>
+                        <li>
+                            <div class="d-flex gap-2">
+                                <a href="#" class="btn btn-outline-light btn-sm rounded-circle">
+                                    <i class="bi bi-facebook"></i>
+                                </a>
+                                <a href="#" class="btn btn-outline-light btn-sm rounded-circle">
+                                    <i class="bi bi-instagram"></i>
+                                </a>
+                                <a href="#" class="btn btn-outline-light btn-sm rounded-circle">
+                                    <i class="bi bi-twitter"></i>
+                                </a>
+                                <a href="#" class="btn btn-outline-light btn-sm rounded-circle">
+                                    <i class="bi bi-youtube"></i>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+      <!-- Menu Utama -->
+<div class="col-md-3 mb-4">
+  <h5 class="fw-bold text-danger border-bottom pb-2 mb-3">Menu Utama</h5>
+  <ul class="list-unstyled small">
+    <li class="mb-2">
+      <a href="index.html" class="text-light text-decoration-none d-flex align-items-center">
+        <i class="bi bi-house-door-fill me-2"></i> Beranda
+      </a>
+    </li>
+    <li class="mb-2">
+      <a href="berita.html" class="text-light text-decoration-none d-flex align-items-center">
+        <i class="bi bi-newspaper me-2"></i> Berita
+      </a>
+    </li>
+    <li class="mb-2">
+      <a href="download-area.html" class="text-light text-decoration-none d-flex align-items-center">
+        <i class="bi bi-download me-2"></i> Download
+      </a>
+    </li>
+    <li class="mb-2">
+      <a href="galeri.html" class="text-light text-decoration-none d-flex align-items-center">
+        <i class="bi bi-images me-2"></i> Galeri
+      </a>
+    </li>
+    <li class="mb-2">
+      <a href="data-statistik.html" class="text-light text-decoration-none d-flex align-items-center">
+        <i class="bi bi-bar-chart-fill me-2"></i> Data Statistik
+      </a>
+    </li>
+    <li class="mb-2">
+      <a href="peta-kelurahan.html" class="text-light text-decoration-none d-flex align-items-center">
+        <i class="bi bi-map-fill me-2"></i> Peta Kelurahan
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+      <!-- Berita Populer -->
+        <div class="col-md-4 mb-4">
+        <h5 class="fw-bold text-danger border-bottom pb-2 mb-3">Berita Populer</h5>
+        <div class="mb-4">
+            <h6 class="fw-bold mb-1">Selamat Datang di Website Kelurahan Tanjungpinang Kota</h6>
+            <p class="text-secondary small mb-0"><i class="bi bi-calendar me-2"></i>Rabu, 31 Agustus 2022</p>
+        </div>
+        <div class="mb-4">
+            <h6 class="fw-bold mb-1">Penghargaan Kepala Daerah Perempuan Inspiratif dari Tempo Media Grup</h6>
+            <p class="text-secondary small mb-0"><i class="bi bi-calendar me-2"></i>Rabu, 28 September 2022</p>
+        </div>
+        <div class="mb-4">
+            <h6 class="fw-bold mb-1">Penyerahan Simbolis Kartu Identitas Anak (KIA)</h6>
+            <p class="text-secondary small mb-0"><i class="bi bi-calendar me-2"></i>Kamis, 15 Desember 2022</p>
+        </div>
+        </div>
+
+        </div>
+
+   
+
+
+    <!-- Footer Bottom Tengah -->
+    <hr class="border-secondary">
+    <div class="text-center pt-2">
+      <small>Design by <a href="#" class="text-danger fw-bold">Mahasiswa Teknik Informatika</a> &copy;2025</small>
+    </div>
+  </div>
+</footer>
+
+
+
+   
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <!-- Custom JS -->
+    <script src="assets/js/script.js"></script>
+    
+  <script>
+
+        // Map Configuration
+    const map = L.map('map').setView([0.9268, 104.4560], 16);
+
+    // Tile layer
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    // Custom Icon
+    const kelurahanIcon = L.divIcon({
+        html: '<i class="bi bi-building-fill" style="color: #dc3545; font-size: 24px;"></i>',
+        iconSize: [30, 30],
+        className: 'custom-div-icon'
+    });
+
+    // Marker
+    const kelurahanMarker = L.marker([0.9268, 104.4560], { icon: kelurahanIcon }).addTo(map);
+    kelurahanMarker.bindPopup(`
+        <div class="popup-content">
+            <h6><strong>Kantor Kelurahan Tanjungpinang Kota</strong></h6>
+            <p><i class="bi bi-geo-alt"></i> Jl. Mesjid No.7, Tanjungpinang Kota</p>
+            <p><i class="bi bi-telephone"></i> (0771) 123456</p>
+            <p><i class="bi bi-clock"></i> Senin-Jumat: 08:00 - 16:00 WIB</p>
+        </div>
+    `);
+
+    // Circle Area
+    L.circle([0.9268, 104.4560], {
+        color: '#198754',
+        fillColor: '#198754',
+        fillOpacity: 0.1,
+        radius: 300
+    }).addTo(map).bindPopup("Area Pelayanan Kelurahan");
+    </script>
+
+    <style>
+        /* Enhanced Pranala Luar Styles */
+        .pranala-luar-section {
+          background: rgba(255, 255, 255, 0.95);
+          backdrop-filter: blur(10px);
+          border-radius: 20px;
+          padding: 40px 0;
+          margin: 20px 0;
+          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+          border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .section-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 40px;
+          padding: 0 20px 20px;
+          position: relative;
+        }
+
+        /* Menambahkan jarak di bawah judul "PROFIL" */
+.section-title {
+    margin-bottom: 1.5rem; /* Tambahkan baris ini */
+} 
+
+        .section-header::after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 20px;
+          right: 20px;
+          height: 3px;
+          background: linear-gradient(90deg, #dc3545, #ff6b35, #dc3545);
+          border-radius: 2px;
+          animation: gradient-shift 3s ease-in-out infinite;
+        }
+
+        @keyframes gradient-shift {
+          0%,
+          100% {
+            opacity: 1;
+          }
+          50% {
+            opacity: 0.7;
+          }
+        }
+
+        .section-title {
+          font-size: 28px;
+          font-weight: 800;
+          background: linear-gradient(135deg, #dc3545, #ff6b35);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+          margin: 0;
+          text-transform: uppercase;
+          letter-spacing: 2px;
+          text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+          animation: title-glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes title-glow {
+          from {
+            filter: brightness(1);
+          }
+          to {
+            filter: brightness(1.1);
+          }
+        }
+
+        .controls-container {
+          display: flex;
+          align-items: center;
+          gap: 15px;
+        }
+
+        .pranala-lainnya-btn {
+          background: linear-gradient(135deg, #dc3545, #ff6b35);
+          color: white;
+          padding: 12px 24px;
+          border: none;
+          border-radius: 25px;
+          font-weight: 600;
+          text-decoration: none;
+          font-size: 14px;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+          position: relative;
+          overflow: hidden;
+        }
+
+        .pranala-lainnya-btn::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: -100%;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 255, 255, 0.3),
+            transparent
+          );
+          transition: left 0.6s ease;
+        }
+
+        .pranala-lainnya-btn:hover {
+          transform: translateY(-2px) scale(1.05);
+          box-shadow: 0 10px 25px rgba(220, 53, 69, 0.4);
+          color: white;
+        }
+
+        .pranala-lainnya-btn:hover::before {
+          left: 100%;
+        }
+
+        .nav-arrows {
+          display: flex;
+          gap: 8px;
+        }
+
+        .nav-arrow {
+          width: 45px;
+          height: 45px;
+          border: 2px solid #ddd;
+          background: white;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          border-radius: 50%;
+          transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+          position: relative;
+          overflow: hidden;
+        }
+
+        .nav-arrow::before {
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 0;
+          height: 0;
+          background: linear-gradient(135deg, #dc3545, #ff6b35);
+          border-radius: 50%;
+          transition: all 0.4s ease;
+          transform: translate(-50%, -50%);
+        }
+
+        .nav-arrow:hover {
+          border-color: #dc3545;
+          transform: translateY(-3px) scale(1.1);
+          box-shadow: 0 8px 20px rgba(220, 53, 69, 0.3);
+        }
+
+        .nav-arrow:hover::before {
+          width: 100%;
+          height: 100%;
+        }
+
+        .nav-arrow:hover i {
+          color: white;
+          transform: scale(1.2);
+          z-index: 2;
+          position: relative;
+        }
+
+        .nav-arrow:active {
+          transform: translateY(-1px) scale(1.05);
+        }
+
+        .horizontal-cards-container {
+          overflow: hidden;
+          position: relative;
+          padding: 20px 0;
+        }
+
+        .horizontal-cards-container::before,
+        .horizontal-cards-container::after {
+          content: "";
+          position: absolute;
+          top: 0;
+          width: 50px;
+          height: 100%;
+          z-index: 10;
+        }
+
+        .horizontal-cards-container::before {
+          left: 0;
+          background: linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.95),
+            transparent
+          );
+        }
+
+        .horizontal-cards-container::after {
+          right: 0;
+          background: linear-gradient(
+            270deg,
+            rgba(255, 255, 255, 0.95),
+            transparent
+          );
+        }
+
+        .horizontal-cards-wrapper {
+          display: flex;
+          gap: 25px;
+          padding: 10px 0;
+          transform-style: preserve-3d;
+          transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .horizontal-cards-wrapper.paused {
+          animation-play-state: paused;
+        }
+
+        .horizontal-card {
+          min-width: 340px;
+          flex-shrink: 0;
+          transform-style: preserve-3d;
+        }
+
+        .card {
+          border: none;
+          border-radius: 20px;
+          overflow: hidden;
+          height: 100%;
+          background: rgba(255, 255, 255, 0.9);
+          backdrop-filter: blur(10px);
+          transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+          position: relative;
+          box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        
+
+        .card:hover {
+          transform: translateY(-10px) rotateY(5deg) rotateX(5deg);
+          box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+          background: rgba(255, 255, 255, 1);
+        }
+
+        
+
+        .card-body {
+          padding: 25px;
+          position: relative;
+        }
+
+        .card-title {
+          font-size: 18px;
+          color: #333;
+          margin-bottom: 20px;
+          padding-bottom: 12px;
+          position: relative;
+          font-weight: 700;
+        }
+
+        .card-title::after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 0;
+          height: 2px;
+          background: linear-gradient(90deg, #dc3545, #ff6b35);
+          transition: width 0.5s ease;
+        }
+
+        .card:hover .card-title::after {
+          width: 100%;
+        }
+
+        .card-title i {
+          color: #dc3545;
+          margin-right: 10px;
+          transition: transform 0.3s ease;
+        }
+
+        .card:hover .card-title i {
+          transform: scale(1.2) rotate(10deg);
+        }
+
+        .infografis-img {
+          width: 100%;
+          height: 160px;
+          object-fit: cover;
+          border-radius: 12px;
+          margin-bottom: 15px;
+          transition: all 0.4s ease;
+          filter: brightness(0.9);
+        }
+
+        .card:hover .infografis-img {
+          transform: scale(1.05);
+          filter: brightness(1) saturate(1.1);
+        }
+
+        .gpr-placeholder {
+          text-align: center;
+          padding: 50px 20px;
+          background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+          border-radius: 15px;
+          color: #6c757d;
+          position: relative;
+          overflow: hidden;
+        }
+
+        .gpr-placeholder::before {
+          content: "";
+          position: absolute;
+          top: -50%;
+          left: -50%;
+          width: 200%;
+          height: 200%;
+          background: linear-gradient(
+            45deg,
+            transparent,
+            rgba(220, 53, 69, 0.1),
+            transparent
+          );
+          animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+          0% {
+            transform: translateX(-100%) translateY(-100%) rotate(45deg);
+          }
+          100% {
+            transform: translateX(100%) translateY(100%) rotate(45deg);
+          }
+        }
+
+        .gpr-placeholder i {
+          font-size: 52px;
+          color: #dc3545;
+          margin-bottom: 20px;
+          animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+          0%,
+          100% {
+            transform: scale(1);
+          }
+          50% {
+            transform: scale(1.1);
+          }
+        }
+
+        .gpr-placeholder p {
+          font-weight: 600;
+          margin-bottom: 8px;
+          position: relative;
+          z-index: 2;
+        }
+
+        .gpr-placeholder small {
+          position: relative;
+          z-index: 2;
+        }
+
+        .list-unstyled li {
+          padding: 12px 0;
+          border-bottom: 1px solid rgba(240, 240, 240, 0.8);
+          transition: all 0.3s ease;
+        }
+
+        .list-unstyled li:hover {
+          background: rgba(220, 53, 69, 0.05);
+          border-radius: 8px;
+          padding-left: 10px;
+          margin: 0 -10px;
+        }
+
+        .list-unstyled li:last-child {
+          border-bottom: none;
+        }
+
+        .form-check-input:checked {
+          background-color: #28a745;
+          border-color: #28a745;
+          animation: check-bounce 0.3s ease;
+        }
+
+        @keyframes check-bounce {
+          0% {
+            transform: scale(0.8);
+          }
+          50% {
+            transform: scale(1.2);
+          }
+          100% {
+            transform: scale(1);
+          }
+        }
+
+        .form-check-label {
+          font-size: 14px;
+          line-height: 1.5;
+          color: #495057;
+          transition: color 0.3s ease;
+        }
+
+        .list-unstyled li:hover .form-check-label {
+          color: #dc3545;
+        }
+
+        .btn-outline-primary {
+          border: 2px solid #dc3545;
+          color: #dc3545;
+          font-size: 14px;
+          font-weight: 600;
+          border-radius: 25px;
+          padding: 10px 20px;
+          transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+          position: relative;
+          overflow: hidden;
+        }
+
+        .btn-outline-primary::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: -100%;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(135deg, #dc3545, #ff6b35);
+          transition: left 0.4s ease;
+          z-index: -1;
+        }
+
+        /* Perbaikan untuk menghilangkan efek hover biru default dari Bootstrap */
+      .btn-outline-primary:hover {
+        background-color: transparent !important; /* Mencegah latar biru muncul */
+        color: white; /* Pastikan teks menjadi putih saat animasi merah berjalan */
+        border-color: #dc3545;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(220, 53, 69, 0.3);
+      }
+
+        .btn-outline-primary:hover::before {
+          left: 0;
+        }
+
+        /* Override untuk btn-primary agar menggunakan warna merah/oranye */
+        .btn-primary {
+            background-color: #f44336 !important;
+            border-color: #f44336 !important;
+        }
+
+        .btn-primary:hover {
+            background-color: #d32f2f !important;
+            border-color: #d32f2f !important;
+        }
+
+        .text-muted {
+          color: #6c757d !important;
+          font-size: 14px;
+          transition: color 0.3s ease;
+        }
+
+        .card:hover .text-muted {
+          color: #495057 !important;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+          .section-header {
+            flex-direction: column;
+            gap: 20px;
+            text-align: center;
+          }
+
+          .horizontal-card {
+            min-width: 280px;
+          }
+
+          .section-title {
+            font-size: 24px;
+          }
+        }
+
+        /* Loading animation */
+        .loading-shimmer {
+          background: linear-gradient(
+            90deg,
+            #f0f0f0 25%,
+            #e0e0e0 50%,
+            #f0f0f0 75%
+          );
+          background-size: 200% 100%;
+          animation: loading 1.5s infinite;
+        }
+
+        @keyframes loading {
+          0% {
+            background-position: 200% 0;
+          }
+          100% {
+            background-position: -200% 0;
+          }
+        }
+        
+        .year-stat-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .year-stat-card:hover {
+            transform: translateY(-3px);
+        }
+
+        .year-stat-card h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #f44336;
+            margin-bottom: 0.5rem;
+        }
+
+        .year-stat-card p {
+            font-size: 1rem;
+            color: #6c757d;
+            margin-bottom: 0;
+        }
+
+        .contact-info-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .contact-info-card:hover {
+            transform: translateY(-3px);
+        }
+
+        .contact-info-card i {
+            font-size: 2rem;
+            color: #198754;
+            margin-bottom: 1rem;
+        }
+
+        .contact-info-card h6 {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #212529;
+        }
+
+        .contact-info-card p {
+            color: #6c757d;
+            margin-bottom: 0;
+        }
+
+        .custom-div-icon {
+            background: transparent;
+            border: none;
+        }
+
+        .popup-content {
+            min-width: 200px;
+        }
+
+        .popup-content h6 {
+            margin-bottom: 0.5rem;
+            color: #212529;
+        }
+
+        .popup-content p {
+            margin-bottom: 0.25rem;
+            font-size: 0.9rem;
+            color: #6c757d;
+        }
+
+        .popup-content i {
+            margin-right: 0.5rem;
+            color: #198754;
+        }
+
+        #populationChart {
+            max-height: 300px !important;
+        }
+
+        h5.border-bottom {
+        border-color: rgba(255, 255, 255, 0.2); /* atau gunakan warna abu */
+        }
+
+        .banner-section {
+        font-size: 0.95rem;
+        }
+
+       /*====================================
+  News Section Styles
+====================================*/
+
+/* Custom Colors (add these to your main CSS variables if you have them) */
+:root {
+    --bs-dark-blue: #2c3e50; /* Darker blue for titles */
+    --bs-muted-dark: #6c757d; /* Slightly darker muted text */
+
+    --news-category-bg: #ffc107; /* Warna kuning dari Bootstrap warning */
+    --news-category-text: #343a40; /* Warna teks gelap */
+    --btn-readmore-border: #dc3545; /* Warna merah dari Bootstrap danger */
+    --btn-readmore-text: #dc3545; /* Warna teks merah */
+}
+
+/* Section Title & Subtitle */
+.section-title {
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+    position: relative;
+    padding-bottom: 15px;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--bs-dark-blue);
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: var(--bs-primary);
+    border-radius: 2px;
+}
+
+.section-subtitle {
+    font-size: 1.15rem;
+    color: var(--bs-muted-dark);
+    margin-bottom: 0;
+}
+
+/* News Card Styling */
+.news-card {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    background: #ffffff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.news-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* News Card Body (Text Content) - Mengatur lebar kolom teks */
+.news-card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 800px; /* Lebar maksimum untuk konten teks */
+    width: 100%;
+}
+
+/* News Category - PERUBAHAN UTAMA DI SINI */
+.news-category {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--news-category-text);
+    background-color: var(--news-category-bg);
+    display: inline-block;
+    /* --- PERUBAHAN DI SINI --- */
+    padding: 4px 12px; /* Meningkatkan padding horizontal untuk efek "pil" */
+    border-radius: 50px; /* Membuat sudut sangat membulat (bentuk pil) */
+    /* --- AKHIR PERUBAHAN --- */
+    margin-bottom: 10px;
+    font-weight: 700;
+    /* Untuk memastikan lebar hanya sesuai konten, jangan set width/max-width di sini */
+}
+
+
+/* News Title */
+.news-title {
+    font-size: 1.8rem;
+    line-height: 1.3;
+    color: var(--bs-dark-blue);
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+/* News Excerpt */
+.news-excerpt {
+    font-size: 1.05rem;
+    color: var(--bs-secondary);
+    line-height: 1.6;
+    margin-bottom: 20px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Read More Button */
+.news-card .btn-outline-primary {
+    border-color: var(--btn-readmore-border);
+    color: var(--btn-readmore-text);
+    border-width: 2px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    padding: 8px 25px;
+    font-size: 0.95rem;
+}
+
+.news-card .btn-outline-primary:hover {
+    background-color: var(--btn-readmore-border);
+    color: white;
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2);
+}
+
+/* "Lihat Semua Berita" Button */
+.btn-primary.btn-lg {
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary.btn-lg:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 123, 255, 0.35) !important;
+}
+
+/* Custom Text Colors */
+.text-dark-blue { color: var(--bs-dark-blue) !important; }
+.text-muted-dark { color: var(--bs-muted-dark) !important; }
+
+/* Animation for news cards */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInSlide 0.6s ease-out forwards;
+}
+
+@keyframes fadeInSlide {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Optional: Delay animation for each card for staggered effect */
+.news-card:nth-child(1) { animation-delay: 0.1s; }
+.news-card:nth-child(2) { animation-delay: 0.2s; }
+.news-card:nth-child(3) { animation-delay: 0.3s; }
+        /* Kelurahan Map Styles */
+        #kelurahanMap {
+            border-radius: 0 0 8px 8px;
+            z-index: 1;
+        }
+        
+        .map-controls {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .map-controls #locateMeBtn {
+            border-radius: 20px;
+            padding: 5px 10px;
+            font-size: 0.8rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        
+        .map-controls .btn-group-vertical button {
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        
+        .map-legend {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            max-width: 180px;
+        }
+        
+        .legend-color {
+            width: 16px;
+            height: 16px;
+            border-radius: 3px;
+        }
+        
+        .kelurahan-office-marker {
+            color: #dc3545;
+            font-size: 36px;
+            text-shadow: 0 0 10px rgba(255,255,255,0.9);
+            animation: pulse 2s infinite;
+        }
+        
+        .facility-marker {
+            font-size: 20px;
+            text-shadow: 0 0 5px rgba(255,255,255,0.8);
+        }
+        
+        .user-location-marker {
+            color: #f44336;
+            font-size: 20px;
+            text-shadow: 0 0 5px rgba(255,255,255,0.8);
+            animation: pulse 1.5s infinite;
+        }
+        
+        .kelurahan-popup {
+            min-width: 240px;
+        }
+        
+        .kelurahan-popup h5 {
+            font-size: 1.1rem;
+        }
+        
+        .facility-popup {
+            min-width: 180px;
+        }
+        
+        .facility-popup h6 {
+            font-size: 0.9rem;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            #peta-kelurahan .display-5 {
+                font-size: 2rem;
+            }
+            
+            #peta-kelurahan .lead {
+                font-size: 1rem;
+            }
+            
+            .map-controls {
+                top: 10px;
+                left: 10px;
+            }
+            
+            .map-controls button {
+                font-size: 0.7rem;
+            }
+            
+            .map-legend {
+                bottom: 10px;
+                right: 10px;
+                font-size: 0.8rem;
+                padding: 10px;
+            }
+        }
+
+        /* Custom Styles for Statistics Section */
+        .year-stat-card {
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+        }
+        
+        .year-stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+        }
+        
+        .stat-card {
+            transition: all 0.2s ease;
+        }
+        
+        .stat-card:hover {
+            background-color: #f8f9fa;
+            transform: translateY(-2px);
+        }
+        
+        #statistik .card {
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        
+        #statistik .card-header {
+            border-bottom: none;
+        }
+        
+        .progress {
+            border-radius: 10px;
+            background-color: #e9ecef;
+        }
+        
+        .progress-bar {
+            border-radius: 10px;
+        }
+        
+        @media (max-width: 768px) {
+            #statistik .display-5 {
+                font-size: 2rem;
+            }
+            
+            #statistik .lead {
+                font-size: 1rem;
+            }
+        }
+    </style>
+    
+    <script src="assets/js/nav.js"></script> 
+</body>
+</html>
+

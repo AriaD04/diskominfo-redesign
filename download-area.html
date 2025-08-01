@@ -1,0 +1,2741 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Download Area - Kelurahan Tanjungpinang Barat</title>
+    <meta
+      name="description"
+      content="Download dokumen dan formulir dari Kelurahan Tanjungpinang Barat"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap Icons -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <!-- Custom CSS -->
+    <style>
+      :root {
+        --primary: #d32f2f; /* DIUBAH MENJADI MERAH UTAMA */
+        --primary-light: #e53935; /* DIUBAH menjadi variasi merah terang */
+        --primary-dark: #b71c1c; /* DIUBAH menjadi variasi merah gelap */
+        --secondary: #64748b;
+        --success: #10b981;
+        --info: #06b6d4;
+        --warning: #f59e0b;
+        --danger: #ef4444;
+        --light: #f8fafc;
+        --dark: #1e293b;
+        --gray: #94a3b8;
+        --light-gray: #f1f5f9;
+        --font-primary: "Poppins", sans-serif;
+        --font-secondary: "Open Sans", sans-serif;
+        --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+        --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+        --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1);
+        --rounded-sm: 0.5rem;
+        --rounded-md: 0.75rem;
+        --rounded-lg: 1rem;
+        --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      /* GANTI SEMUA CSS LAMA untuk .nav-link DENGAN KODE BARU INI */
+
+      /* Tambahkan kode ini untuk efek gradasi emas pada teks */
+      /* Efek gradasi emas pada teks */
+      /* Bagian yang membuat teks memiliki latar belakang gradien */
+      .title-highlight {
+        background: linear-gradient(45deg, #ffc107, #fff, #ffc107);
+        background-size: 200% 200%;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        animation: gradient-text 3s ease infinite; /* Memanggil animasi */
+      }
+
+      /* --- KODE BARU UNTUK MENYERAGAMKAN TOMBOL BANTUAN --- */
+
+      /* 1. Mengatur Bentuk Dasar untuk Semua Tombol di Kartu Bantuan */
+      .help-card .btn {
+        border-width: 2px;
+        font-weight: 600;
+        border-radius: 50px; /* Membuat bentuk tombol menjadi kapsul/pil */
+        padding: 8px 20px; /* Menyesuaikan ukuran agar pas */
+        transition: all 0.4s ease;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+      }
+
+      /* 2. Menyiapkan Animasi Hover untuk Semua Tombol */
+      .help-card .btn::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        transition: left 0.4s ease;
+        z-index: -1;
+      }
+
+      .help-card .btn:hover {
+        color: white !important; /* Saat di-hover, teks menjadi putih */
+        transform: translateY(-2px);
+      }
+
+      .help-card .btn:hover::before {
+        left: 0; /* Memicu animasi latar belakang masuk */
+      }
+
+      /* 3. Atur Warna Spesifik untuk Tombol HIJAU (Hubungi) */
+      .help-card .btn-outline-success::before {
+        background: #198754; /* Latar hover hijau */
+      }
+      .help-card .btn-outline-success:hover {
+        box-shadow: 0 8px 20px rgba(25, 135, 84, 0.3); /* Bayangan hijau */
+      }
+
+      /* 4. Atur Warna Spesifik untuk Tombol KUNING (Info Lengkap) */
+      .help-card .btn-outline-warning::before {
+        background: #ffc107; /* Latar hover kuning */
+      }
+      .help-card .btn-outline-warning:hover {
+        color: #212529 !important; /* Teks kuning butuh warna gelap agar terbaca */
+        box-shadow: 0 8px 20px rgba(255, 193, 7, 0.3); /* Bayangan kuning */
+      }
+
+      /* 5. Menyesuaikan Tombol MERAH (Email Kami) agar konsisten */
+      .help-card .btn-outline-primary::before {
+        background: var(--primary); /* Latar hover merah */
+      }
+      .help-card .btn-outline-primary:hover {
+        box-shadow: 0 8px 20px rgba(220, 53, 69, 0.3); /* Bayangan merah */
+      }
+
+      /* --- KODE BARU UNTUK MENYERAGAMKAN TOMBOL QUICK LINKS --- */
+
+      /* 1. Mengatur Bentuk Dasar untuk Semua Tombol di Kartu Quick Links */
+      .quick-link-card .btn {
+        border-width: 2px;
+        font-weight: 600;
+        border-radius: 50px; /* Membuat bentuk tombol menjadi kapsul/pil */
+        padding: 6px 18px; /* Menyesuaikan ukuran agar pas */
+        transition: all 0.4s ease;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+      }
+
+      /* 2. Menyiapkan Animasi Hover untuk Semua Tombol */
+      .quick-link-card .btn::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        transition: left 0.4s ease;
+        z-index: -1;
+      }
+
+      .quick-link-card .btn:hover {
+        color: white !important; /* Saat di-hover, teks menjadi putih */
+        transform: translateY(-2px);
+      }
+
+      .quick-link-card .btn:hover::before {
+        left: 0; /* Memicu animasi latar belakang masuk */
+      }
+
+      /* 3. Atur Warna Spesifik untuk Tombol MERAH */
+      .quick-link-card .btn-outline-primary::before {
+        background: var(--primary); /* Latar hover merah */
+      }
+      .quick-link-card .btn-outline-primary:hover {
+        box-shadow: 0 8px 20px rgba(220, 53, 69, 0.3); /* Bayangan merah */
+      }
+
+      /* 4. Atur Warna Spesifik untuk Tombol HIJAU */
+      .quick-link-card .btn-outline-success::before {
+        background: #198754; /* Latar hover hijau */
+      }
+      .quick-link-card .btn-outline-success:hover {
+        box-shadow: 0 8px 20px rgba(25, 135, 84, 0.3); /* Bayangan hijau */
+      }
+
+      /* 5. Atur Warna Spesifik untuk Tombol BIRU MUDA */
+      .quick-link-card .btn-outline-info::before {
+        background: #0dcaf0; /* Latar hover biru muda */
+      }
+      .quick-link-card .btn-outline-info:hover {
+        box-shadow: 0 8px 20px rgba(13, 202, 240, 0.3); /* Bayangan biru muda */
+      }
+      /* Bagian "Fungsi" atau animasi yang membuatnya bergerak */
+      @keyframes gradient-text {
+        0%,
+        100% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+      }
+
+      /* body {
+        font-family: var(--font-secondary);
+        color: var(--dark);
+        line-height: 1.6;
+        background-color: #f8fafc;
+        overflow-x: hidden;
+      } */
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      .header-title,
+      .section-title {
+        font-family: var(--font-primary);
+        font-weight: 600;
+        color: white; /* <-- UBAH MENJADI SEPERTI INI */
+      }
+
+      a {
+        text-decoration: none;
+        transition: var(--transition);
+      }
+
+      /* Hero Section */
+      .hero-section {
+        position: relative;
+        padding: 120px 0 80px;
+        background: var(
+          --gradient-primary
+        ); /* Menggunakan gradien merah dari root */
+        color: white;
+        overflow: hidden;
+        margin-bottom: 2rem;
+      }
+
+      .hero-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(
+          0,
+          0,
+          0,
+          0.2
+        ); /* Slightly lighter overlay for better contrast */
+        z-index: 1;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 2;
+      }
+
+      .hero-badge {
+        display: inline-block;
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(5px);
+        color: white;
+        padding: 0.5rem 1.25rem;
+        border-radius: 50px;
+        font-size: 0.9rem;
+        margin-bottom: 1.5rem;
+        font-weight: 500;
+      }
+
+      .hero-title {
+        font-size: 2.75rem;
+        font-weight: 700;
+        line-height: 1.2;
+        margin-bottom: 1.5rem;
+        color: white; /* <-- TAMBAHKAN KEMBALI BARIS INI */
+      }
+
+      /* GANTI KODE LAMA DENGAN INI UNTUK EFEK HIGHLIGHT KUNING */
+
+      .title-highlight {
+        color: #ffc107;
+        position: relative;
+        display: inline-block;
+      }
+
+      .title-highlight:after {
+        content: "";
+        position: absolute;
+        bottom: 5px;
+        left: 0;
+        width: 100%;
+        height: 10px;
+        z-index: -1;
+        border-radius: 3px;
+      }
+
+      .hero-subtitle {
+        font-size: 1.25rem;
+        opacity: 0.9;
+        max-width: 700px;
+        margin: 0 auto 2rem;
+      }
+
+      .hero-actions {
+        gap: 1rem;
+        margin-bottom: 3rem;
+      }
+
+      .hero-wave {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        overflow: hidden;
+        line-height: 0;
+        transform: rotate(180deg);
+      }
+
+      .hero-wave svg {
+        position: relative;
+        display: block;
+        width: calc(100% + 1.3px);
+        height: 120px;
+      }
+
+      .hero-wave .shape-fill {
+        fill: #f8fafc;
+      }
+
+      /* Breadcrumb */
+      .breadcrumb-custom {
+        background: transparent;
+        padding: 0;
+        justify-content: center;
+      }
+
+      .breadcrumb-custom .breadcrumb-item a {
+        color: rgba(255, 255, 255, 0.9);
+        display: flex;
+        align-items: center;
+      }
+
+      .breadcrumb-custom .breadcrumb-item.active {
+        color: white;
+      }
+
+      .breadcrumb-custom .breadcrumb-item + .breadcrumb-item::before {
+        color: rgba(255, 255, 255, 0.7);
+      }
+
+      /* Search & Filter */
+      .search-filter-section {
+        background-color: white;
+        padding: 1.5rem 0;
+        box-shadow: var(--shadow-sm);
+        position: relative;
+        z-index: 10;
+      }
+
+      .search-box {
+        position: relative;
+      }
+
+      .search-box .input-group-text {
+        background-color: white;
+        border-right: none;
+        border-radius: var(--rounded-sm) 0 0 var(--rounded-sm);
+        padding-left: 1.25rem;
+      }
+
+      .search-box .form-control {
+        border-left: none;
+        border-radius: 0 var(--rounded-sm) var(--rounded-sm) 0;
+        padding-left: 0;
+      }
+
+      .search-box .btn {
+        border-radius: var(--rounded-sm);
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+        font-weight: 500;
+      }
+
+      .filter-box .form-select {
+        border-radius: var(--rounded-sm);
+        padding-left: 1rem;
+        font-weight: 500;
+      }
+
+      /* Stats Section */
+      .stats-section {
+        padding: 3rem 0;
+        background-color: white;
+      }
+
+      .stat-card {
+        background: white;
+        border-radius: var(--rounded-md);
+        padding: 1.5rem;
+        height: 100%;
+        text-align: center;
+        transition: var(--transition);
+        border: 1px solid #e2e8f0;
+      }
+
+      .stat-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-lg);
+      }
+
+      .stat-icon {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        margin: 0 auto 1.25rem;
+      }
+
+      .stat-number {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+        color: var(--dark);
+      }
+
+      .stat-label {
+        color: var(--secondary);
+        font-size: 0.9rem;
+        margin-bottom: 0;
+      }
+
+      /* Documents Section */
+      .documents-section {
+        padding: 4rem 0;
+      }
+
+      .section-header {
+        margin-bottom: 2rem;
+      }
+
+      .section-title {
+        position: relative;
+        padding-bottom: 1rem;
+        margin-bottom: 1rem;
+        font-size: 1.75rem;
+      }
+
+      .section-title::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: var(--primary);
+        border-radius: 2px;
+      }
+
+      .section-subtitle {
+        color: var(--secondary);
+        font-size: 1rem;
+      }
+
+      /* Category Tabs */
+      .category-tabs {
+        overflow-x: auto;
+        white-space: nowrap;
+        padding-bottom: 0.5rem;
+        margin-bottom: 2rem;
+      }
+
+      .category-tabs .nav-pills {
+        flex-wrap: nowrap;
+      }
+
+      .category-tabs .nav-link {
+        border-radius: 50px;
+        padding: 0.5rem 1.25rem;
+        margin-right: 0.5rem;
+        color: var(--secondary);
+        font-weight: 500;
+        border: 1px solid #e2e8f0;
+        background: white;
+        transition: var(--transition);
+      }
+
+      .category-tabs .nav-link:hover {
+        border-color: var(--primary);
+        color: var(--primary);
+      }
+
+      .category-tabs .nav-link.active {
+        background: var(--primary);
+        color: white;
+        border-color: var(--primary);
+      }
+
+      /* View Toggle */
+      .view-toggle .btn {
+        border-radius: 0;
+        font-weight: 500;
+      }
+
+      .view-toggle .btn:first-child {
+        border-top-left-radius: var(--rounded-sm);
+        border-bottom-left-radius: var(--rounded-sm);
+      }
+
+      .view-toggle .btn:last-child {
+        border-top-right-radius: var(--rounded-sm);
+        border-bottom-right-radius: var(--rounded-sm);
+      }
+
+      .view-toggle .btn.active {
+        background-color: var(--primary);
+        border-color: var(--primary);
+        color: white;
+      }
+
+      /* Document Card */
+      .document-card {
+        background: white;
+        border-radius: var(--rounded-md);
+        padding: 1.5rem;
+        box-shadow: var(--shadow-sm);
+        transition: var(--transition);
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+        border: 1px solid #e2e8f0;
+      }
+
+      .document-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-lg);
+        border-color: var(--primary-light);
+      }
+
+      /* 1. Mengatur kartu utama (wadah) */
+      .document-card {
+        background: white;
+        border-radius: var(--rounded-md);
+        padding: 1.5rem;
+        box-shadow: var(--shadow-sm);
+        transition: var(--transition);
+        height: 100%; /* Penting agar flexbox di dalam bisa mengisi tinggi kartu */
+        border: 1px solid #e2e8f0;
+
+        /* Jadikan kartu sebagai flex container vertikal */
+        display: flex;
+        flex-direction: column;
+      }
+
+      .document-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-lg);
+      }
+
+      /* Menghilangkan animasi garis atas yang tidak Anda inginkan */
+      .document-card::before {
+        display: none;
+      }
+
+      /* 2. Mengatur icon dan jenis file di bagian atas */
+      .document-icon {
+        position: relative;
+        width: 80px;
+        height: 80px;
+        margin: 0 auto 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .document-icon i {
+        font-size: 2.5rem;
+      }
+
+      .document-badge {
+        position: absolute;
+        top: 0;
+        right: 0;
+        background: var(--primary);
+        color: white;
+        padding: 0.25rem 0.75rem;
+        border-radius: 50px;
+        font-size: 0.7rem;
+        font-weight: 600;
+      }
+
+      /* Mengatur kontainer konten utama */
+      .document-content {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        text-align: center;
+      }
+
+      /* Deskripsi file */
+      .document-content p {
+        font-size: 0.9rem;
+        color: var(--secondary);
+        margin-bottom: 1.5rem;
+        flex-grow: 1; /* KUNCI UTAMA: Biarkan deskripsi mengisi semua ruang kosong yang tersedia */
+      }
+
+      /* Meta: Ukuran file & Tanggal (berdampingan) */
+      .document-meta {
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+        font-size: 0.85rem;
+        color: var(--secondary);
+        margin-bottom: 0.5rem;
+      }
+
+      /* Stats: Jumlah download */
+      .document-stats {
+        font-size: 0.85rem;
+        color: var(--secondary);
+        margin-bottom: 1.5rem;
+      }
+
+      /* Actions: Tombol Preview & Unduh */
+      .document-actions {
+        display: flex;
+        justify-content: center;
+        gap: 0.75rem;
+      }
+
+      /* Document Table */
+      .document-table {
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 0;
+      }
+
+      .document-table thead th {
+        background-color: var(--primary);
+        color: white;
+        padding: 1rem;
+        font-weight: 500;
+        border: none;
+      }
+
+      .document-table thead th:first-child {
+        border-top-left-radius: var(--rounded-md);
+      }
+
+      .document-table thead th:last-child {
+        border-top-right-radius: var(--rounded-md);
+      }
+
+      .document-table tbody tr {
+        background-color: white;
+        transition: var(--transition);
+      }
+
+      .document-table tbody tr:hover {
+        background-color: #f8fafc;
+      }
+
+      .document-table tbody td {
+        padding: 1rem;
+        vertical-align: middle;
+        border-bottom: 1px solid #e2e8f0;
+      }
+
+      .document-table tbody tr:last-child td {
+        border-bottom: none;
+      }
+
+      .table-document-name {
+        display: flex;
+        align-items: center;
+      }
+
+      .table-document-icon {
+        width: 40px;
+        height: 40px;
+        background-color: #f1f5f9;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 1rem;
+        color: var(--primary);
+      }
+
+      .table-document-info h6 {
+        margin-bottom: 0.25rem;
+        font-weight: 500;
+      }
+
+      .table-document-info small {
+        color: var(--secondary);
+        font-size: 0.8rem;
+      }
+
+      .table-badge {
+        display: inline-block;
+        padding: 0.25rem 0.75rem;
+        border-radius: 50px;
+        font-size: 0.75rem;
+        font-weight: 500;
+      }
+
+      .table-actions {
+        display: flex;
+        gap: 0.5rem;
+      }
+
+      .table-actions .btn {
+        padding: 0.35rem 0.5rem;
+        font-size: 0.8rem;
+      }
+
+      /* Pagination */
+      .pagination-custom .page-item .page-link {
+        border-radius: var(--rounded-sm);
+        margin: 0 0.25rem;
+        color: var(--dark);
+        font-weight: 500;
+        border: 1px solid #e2e8f0;
+      }
+
+      .pagination-custom .page-item.active .page-link {
+        background-color: var(--primary);
+        border-color: var(--primary);
+        color: white;
+      }
+
+      .pagination-custom .page-item.disabled .page-link {
+        color: var(--gray);
+      }
+
+      /* Help Section */
+      .help-section {
+        padding: 4rem 0;
+        background-color: #f1f5f9;
+      }
+
+      /* PERBAIKAN DESAIN KARTU BANTUAN */
+
+      .help-card {
+        background: white;
+        border-radius: var(--rounded-md);
+        padding: 2rem; /* Tambah padding agar lebih lega */
+        height: 100%;
+        text-align: center;
+        transition: var(--transition);
+        border: 1px solid #e2e8f0;
+
+        /* Jadikan kartu sebagai flex container vertikal */
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Pusatkan semua item secara horizontal */
+      }
+
+      .help-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-md);
+      }
+
+      .help-icon {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        margin: 0 auto 1.25rem;
+      }
+
+      .help-card h5 {
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        color: var(--dark); /* Pastikan warna teks gelap */
+      }
+
+      .help-card p {
+        color: var(--secondary);
+        margin-bottom: 1rem;
+        font-size: 0.9rem;
+        flex-grow: 1; /* KUNCI: Mendorong tombol ke bawah agar posisinya sama */
+      }
+
+      .help-card .btn {
+        font-size: 0.85rem;
+        font-weight: 500;
+        padding: 0.6rem 1.5rem; /* Buat tombol sedikit lebih besar */
+      }
+
+      /* Quick Links */
+      .quick-links-section {
+        padding: 4rem 0;
+        background-color: white;
+      }
+
+      /* PERBAIKAN UNTUK KARTU QUICK LINKS AGAR SIMETRIS */
+
+      .quick-link-card {
+        background: white;
+        border-radius: var(--rounded-md);
+        padding: 1.5rem;
+        height: 100%;
+        transition: var(--transition);
+        border: 1px solid #e2e8f0;
+        display: flex; /* 1. Jadikan kartu sebagai flex container */
+        align-items: center;
+      }
+
+      .quick-link-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-md);
+        border-color: var(--primary-light);
+      }
+
+      .quick-link-icon {
+        width: 60px;
+        height: 60px;
+        border-radius: var(--rounded-sm);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        color: white;
+        margin-right: 1.5rem;
+        flex-shrink: 0;
+      }
+
+      /* KUNCI PERBAIKAN ADA DI SINI */
+      .quick-link-content {
+        display: flex; /* 2. Jadikan kontainer konten sebagai flex container vertikal */
+        flex-direction: column;
+        height: 100%; /* 3. Pastikan tingginya 100% dari kartu */
+      }
+
+      .quick-link-content h5 {
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+      }
+
+      .quick-link-content p {
+        font-size: 0.9rem;
+        color: var(--secondary);
+        margin-bottom: 1rem;
+        flex-grow: 1; /* 4. Biarkan deskripsi mengisi ruang kosong yang tersedia */
+      }
+
+      .quick-link-content .btn {
+        font-size: 0.85rem;
+        font-weight: 500;
+        padding: 0.35rem 0.75rem;
+        align-self: flex-start; /* 5. Posisikan tombol di awal (kiri) kontainer */
+      }
+
+      /* Footer */
+      footer {
+        background: linear-gradient(
+          135deg,
+          #1a1a2e 0%,
+          #16213e 50%,
+          #0f3460 100%
+        );
+        position: relative;
+        overflow: hidden;
+      }
+
+      footer::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, #ffc107, transparent);
+        animation: shimmer 3s ease-in-out infinite;
+      }
+
+      @keyframes shimmer {
+        0%,
+        100% {
+          opacity: 0.3;
+        }
+        50% {
+          opacity: 1;
+        }
+      }
+
+      .footer-brand {
+        position: relative;
+        z-index: 2;
+      }
+
+      .footer-brand img {
+        filter: brightness(0) invert(1);
+        transition: var(--transition);
+        animation: float 3s ease-in-out infinite;
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-5px);
+        }
+      }
+
+      .footer-brand:hover img {
+        transform: scale(1.1) rotate(5deg);
+      }
+
+      .footer-brand h5 {
+        background: linear-gradient(45deg, #ffc107, #fff, #ffc107);
+        background-size: 200% 200%;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        animation: gradient-text 3s ease infinite;
+        font-weight: 700;
+        margin-bottom: 1rem;
+      }
+
+      @keyframes gradient-text {
+        0%,
+        100% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+      }
+
+      .footer-links {
+        list-style: none;
+        padding: 0;
+      }
+
+      .footer-links li {
+        margin-bottom: 0.75rem;
+        transform: translateX(-10px);
+        opacity: 0;
+        animation: slideInLeft 0.6s ease forwards;
+      }
+
+      .footer-links li:nth-child(1) {
+        animation-delay: 0.1s;
+      }
+      .footer-links li:nth-child(2) {
+        animation-delay: 0.2s;
+      }
+      .footer-links li:nth-child(3) {
+        animation-delay: 0.3s;
+      }
+      .footer-links li:nth-child(4) {
+        animation-delay: 0.4s;
+      }
+      .footer-links li:nth-child(5) {
+        animation-delay: 0.5s;
+      }
+      .footer-links li:nth-child(6) {
+        animation-delay: 0.6s;
+      }
+
+      @keyframes slideInLeft {
+        to {
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
+
+      .footer-links a {
+        color: rgba(255, 255, 255, 0.8);
+        text-decoration: none;
+        transition: var(--transition);
+        position: relative;
+        display: inline-block;
+        padding: 0.25rem 0;
+      }
+
+      .footer-links a::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: linear-gradient(90deg, #ffc107, #fff);
+        transition: width 0.3s ease;
+      }
+
+      .footer-links a:hover {
+        color: #ffc107;
+        transform: translateX(5px);
+      }
+
+      .footer-links a:hover::before {
+        width: 100%;
+      }
+
+      /* Back to Top Button */
+      .btn-back-to-top {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 999;
+        opacity: 0;
+        visibility: hidden;
+        transition: var(--transition);
+        background-color: var(--primary);
+        color: white;
+        box-shadow: var(--shadow-md);
+        border: none;
+      }
+
+      .btn-back-to-top:hover {
+        background-color: var(--primary-dark);
+        transform: translateY(-3px);
+      }
+
+      .btn-back-to-top.show {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      /* Floating Action Button */
+      .fab-container {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        z-index: 999;
+      }
+
+      .fab {
+        width: 60px;
+        height: 60px;
+        background: var(--primary-color);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 1.5rem;
+        box-shadow: 0 5px 20px rgba(13, 110, 253, 0.3);
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .fab:hover {
+        background-color: var(--primary-dark);
+        transform: scale(1.1);
+      }
+
+      .fab-main {
+        position: relative;
+        z-index: 2;
+      }
+
+      .fab-options {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        position: absolute;
+        bottom: 70px;
+        right: 0;
+        opacity: 0;
+        visibility: hidden;
+        transition: var(--transition);
+      }
+
+      .fab-options.show {
+        opacity: 1;
+        visibility: visible;
+        bottom: 80px;
+      }
+
+      .fab-option {
+        width: 48px;
+        height: 48px;
+        background: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 12px;
+        color: var(--dark);
+        box-shadow: var(--shadow-sm);
+        transition: var(--transition);
+        position: relative;
+        border: none;
+      }
+
+      .fab-option:hover {
+        transform: translateY(-3px) scale(1.1);
+        color: var(--primary);
+      }
+
+      .fab-option[data-tooltip]:hover::after {
+        content: attr(data-tooltip);
+        position: absolute;
+        right: 60px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: var(--dark);
+        color: white;
+        padding: 6px 12px;
+        border-radius: var(--rounded-sm);
+        font-size: 0.8rem;
+        white-space: nowrap;
+        font-weight: 500;
+      }
+
+      .fab-option[data-tooltip]:hover::before {
+        content: "";
+        position: absolute;
+        right: 55px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 0;
+        height: 0;
+        border-top: 6px solid transparent;
+        border-bottom: 6px solid transparent;
+        border-left: 6px solid var(--dark);
+      }
+
+      .rotate {
+        transform: rotate(45deg);
+      }
+
+      /* Preview Modal */
+      .preview-modal .modal-content {
+        border-radius: var(--rounded-lg);
+        overflow: hidden;
+        border: none;
+      }
+
+      /* Tambahkan kode ini untuk mengubah warna judul di popup */
+      .preview-modal .modal-title {
+        color: white;
+      }
+
+      .preview-modal .modal-header {
+        background-color: var(--primary);
+        color: white;
+        border-bottom: none;
+      }
+
+      .preview-modal .btn-close {
+        filter: brightness(0) invert(1);
+        opacity: 0.8;
+      }
+
+      .preview-modal .modal-body {
+        padding: 2rem;
+      }
+
+      .document-preview-icon {
+        position: relative;
+        width: 120px;
+        height: 120px;
+        margin: 0 auto 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .document-preview-icon i {
+        font-size: 4rem;
+      }
+
+      .document-format-badge {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        background: var(--danger);
+        color: white;
+        padding: 0.25rem 0.75rem;
+        border-radius: 50px;
+        font-size: 0.75rem;
+        font-weight: 600;
+      }
+
+      .document-info-card {
+        background: var(--light-gray);
+        border-radius: var(--rounded-md);
+        padding: 1.5rem;
+        margin-top: 1.5rem;
+      }
+
+      /* PERBAIKAN TATA LETAK SIMETRIS DI DALAM PREVIEW MODAL */
+
+      /* Mengatur setiap baris informasi (icon + konten) */
+      .info-item {
+        display: flex;
+        align-items: center; /* Membuat icon dan blok teks sejajar secara vertikal */
+        margin-bottom: 1rem;
+      }
+
+      .info-item:last-child {
+        margin-bottom: 0;
+      }
+
+      /* Mengatur lingkaran icon di sebelah kiri */
+      .info-item i {
+        width: 40px;
+        height: 40px;
+        background-color: rgba(37, 99, 235, 0.1);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.25rem;
+        margin-right: 1rem;
+        color: var(--primary);
+        flex-shrink: 0; /* Mencegah icon mengecil jika teks terlalu panjang */
+      }
+
+      /* KUNCI PERBAIKAN: Mengatur kontainer teks (Label dan Nilai) */
+      .info-item-content {
+        display: flex; /* 1. Jadikan flex container */
+        justify-content: space-between; /* 2. Mendorong label ke kiri dan nilai ke kanan */
+        align-items: center; /* 3. Menyejajarkan keduanya secara vertikal */
+        width: 100%; /* 4. Memastikan kontainer mengisi sisa ruang */
+      }
+
+      /* Mengatur teks label (misal: "Ukuran") */
+      .info-item-content small {
+        color: var(--secondary);
+        font-size: 0.9rem; /* Sedikit memperbesar teks agar mudah dibaca */
+        text-align: left; /* Pastikan teks label rata kiri */
+      }
+
+      /* Mengatur teks nilai (misal: "198 KB") */
+      .info-item-content h6 {
+        margin-bottom: 0;
+        font-size: 1rem;
+        font-weight: 600; /* Membuat nilai lebih tebal dan menonjol */
+        text-align: right; /* Pastikan teks nilai rata kanan */
+      }
+
+      .preview-modal .modal-footer {
+        border-top: none;
+        background-color: #f8fafc;
+      }
+
+      /* Animations */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .fade-in {
+        animation: fadeIn 0.6s ease forwards;
+      }
+
+      /* Responsive Adjustments */
+      @media (max-width: 1199.98px) {
+        .hero-title {
+          font-size: 2.5rem;
+        }
+
+        .hero-subtitle {
+          font-size: 1.1rem;
+        }
+      }
+
+      @media (max-width: 991.98px) {
+        .navbar-collapse {
+          padding: 1rem;
+          background-color: var(--primary-dark);
+          border-radius: var(--rounded-sm);
+          margin-top: 1rem;
+        }
+
+        .nav-link {
+          padding: 0.5rem 0 !important;
+          border-radius: 0 !important;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .hero-section {
+          padding: 6rem 0 4rem;
+        }
+
+        .hero-title {
+          font-size: 2.25rem;
+        }
+
+        .section-title {
+          font-size: 1.5rem;
+        }
+
+        .quick-link-card {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .quick-link-icon {
+          margin-right: 0;
+          margin-bottom: 1rem;
+        }
+
+        .footer-menu {
+          margin-bottom: 2rem;
+        }
+      }
+
+      @media (max-width: 767.98px) {
+        .hero-section {
+          padding: 5rem 0 3rem;
+        }
+
+        .hero-title {
+          font-size: 2rem;
+        }
+
+        .hero-badge {
+          font-size: 0.8rem;
+        }
+
+        .hero-actions {
+          flex-direction: column;
+          gap: 0.75rem;
+        }
+
+        .hero-actions .btn {
+          width: 100%;
+        }
+
+        .search-filter-section .row > div {
+          margin-bottom: 1rem;
+        }
+
+        .search-filter-section .row > div:last-child {
+          margin-bottom: 0;
+        }
+
+        .document-actions {
+          flex-direction: column;
+          gap: 0.5rem;
+        }
+
+        .document-actions .btn {
+          width: 100%;
+        }
+
+        .footer {
+          padding: 3rem 0 1.5rem;
+        }
+      }
+
+      @media (max-width: 575.98px) {
+        .hero-title {
+          font-size: 1.75rem;
+        }
+
+        .hero-subtitle {
+          font-size: 1rem;
+        }
+
+        .section-title {
+          font-size: 1.35rem;
+        }
+
+        .document-card {
+          margin-bottom: 1.5rem;
+        }
+
+        .document-card:last-child {
+          margin-bottom: 0;
+        }
+
+        .preview-modal .modal-body {
+          padding: 1.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <header id="navbar-placeholder"></header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="hero-overlay"></div>
+      <div class="container">
+        <div class="row align-items-center min-vh-60">
+          <div class="col-lg-8 mx-auto text-center">
+            <div class="hero-content" data-aos="fade-up">
+              <div class="hero-badge">
+                <i class="bi bi-download me-2"></i>
+                <span>Area Unduhan</span>
+              </div>
+              <h1 class="header-title mb-3">
+                <span class="title-highlight">Download</span> Dokumen
+              </h1>
+              <p class="hero-subtitle">
+                Temukan dan unduh formulir, dokumen, dan berkas penting dari
+                Kelurahan Tanjungpinang Barat
+              </p>
+              <div class="d-flex justify-content-center hero-actions">
+                <a href="#documents-section" class="btn btn-light btn-lg px-4">
+                  <i class="bi bi-arrow-down me-2"></i>Lihat Dokumen
+                </a>
+                <a
+                  href="#help-section"
+                  class="btn btn-outline-light btn-lg px-4"
+                >
+                  <i class="bi bi-question-circle me-2"></i>Bantuan
+                </a>
+              </div>
+              <nav aria-label="breadcrumb" class="mt-4">
+                <ol class="breadcrumb breadcrumb-custom justify-content-center">
+                  <li class="breadcrumb-item">
+                    <a href="index.html">
+                      <i class="bi bi-house-door me-1"></i>Beranda
+                    </a>
+                  </li>
+                  <li class="breadcrumb-item active" aria-current="page">
+                    Download Area
+                  </li>
+                </ol>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-wave">
+        <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <path
+            d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"
+            opacity=".25"
+            class="shape-fill"
+          ></path>
+          <path
+            d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z"
+            opacity=".5"
+            class="shape-fill"
+          ></path>
+          <path
+            d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z"
+            class="shape-fill"
+          ></path>
+        </svg>
+      </div>
+    </section>
+
+    <!-- Search and Filter Section -->
+    <section
+      class="search-filter-section"
+      data-aos="fade-up"
+      id="documents-section"
+    >
+      <div class="container">
+        <div class="row g-3">
+          <div class="col-lg-6">
+            <div class="search-box">
+              <div class="input-group">
+                <span class="input-group-text">
+                  <i class="bi bi-search text-muted"></i>
+                </span>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="searchInput"
+                  placeholder="Cari dokumen..."
+                />
+                <button class="btn btn-primary" type="button" id="searchBtn">
+                  <i class="bi bi-search me-1"></i> Cari
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="filter-box">
+              <select class="form-select" id="categoryFilter">
+                <option value="">Semua Kategori</option>
+                <option value="formulir">Formulir</option>
+                <option value="surat">Surat Keterangan</option>
+                <option value="peraturan">Peraturan</option>
+                <option value="panduan">Panduan</option>
+                <option value="laporan">Laporan</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="filter-box">
+              <select class="form-select" id="sortFilter">
+                <option value="newest">Terbaru</option>
+                <option value="oldest">Terlama</option>
+                <option value="name">Nama A-Z</option>
+                <option value="popular">Paling Populer</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="stats-section">
+      <div class="container">
+        <div class="row g-4 text-center">
+          <div
+            class="col-lg-3 col-md-6"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="stat-card">
+              <div class="stat-icon bg-danger bg-opacity-10 text-danger">
+                <i class="bi bi-file-earmark-pdf"></i>
+              </div>
+              <h3 class="stat-number" data-count="24">0</h3>
+              <p class="stat-label">Total Dokumen</p>
+            </div>
+          </div>
+          <div
+            class="col-lg-3 col-md-6"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="stat-card">
+              <div class="stat-icon bg-success bg-opacity-10 text-success">
+                <i class="bi bi-download"></i>
+              </div>
+              <h3 class="stat-number" data-count="1247">0</h3>
+              <p class="stat-label">Total Download</p>
+            </div>
+          </div>
+          <div
+            class="col-lg-3 col-md-6"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <div class="stat-card">
+              <div class="stat-icon bg-primary bg-opacity-10 text-primary">
+                <i class="bi bi-calendar-plus"></i>
+              </div>
+              <h3 class="stat-number" data-count="8">0</h3>
+              <p class="stat-label">Dokumen Bulan Ini</p>
+            </div>
+          </div>
+          <div
+            class="col-lg-3 col-md-6"
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
+            <div class="stat-card">
+              <div class="stat-icon bg-warning bg-opacity-10 text-warning">
+                <i class="bi bi-star"></i>
+              </div>
+              <h3 class="stat-number" data-count="156">0</h3>
+              <p class="stat-label">Download Terpopuler</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Documents Grid Section -->
+    <section class="documents-section">
+      <div class="container">
+        <div class="section-header">
+          <div class="d-flex justify-content-between align-items-center w-100">
+            <div>
+              <h2 class="section-title">
+                <i class="bi bi-file-earmark-text text-primary me-2"></i>
+                Daftar Dokumen
+              </h2>
+            </div>
+
+            <div class="view-toggle btn-group" role="group">
+              <button class="btn btn-outline-secondary active" id="gridView">
+                <i class="bi bi-grid-3x3-gap"></i> Grid
+              </button>
+              <button class="btn btn-outline-secondary" id="listView">
+                <i class="bi bi-list"></i> List
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category Tabs -->
+        <div class="category-tabs">
+          <div class="nav nav-pills" id="category-tab" role="tablist">
+            <button
+              class="nav-link active"
+              id="all-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#all"
+              type="button"
+            >
+              Semua
+            </button>
+            <button
+              class="nav-link"
+              id="formulir-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#formulir"
+              type="button"
+            >
+              Formulir
+            </button>
+            <button
+              class="nav-link"
+              id="surat-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#surat"
+              type="button"
+            >
+              Surat
+            </button>
+            <button
+              class="nav-link"
+              id="peraturan-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#peraturan"
+              type="button"
+            >
+              Peraturan
+            </button>
+            <button
+              class="nav-link"
+              id="panduan-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#panduan"
+              type="button"
+            >
+              Panduan
+            </button>
+            <button
+              class="nav-link"
+              id="laporan-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#laporan"
+              type="button"
+            >
+              Laporan
+            </button>
+          </div>
+        </div>
+
+        <!-- Grid View -->
+        <div class="row g-4" id="documentsGrid">
+          <!-- Documents will be populated by JavaScript -->
+        </div>
+
+        <!-- List View -->
+        <div class="d-none" id="documentsList">
+          <div class="table-responsive">
+            <table class="document-table">
+              <thead>
+                <tr>
+                  <th width="40%">Nama Dokumen</th>
+                  <th width="15%">Kategori</th>
+                  <th width="10%">Ukuran</th>
+                  <th width="15%">Tanggal Upload</th>
+                  <th width="10%">Download</th>
+                  <th width="10%">Aksi</th>
+                </tr>
+              </thead>
+              <tbody id="documentsTableBody">
+                <!-- Table rows will be populated by JavaScript -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Pagination -->
+        <div class="row mt-5">
+          <div class="col-12">
+            <nav aria-label="Documents pagination">
+              <ul
+                class="pagination pagination-custom justify-content-center"
+                id="pagination"
+              >
+                <!-- Pagination will be populated by JavaScript -->
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Help Section -->
+    <section class="help-section" id="help-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto text-center">
+            <div class="section-header mb-5">
+              <h2 class="section-title">
+                <i class="bi bi-question-circle text-primary me-2"></i>
+                Butuh Bantuan?
+              </h2>
+              <p class="section-subtitle">
+                Jika Anda mengalami kesulitan dalam mengunduh dokumen atau
+                membutuhkan bantuan lainnya, silakan hubungi kami.
+              </p>
+            </div>
+            <div class="row g-4">
+              <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="help-card">
+                  <div class="help-icon bg-success bg-opacity-10 text-success">
+                    <i class="bi bi-telephone-fill"></i>
+                  </div>
+                  <h5>Telepon</h5>
+                  <p class="text-muted">(0771) 123456</p>
+                  <a
+                    href="tel:0771123456"
+                    class="btn btn-outline-success btn-sm"
+                  >
+                    <i class="bi bi-telephone me-1"></i> Hubungi
+                  </a>
+                </div>
+              </div>
+              <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="help-card">
+                  <div class="help-icon bg-primary bg-opacity-10 text-primary">
+                    <i class="bi bi-envelope-fill"></i>
+                  </div>
+                  <h5>Email</h5>
+                  <p class="text-muted">keltpbarat@tanjungpinangkota.go.id</p>
+                  <a
+                    href="mailto:keltpbarat@tanjungpinangkota.go.id"
+                    class="btn btn-outline-primary btn-sm"
+                  >
+                    <i class="bi bi-envelope me-1"></i> Email Kami
+                  </a>
+                </div>
+              </div>
+              <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="help-card">
+                  <div class="help-icon bg-warning bg-opacity-10 text-warning">
+                    <i class="bi bi-clock-fill"></i>
+                  </div>
+                  <h5>Jam Pelayanan</h5>
+                  <p class="text-muted">Senin-Jumat: 08:00-16:00 WIB</p>
+                  <a href="kontak.html" class="btn btn-outline-warning btn-sm">
+                    <i class="bi bi-info-circle me-1"></i> Info Lengkap
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick Links Section -->
+    <section class="quick-links-section">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="quick-link-card">
+              <div class="quick-link-icon bg-primary">
+                <i class="bi bi-newspaper"></i>
+              </div>
+              <div class="quick-link-content">
+                <h5>Berita Terkini</h5>
+                <p>Informasi terbaru dari Kelurahan Tanjungpinang Barat</p>
+                <a href="berita.html" class="btn btn-sm btn-outline-primary">
+                  Kunjungi <i class="bi bi-arrow-right ms-1"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="quick-link-card">
+              <div class="quick-link-icon bg-success">
+                <i class="bi bi-images"></i>
+              </div>
+              <div class="quick-link-content">
+                <h5>Galeri Kegiatan</h5>
+                <p>Kumpulan foto kegiatan kelurahan</p>
+                <a href="galeri.html" class="btn btn-sm btn-outline-success">
+                  Kunjungi <i class="bi bi-arrow-right ms-1"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="quick-link-card">
+              <div class="quick-link-icon bg-info">
+                <i class="bi bi-map"></i>
+              </div>
+              <div class="quick-link-content">
+                <h5>Peta Kelurahan</h5>
+                <p>Peta wilayah dan batas Kelurahan Tanjungpinang Barat</p>
+                <a
+                  href="peta-kelurahan.html"
+                  class="btn btn-sm btn-outline-info"
+                >
+                  Kunjungi <i class="bi bi-arrow-right ms-1"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-dark text-light pt-5 pb-4">
+      <div class="container">
+        <div class="row justify-content-between align-items-start">
+          <!-- Hubungi Kami -->
+          <div class="col-md-4 mb-4">
+            <h5 class="fw-bold text-danger mb-3">Hubungi Kami</h5>
+            <div class="d-flex align-items-start mb-4">
+              <div class="me-3">
+                <img
+                  src="assets/images/logo-tanjungpinang.png"
+                  alt="Logo"
+                  style="width: 80px; height: auto"
+                  class="img-fluid"
+                />
+              </div>
+              <div class="small">
+                <p class="fw-bold mb-1">Kelurahan Tanjungpinang Kota</p>
+                <p class="mb-1">Kecamatan Tanjungpinang Kota</p>
+              </div>
+            </div>
+            <ul class="list-unstyled small">
+              <li class="mb-2">
+                <i class="bi bi-geo-alt-fill me-2 text-danger"></i>
+                Jl. Mesjid No.7, Tanjungpinang Kota, Kota Tanjungpinang,
+                Kepulauan Riau
+              </li>
+              <li class="mb-2">
+                <i class="bi bi-envelope-fill me-2 text-danger"></i>
+                tpitimurkotakel@tanjungpinangkota.go.id
+              </li>
+              <li class="mb-3">
+                <i class="bi bi-telephone-fill me-2 text-danger"></i>
+                (0771) 1234567
+              </li>
+              <li>
+                <div class="d-flex gap-2">
+                  <a
+                    href="#"
+                    class="btn btn-outline-light btn-sm rounded-circle"
+                  >
+                    <i class="bi bi-facebook"></i>
+                  </a>
+                  <a
+                    href="#"
+                    class="btn btn-outline-light btn-sm rounded-circle"
+                  >
+                    <i class="bi bi-instagram"></i>
+                  </a>
+                  <a
+                    href="#"
+                    class="btn btn-outline-light btn-sm rounded-circle"
+                  >
+                    <i class="bi bi-twitter"></i>
+                  </a>
+                  <a
+                    href="#"
+                    class="btn btn-outline-light btn-sm rounded-circle"
+                  >
+                    <i class="bi bi-youtube"></i>
+                  </a>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Menu Utama -->
+          <div class="col-md-3 mb-4">
+            <h5 class="fw-bold text-danger border-bottom pb-2 mb-3">
+              Menu Utama
+            </h5>
+            <ul class="list-unstyled small">
+              <li class="mb-2">
+                <a
+                  href="index.html"
+                  class="text-light text-decoration-none d-flex align-items-center"
+                >
+                  <i class="bi bi-house-door-fill me-2"></i> Beranda
+                </a>
+              </li>
+              <li class="mb-2">
+                <a
+                  href="berita.html"
+                  class="text-light text-decoration-none d-flex align-items-center"
+                >
+                  <i class="bi bi-newspaper me-2"></i> Berita
+                </a>
+              </li>
+              <li class="mb-2">
+                <a
+                  href="download-area.html"
+                  class="text-light text-decoration-none d-flex align-items-center"
+                >
+                  <i class="bi bi-download me-2"></i> Download
+                </a>
+              </li>
+              <li class="mb-2">
+                <a
+                  href="galeri.html"
+                  class="text-light text-decoration-none d-flex align-items-center"
+                >
+                  <i class="bi bi-images me-2"></i> Galeri
+                </a>
+              </li>
+              <li class="mb-2">
+                <a
+                  href="data-statistik.html"
+                  class="text-light text-decoration-none d-flex align-items-center"
+                >
+                  <i class="bi bi-bar-chart-fill me-2"></i> Data Statistik
+                </a>
+              </li>
+              <li class="mb-2">
+                <a
+                  href="peta-kelurahan.html"
+                  class="text-light text-decoration-none d-flex align-items-center"
+                >
+                  <i class="bi bi-map-fill me-2"></i> Peta Kelurahan
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Berita Populer -->
+          <div class="col-md-4 mb-4">
+            <h5 class="fw-bold text-danger border-bottom pb-2 mb-3">
+              Berita Populer
+            </h5>
+            <div class="mb-4">
+              <h6 class="fw-bold mb-1">
+                Selamat Datang di Website Kelurahan Tanjungpinang Kota
+              </h6>
+              <p class="text-secondary small mb-0">
+                <i class="bi bi-calendar me-2"></i>Rabu, 31 Agustus 2022
+              </p>
+            </div>
+            <div class="mb-4">
+              <h6 class="fw-bold mb-1">
+                Penghargaan Kepala Daerah Perempuan Inspiratif dari Tempo Media
+                Grup
+              </h6>
+              <p class="text-secondary small mb-0">
+                <i class="bi bi-calendar me-2"></i>Rabu, 28 September 2022
+              </p>
+            </div>
+            <div class="mb-4">
+              <h6 class="fw-bold mb-1">
+                Penyerahan Simbolis Kartu Identitas Anak (KIA)
+              </h6>
+              <p class="text-secondary small mb-0">
+                <i class="bi bi-calendar me-2"></i>Kamis, 15 Desember 2022
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer Bottom Tengah -->
+        <hr class="border-secondary" />
+        <div class="text-center pt-2">
+          <small
+            >Design by
+            <a href="#" class="text-danger fw-bold"
+              >Mahasiswa Teknik Informatika</a
+            >
+            &copy;2025</small
+          >
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="btn btn-back-to-top">
+      <i class="bi bi-arrow-up"></i>
+    </button>
+
+    <!-- Floating Action Button -->
+    <div class="fab-container">
+      <div class="fab fab-main">
+        <i class="bi bi-question-circle"></i>
+      </div>
+      <ul class="fab-options">
+        <li>
+          <a href="berita.html" class="fab-option" data-tooltip="Berita">
+            <i class="bi bi-newspaper"></i>
+          </a>
+        </li>
+        <li>
+          <a href="info.html" class="fab-option" data-tooltip="Pengumuman">
+            <i class="bi bi-megaphone-fill"></i>
+          </a>
+        </li>
+        <li>
+          <a href="peta-kelurahan.html" class="fab-option" data-tooltip="Peta">
+            <i class="bi bi-map"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Preview Modal -->
+    <div
+      class="modal fade preview-modal"
+      id="previewModal"
+      tabindex="-1"
+      aria-labelledby="previewModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="previewModalLabel">Preview Dokumen</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="text-center py-4">
+              <div class="document-preview-icon mb-4">
+                <i class="bi bi-file-earmark-pdf text-danger"></i>
+                <div class="document-format-badge">PDF</div>
+              </div>
+              <h4 class="mb-3" id="previewTitle">Nama Dokumen</h4>
+              <p class="text-muted mb-4" id="previewDescription">
+                Deskripsi dokumen akan ditampilkan di sini.
+              </p>
+
+              <div class="document-info-card">
+                <div class="info-item">
+                  <i class="bi bi-file-earmark-text"></i>
+                  <div class="info-item-content">
+                    <small>Ukuran</small>
+                    <h6 id="previewSize">-</h6>
+                  </div>
+                </div>
+                <div class="info-item">
+                  <i class="bi bi-calendar"></i>
+                  <div class="info-item-content">
+                    <small>Tanggal Upload</small>
+                    <h6 id="previewDate">-</h6>
+                  </div>
+                </div>
+                <div class="info-item">
+                  <i class="bi bi-download"></i>
+                  <div class="info-item-content">
+                    <small>Total Download</small>
+                    <h6 id="previewDownloads">-</h6>
+                  </div>
+                </div>
+                <div class="info-item">
+                  <i class="bi bi-tags"></i>
+                  <div class="info-item-content">
+                    <small>Kategori</small>
+                    <h6 id="previewCategory">-</h6>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              <i class="bi bi-x-lg me-1"></i> Tutup
+            </button>
+            <button
+              type="button"
+              class="btn btn-success"
+              id="downloadFromPreview"
+            >
+              <i class="bi bi-download me-1"></i> Download
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS Animation -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Documents Data and Functionality -->
+    <script>
+      // Initialize AOS animation
+      AOS.init({
+        duration: 800,
+        easing: "ease-in-out",
+        once: true,
+      });
+
+      // Documents data
+      const documentsData = [
+        {
+          id: 1,
+          name: "Formulir Permohonan KTP",
+          description:
+            "Formulir untuk permohonan pembuatan Kartu Tanda Penduduk (KTP) baru",
+          category: "formulir",
+          size: "245 KB",
+          uploadDate: "2025-01-15",
+          downloads: 156,
+          format: "PDF",
+          url: "#",
+        },
+        {
+          id: 2,
+          name: "Formulir Permohonan KK",
+          description:
+            "Formulir untuk permohonan pembuatan Kartu Keluarga (KK) baru",
+          category: "formulir",
+          size: "198 KB",
+          uploadDate: "2025-01-15",
+          downloads: 134,
+          format: "PDF",
+          url: "#",
+        },
+        {
+          id: 3,
+          name: "Surat Keterangan Domisili",
+          description:
+            "Template surat keterangan domisili untuk keperluan administrasi",
+          category: "surat",
+          size: "167 KB",
+          uploadDate: "2025-01-12",
+          downloads: 89,
+          format: "PDF",
+          url: "#",
+        },
+        {
+          id: 4,
+          name: "Formulir Izin Usaha Mikro",
+          description: "Formulir permohonan izin usaha mikro dan kecil",
+          category: "formulir",
+          size: "312 KB",
+          uploadDate: "2025-01-10",
+          downloads: 67,
+          format: "PDF",
+          url: "#",
+        },
+        {
+          id: 5,
+          name: "Peraturan Kelurahan No. 01/2024",
+          description: "Peraturan tentang tata tertib lingkungan kelurahan",
+          category: "peraturan",
+          size: "1.2 MB",
+          uploadDate: "2025-01-08",
+          downloads: 45,
+          format: "PDF",
+          url: "#",
+        },
+        {
+          id: 6,
+          name: "Panduan Pelayanan Administrasi",
+          description: "Panduan lengkap pelayanan administrasi kependudukan",
+          category: "panduan",
+          size: "2.1 MB",
+          uploadDate: "2025-01-05",
+          downloads: 78,
+          format: "PDF",
+          url: "#",
+        },
+        {
+          id: 7,
+          name: "Formulir Surat Keterangan Tidak Mampu",
+          description: "Formulir untuk permohonan surat keterangan tidak mampu",
+          category: "formulir",
+          size: "189 KB",
+          uploadDate: "2025-01-03",
+          downloads: 92,
+          format: "PDF",
+          url: "#",
+        },
+        {
+          id: 8,
+          name: "Laporan Keuangan Kelurahan 2024",
+          description:
+            "Laporan pertanggungjawaban keuangan kelurahan tahun 2024",
+          category: "laporan",
+          size: "3.4 MB",
+          uploadDate: "2024-12-30",
+          downloads: 123,
+          format: "PDF",
+          url: "#",
+        },
+        {
+          id: 9,
+          name: "Formulir Permohonan Akta Kelahiran",
+          description: "Formulir untuk permohonan pembuatan akta kelahiran",
+          category: "formulir",
+          size: "234 KB",
+          uploadDate: "2024-12-28",
+          downloads: 145,
+          format: "PDF",
+          url: "#",
+        },
+        {
+          id: 10,
+          name: "Surat Keterangan Usaha",
+          description: "Template surat keterangan usaha untuk UMKM",
+          category: "surat",
+          size: "156 KB",
+          uploadDate: "2024-12-25",
+          downloads: 76,
+          format: "PDF",
+          url: "#",
+        },
+        {
+          id: 11,
+          name: "Panduan Pengurusan Izin Bangunan",
+          description: "Panduan lengkap pengurusan izin mendirikan bangunan",
+          category: "panduan",
+          size: "1.8 MB",
+          uploadDate: "2024-12-20",
+          downloads: 54,
+          format: "PDF",
+          url: "#",
+        },
+        {
+          id: 12,
+          name: "Formulir Permohonan Pindah Alamat",
+          description:
+            "Formulir untuk permohonan pindah alamat dalam kelurahan",
+          category: "formulir",
+          size: "178 KB",
+          uploadDate: "2024-12-18",
+          downloads: 63,
+          format: "PDF",
+          url: "#",
+        },
+      ];
+
+      let currentPage = 1;
+      const itemsPerPage = 8;
+      let filteredDocuments = [...documentsData];
+      let currentView = "grid";
+
+      // Format date
+      function formatDate(dateString) {
+        const options = { year: "numeric", month: "long", day: "numeric" };
+        return new Date(dateString).toLocaleDateString("id-ID", options);
+      }
+
+      // Format short date
+      function formatShortDate(dateString) {
+        const options = { day: "numeric", month: "short", year: "numeric" };
+        return new Date(dateString).toLocaleDateString("id-ID", options);
+      }
+
+      // Get category badge class
+      function getCategoryBadgeClass(category) {
+        const classes = {
+          formulir: "bg-primary",
+          surat: "bg-success",
+          peraturan: "bg-warning",
+          panduan: "bg-info",
+          laporan: "bg-secondary",
+        };
+        return classes[category] || "bg-secondary";
+      }
+
+      // Get file icon
+      function getFileIcon(format) {
+        const icons = {
+          PDF: "bi-file-earmark-pdf text-danger",
+          DOC: "bi-file-earmark-word text-primary",
+          XLS: "bi-file-earmark-excel text-success",
+          PPT: "bi-file-earmark-ppt text-warning",
+          ZIP: "bi-file-earmark-zip text-secondary",
+        };
+        return icons[format] || "bi-file-earmark-text text-muted";
+      }
+
+      // Update download count
+      function updateDownloadCount(docId) {
+        const downloadKey = `doc_download_${docId}`;
+        let currentDownloads = localStorage.getItem(downloadKey);
+
+        if (!currentDownloads) {
+          const doc = documentsData.find((d) => d.id == docId);
+          if (doc) {
+            currentDownloads = doc.downloads + 1;
+            localStorage.setItem(downloadKey, currentDownloads);
+          }
+        } else {
+          currentDownloads = parseInt(currentDownloads) + 1;
+          localStorage.setItem(downloadKey, currentDownloads);
+        }
+
+        return currentDownloads;
+      }
+
+      // Get download count
+      function getDownloadCount(docId) {
+        const downloadKey = `doc_download_${docId}`;
+        let currentDownloads = localStorage.getItem(downloadKey);
+
+        if (!currentDownloads) {
+          const doc = documentsData.find((d) => d.id == docId);
+          return doc ? doc.downloads : 0;
+        }
+
+        return parseInt(currentDownloads);
+      }
+
+      // Render documents grid
+      function renderDocumentsGrid() {
+        const documentsGrid = document.getElementById("documentsGrid");
+        const startIndex = (currentPage - 1) * itemsPerPage;
+        const endIndex = startIndex + itemsPerPage;
+        const currentDocs = filteredDocuments.slice(startIndex, endIndex);
+
+        documentsGrid.innerHTML = currentDocs
+          .map(
+            (doc) => `
+                <div class="col-lg-3 col-md-6" data-aos="fade-up">
+                    <div class="document-card">
+                        <div class="document-icon">
+                            <i class="bi ${getFileIcon(doc.format)}"></i>
+                            <span class="document-badge">${
+                              doc.category.charAt(0).toUpperCase() +
+                              doc.category.slice(1)
+                            }</span>
+                        </div>
+                        <div class="document-content">
+                            <h5>${doc.name}</h5>
+                            <p>${doc.description}</p>
+                            <div class="document-footer">
+                                <div class="document-meta">
+                                    <span><i class="bi bi-file-earmark-text me-2"></i>${
+                                      doc.size
+                                    }</span>
+                                    <span><i class="bi bi-calendar me-2"></i>${formatShortDate(
+                                      doc.uploadDate
+                                    )}</span>
+                                </div>
+                                <div class="document-stats">
+                                    <span><i class="bi bi-download me-2"></i><span class="download-count" data-id="${
+                                      doc.id
+                                    }">${getDownloadCount(
+              doc.id
+            )}</span> downloads</span>
+                                </div>
+                            </div>
+                            <div class="document-actions">
+                                <button class="btn btn-outline-primary btn-sm" onclick="previewDocument(${
+                                  doc.id
+                                })">
+                                    <i class="bi bi-eye"></i> Preview
+                                </button>
+                                <button class="btn btn-success btn-sm" onclick="downloadDocument(${
+                                  doc.id
+                                })">
+                                    <i class="bi bi-download"></i> Unduh
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `
+          )
+          .join("");
+
+        renderPagination();
+      }
+
+      // Render documents table
+      function renderDocumentsTable() {
+        const tableBody = document.getElementById("documentsTableBody");
+        const startIndex = (currentPage - 1) * itemsPerPage;
+        const endIndex = startIndex + itemsPerPage;
+        const currentDocs = filteredDocuments.slice(startIndex, endIndex);
+
+        tableBody.innerHTML = currentDocs
+          .map(
+            (doc) => `
+                <tr data-aos="fade-up">
+                    <td>
+                        <div class="table-document-name">
+                            <div class="table-document-icon">
+                                <i class="bi ${getFileIcon(doc.format)}"></i>
+                            </div>
+                            <div class="table-document-info">
+                                <h6>${doc.name}</h6>
+                                <small>${doc.description}</small>
+                            </div>
+                        </div>
+                    </td>
+                    <td><span class="badge ${getCategoryBadgeClass(
+                      doc.category
+                    )}">${
+              doc.category.charAt(0).toUpperCase() + doc.category.slice(1)
+            }</span></td>
+                    <td>${doc.size}</td>
+                    <td>${formatShortDate(doc.uploadDate)}</td>
+                    <td><span class="download-count" data-id="${
+                      doc.id
+                    }">${getDownloadCount(doc.id)}</span></td>
+                    <td>
+                        <div class="table-actions">
+                            <button class="btn btn-outline-primary btn-sm" onclick="previewDocument(${
+                              doc.id
+                            })">
+                                <i class="bi bi-eye"></i>
+                            </button>
+                            <button class="btn btn-success btn-sm" onclick="downloadDocument(${
+                              doc.id
+                            })">
+                                <i class="bi bi-download"></i>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            `
+          )
+          .join("");
+
+        renderPagination();
+      }
+
+      // Render pagination
+      function renderPagination() {
+        const pagination = document.getElementById("pagination");
+        const totalPages = Math.ceil(filteredDocuments.length / itemsPerPage);
+
+        let paginationHTML = "";
+
+        // Previous button
+        paginationHTML += `
+                <li class="page-item ${currentPage === 1 ? "disabled" : ""}">
+                    <a class="page-link" href="#" onclick="changePage(${
+                      currentPage - 1
+                    })">
+                        <i class="bi bi-chevron-left"></i>
+                    </a>
+                </li>
+            `;
+
+        // Page numbers
+        for (let i = 1; i <= totalPages; i++) {
+          if (
+            i === 1 ||
+            i === totalPages ||
+            (i >= currentPage - 1 && i <= currentPage + 1)
+          ) {
+            paginationHTML += `
+                        <li class="page-item ${
+                          i === currentPage ? "active" : ""
+                        }">
+                            <a class="page-link" href="#" onclick="changePage(${i})">${i}</a>
+                        </li>
+                    `;
+          } else if (i === currentPage - 2 || i === currentPage + 2) {
+            paginationHTML += `<li class="page-item disabled"><span class="page-link">...</span></li>`;
+          }
+        }
+
+        // Next button
+        paginationHTML += `
+                <li class="page-item ${
+                  currentPage === totalPages ? "disabled" : ""
+                }">
+                    <a class="page-link" href="#" onclick="changePage(${
+                      currentPage + 1
+                    })">
+                        <i class="bi bi-chevron-right"></i>
+                    </a>
+                </li>
+            `;
+
+        pagination.innerHTML = paginationHTML;
+      }
+
+      // Change page
+      function changePage(page) {
+        const totalPages = Math.ceil(filteredDocuments.length / itemsPerPage);
+        if (page >= 1 && page <= totalPages) {
+          currentPage = page;
+          if (currentView === "grid") {
+            renderDocumentsGrid();
+          } else {
+            renderDocumentsTable();
+          }
+          // Bagian window.scrollTo sudah dihapus dari sini
+        }
+      }
+
+      // Filter documents
+      function filterDocuments() {
+        const searchTerm = document
+          .getElementById("searchInput")
+          .value.toLowerCase();
+        const category = document.getElementById("categoryFilter").value;
+        const sortBy = document.getElementById("sortFilter").value;
+
+        filteredDocuments = documentsData.filter((doc) => {
+          const matchesSearch =
+            doc.name.toLowerCase().includes(searchTerm) ||
+            doc.description.toLowerCase().includes(searchTerm);
+          const matchesCategory = !category || doc.category === category;
+          return matchesSearch && matchesCategory;
+        });
+
+        // Sort documents
+        switch (sortBy) {
+          case "newest":
+            filteredDocuments.sort(
+              (a, b) => new Date(b.uploadDate) - new Date(a.uploadDate)
+            );
+            break;
+          case "oldest":
+            filteredDocuments.sort(
+              (a, b) => new Date(a.uploadDate) - new Date(b.uploadDate)
+            );
+            break;
+          case "name":
+            filteredDocuments.sort((a, b) => a.name.localeCompare(b.name));
+            break;
+          case "popular":
+            filteredDocuments.sort(
+              (a, b) => getDownloadCount(b.id) - getDownloadCount(a.id)
+            );
+            break;
+        }
+
+        currentPage = 1;
+        if (currentView === "grid") {
+          renderDocumentsGrid();
+        } else {
+          renderDocumentsTable();
+        }
+      }
+
+      // Preview document
+      function previewDocument(docId) {
+        const doc = documentsData.find((d) => d.id === docId);
+        if (doc) {
+          document.getElementById("previewTitle").textContent = doc.name;
+          document.getElementById("previewDescription").textContent =
+            doc.description;
+          document.getElementById("previewSize").textContent = doc.size;
+          document.getElementById("previewDate").textContent = formatDate(
+            doc.uploadDate
+          );
+          document.getElementById("previewDownloads").textContent =
+            getDownloadCount(doc.id);
+          document.getElementById("previewCategory").textContent =
+            doc.category.charAt(0).toUpperCase() + doc.category.slice(1);
+
+          document.getElementById("downloadFromPreview").onclick = () =>
+            downloadDocument(docId);
+
+          const modal = new bootstrap.Modal(
+            document.getElementById("previewModal")
+          );
+          modal.show();
+        }
+      }
+
+      // Download document
+      function downloadDocument(docId) {
+        const doc = documentsData.find((d) => d.id === docId);
+        if (doc) {
+          // Update download count
+          const newCount = updateDownloadCount(docId);
+
+          // Update all download count displays
+          document
+            .querySelectorAll(`.download-count[data-id="${docId}"]`)
+            .forEach((el) => {
+              el.textContent = newCount;
+            });
+
+          // Simulate download (in real implementation, this would be a real file download)
+          alert(`Mengunduh: ${doc.name}\nUkuran: ${doc.size}`);
+
+          // In real implementation, you would do:
+          // window.open(doc.url, '_blank');
+        }
+      }
+
+      // Toggle view
+      function toggleView(view) {
+        currentView = view;
+
+        document
+          .getElementById("gridView")
+          .classList.toggle("active", view === "grid");
+        document
+          .getElementById("listView")
+          .classList.toggle("active", view === "list");
+
+        if (view === "grid") {
+          document.getElementById("documentsGrid").classList.remove("d-none");
+          document.getElementById("documentsList").classList.add("d-none");
+          renderDocumentsGrid();
+        } else {
+          document.getElementById("documentsGrid").classList.add("d-none");
+          document.getElementById("documentsList").classList.remove("d-none");
+          renderDocumentsTable();
+        }
+      }
+
+      // Event listeners
+      document
+        .getElementById("searchBtn")
+        .addEventListener("click", filterDocuments);
+      document
+        .getElementById("searchInput")
+        .addEventListener("keypress", function (e) {
+          if (e.key === "Enter") {
+            filterDocuments();
+          }
+        });
+      document
+        .getElementById("categoryFilter")
+        .addEventListener("change", filterDocuments);
+      document
+        .getElementById("sortFilter")
+        .addEventListener("change", filterDocuments);
+
+      document
+        .getElementById("gridView")
+        .addEventListener("click", () => toggleView("grid"));
+      document
+        .getElementById("listView")
+        .addEventListener("click", () => toggleView("list"));
+
+      // Initialize
+      document.addEventListener("DOMContentLoaded", function () {
+        renderDocumentsGrid();
+
+        // Animate counting numbers
+        const counters = document.querySelectorAll(".stat-number");
+        const speed = 200;
+
+        counters.forEach((counter) => {
+          const target = +counter.getAttribute("data-count");
+          const count = +counter.innerText;
+          const increment = target / speed;
+
+          if (count < target) {
+            counter.innerText = Math.ceil(count + increment);
+            setTimeout(updateCount, 1);
+          } else {
+            counter.innerText = target;
+          }
+
+          function updateCount() {
+            const count = +counter.innerText;
+            const increment = target / speed;
+
+            if (count < target) {
+              counter.innerText = Math.ceil(count + increment);
+              setTimeout(updateCount, 1);
+            } else {
+              counter.innerText = target;
+            }
+          }
+        });
+
+        // Floating action button
+        const fab = document.querySelector(".fab-main");
+        const fabOptions = document.querySelector(".fab-options");
+
+        fab.addEventListener("click", function () {
+          fabOptions.classList.toggle("show");
+          fab.classList.toggle("rotate");
+        });
+
+        // Back to top button
+        const backToTopButton = document.getElementById("backToTop");
+
+        window.addEventListener("scroll", function () {
+          if (window.pageYOffset > 300) {
+            backToTopButton.classList.add("show");
+          } else {
+            backToTopButton.classList.remove("show");
+          }
+        });
+
+        backToTopButton.addEventListener("click", function (e) {
+          e.preventDefault();
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+        // --- KODE PERBAIKAN UNTUK FILTER KATEGORI ---
+        const categoryPills = document.querySelectorAll(
+          "#category-tab .nav-link"
+        );
+        const categoryDropdown = document.getElementById("categoryFilter");
+
+        categoryPills.forEach((pill) => {
+          pill.addEventListener("click", function () {
+            // Ambil nama kategori dari teks tombol
+            let selectedCategory = this.textContent.trim().toLowerCase();
+
+            if (selectedCategory === "semua") {
+              selectedCategory = ""; // Value untuk "Semua Kategori" di dropdown adalah string kosong
+            }
+
+            // Atur nilai dropdown sesuai tombol yang diklik
+            categoryDropdown.value = selectedCategory;
+
+            // Picu (trigger) event 'change' pada dropdown
+            // Ini akan menjalankan fungsi filterDocuments() yang sudah ada
+            const changeEvent = new Event("change");
+            categoryDropdown.dispatchEvent(changeEvent);
+          });
+        });
+        // --- AKHIR DARI KODE PERBAIKAN ---
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="assets/js/nav.js"></script>
+  </body>
+</html>

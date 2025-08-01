@@ -1,0 +1,1975 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Galeri - Kelurahan Tanjungpinang Barat</title>
+    <meta
+      name="description"
+      content="Galeri dokumentasi kegiatan Kelurahan Tanjungpinang Barat"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap Icons -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="assets/css/style.css" />
+
+    <!-- Custom CSS -->
+    <style>
+      :root {
+        --primary: #d32f2f; /* DIUBAH MENJADI MERAH UTAMA */
+        --primary-light: #e53935; /* DIUBAH menjadi variasi merah terang */
+        --primary-dark: #b71c1c; /* DIUBAH menjadi variasi merah gelap */
+        --secondary: #64748b;
+        --success: #10b981;
+        --info: #06b6d4;
+        --warning: #f59e0b;
+        --danger: #ef4444;
+        --light: #f8fafc;
+        --dark: #1e293b;
+        --gray: #94a3b8;
+        --light-gray: #f1f5f9;
+        --font-primary: "Poppins", sans-serif;
+        --font-secondary: "Open Sans", sans-serif;
+        --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+        --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+        --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1);
+        --rounded-sm: 0.5rem;
+        --rounded-md: 0.75rem;
+        --rounded-lg: 1rem;
+        --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      /* Salin dan tempel kode ini ke dalam tag <style> di galeri.html */
+
+      .title-highlight {
+        background: linear-gradient(45deg, #ffc107, #fff, #ffc107);
+        background-size: 200% 200%;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        animation: gradient-text 3s ease infinite;
+        text-shadow: none !important;
+      }
+
+      @keyframes gradient-text {
+        0%,
+        100% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+      }
+      /* body {
+            font-family: var(--font-secondary);
+            color: var(--dark);
+            line-height: 1.6;
+            background-color: #f8fafc;
+            overflow-x: hidden;
+        } */
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      .header-title,
+      .section-title {
+        font-family: var(--font-primary);
+        font-weight: 600;
+        color: var(--dark);
+      }
+
+      a {
+        text-decoration: none;
+        transition: var(--transition);
+      }
+
+      /* Hero Section */
+      .hero-section {
+        position: relative;
+        padding: 120px 0 80px;
+        background: var(
+          --gradient-primary
+        ); /* Menggunakan gradien merah dari root */
+        color: white;
+        overflow: hidden;
+        margin-bottom: 2rem;
+      }
+
+      .hero-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(
+          0,
+          0,
+          0,
+          0.2
+        ); /* Slightly lighter overlay for better contrast */
+        z-index: 1;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 2;
+      }
+
+      .hero-badge {
+        display: inline-block;
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(5px);
+        color: white;
+        padding: 0.5rem 1.25rem;
+        border-radius: 50px;
+        font-size: 0.9rem;
+        margin-bottom: 1.5rem;
+        font-weight: 500;
+      }
+
+      .hero-title {
+        font-size: 2.75rem;
+        font-weight: 700;
+        line-height: 1.2;
+        margin-bottom: 1.5rem;
+      }
+
+      .hero-subtitle {
+        font-size: 1.25rem;
+        opacity: 0.9;
+        max-width: 700px;
+        margin: 0 auto 2rem;
+      }
+
+      .hero-wave {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        overflow: hidden;
+        line-height: 0;
+        transform: rotate(180deg);
+      }
+
+      .hero-wave svg {
+        position: relative;
+        display: block;
+        width: calc(100% + 1.3px);
+        height: 120px;
+      }
+
+      .hero-wave .shape-fill {
+        fill: #f8fafc;
+      }
+
+      /* Breadcrumb */
+      .breadcrumb-custom {
+        background: transparent;
+        padding: 0;
+        justify-content: center;
+      }
+
+      .breadcrumb-custom .breadcrumb-item a {
+        color: rgba(255, 255, 255, 0.9);
+        display: flex;
+        align-items: center;
+      }
+
+      .breadcrumb-custom .breadcrumb-item.active {
+        color: white;
+      }
+
+      .breadcrumb-custom .breadcrumb-item + .breadcrumb-item::before {
+        color: rgba(255, 255, 255, 0.7);
+      }
+
+      /* Search & Filter */
+      .search-filter-section {
+        background-color: white;
+        padding: 1.5rem 0;
+        box-shadow: var(--shadow-sm);
+        position: relative;
+        z-index: 10;
+      }
+
+      .search-box {
+        position: relative;
+      }
+
+      .search-box .input-group-text {
+        background-color: white;
+        border-right: none;
+        border-radius: var(--rounded-sm) 0 0 var(--rounded-sm);
+        padding-left: 1.25rem;
+      }
+
+      .search-box .form-control {
+        border-left: none;
+        border-radius: 0 var(--rounded-sm) var(--rounded-sm) 0;
+        padding-left: 0;
+      }
+
+      .search-box .btn {
+        border-radius: var(--rounded-sm);
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+        font-weight: 500;
+        background-color: var(--warning);
+        border-color: var(--warning);
+      }
+
+      .filter-box .form-select {
+        border-radius: var(--rounded-sm);
+        padding-left: 1rem;
+        font-weight: 500;
+      }
+
+      /* Stats Section */
+      .stats-section {
+        padding: 3rem 0;
+        background-color: white;
+      }
+
+      .stat-card {
+        background: white;
+        border-radius: var(--rounded-md);
+        padding: 1.5rem;
+        height: 100%;
+        text-align: center;
+        transition: var(--transition);
+        border: 1px solid #e2e8f0;
+      }
+
+      .stat-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-lg);
+      }
+
+      .stat-icon {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        margin: 0 auto 1.25rem;
+      }
+
+      .stat-number {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+        color: var(--dark);
+      }
+
+      .stat-label {
+        color: var(--secondary);
+        font-size: 0.9rem;
+        margin-bottom: 0;
+      }
+
+      /* Featured Gallery */
+      .featured-section {
+        padding: 4rem 0;
+      }
+
+      .section-header {
+        margin-bottom: 2rem;
+      }
+
+      .section-title {
+        position: relative;
+        padding-bottom: 1rem;
+        margin-bottom: 1rem;
+        font-size: 1.75rem;
+      }
+
+      .section-title::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 60px;
+        height: 4px;
+        background: var(--warning);
+        border-radius: 2px;
+      }
+
+      .section-subtitle {
+        color: var(--secondary);
+        font-size: 1rem;
+      }
+
+      .featured-gallery-card {
+        background: white;
+        border-radius: var(--rounded-md);
+        overflow: hidden;
+        box-shadow: var(--shadow-md);
+        transition: var(--transition);
+        height: 100%;
+      }
+
+      .featured-gallery-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-lg);
+      }
+
+      .featured-gallery-image {
+        position: relative;
+        height: 300px;
+        overflow: hidden;
+      }
+
+      .featured-gallery-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+
+      .featured-gallery-card:hover .featured-gallery-image img {
+        transform: scale(1.05);
+      }
+
+      .photo-count {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        background: rgba(0, 0, 0, 0.7);
+        color: white;
+        padding: 0.25rem 0.75rem;
+        border-radius: 50px;
+        font-size: 0.8rem;
+        font-weight: 500;
+      }
+
+      .photo-count i {
+        margin-right: 0.25rem;
+      }
+
+      .featured-gallery-content {
+        padding: 1.5rem;
+      }
+
+      .gallery-meta {
+        display: flex;
+        align-items: center;
+        margin-bottom: 0.75rem;
+      }
+
+      .gallery-meta .badge {
+        font-size: 0.75rem;
+        font-weight: 500;
+        padding: 0.25rem 0.75rem;
+      }
+
+      .gallery-meta small {
+        color: var(--secondary);
+        font-size: 0.85rem;
+      }
+
+      .featured-gallery-content h3 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        line-height: 1.4;
+      }
+
+      .featured-gallery-content p {
+        color: var(--secondary);
+        font-size: 0.9rem;
+        line-height: 1.5;
+        margin-bottom: 1.5rem;
+      }
+
+      .gallery-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .gallery-footer small {
+        color: var(--secondary);
+        font-size: 0.85rem;
+      }
+
+      .gallery-footer small i {
+        margin-right: 0.25rem;
+      }
+
+      /* Recent Galleries */
+      .recent-galleries {
+        background: white;
+        border-radius: var(--rounded-md);
+        padding: 1.5rem;
+        box-shadow: var(--shadow-md);
+        height: 100%;
+      }
+
+      .recent-header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1.5rem;
+        padding-bottom: 0.75rem;
+        border-bottom: 1px solid #e2e8f0;
+      }
+
+      .recent-header h5 {
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-bottom: 0;
+      }
+
+      .recent-header i {
+        margin-right: 0.5rem;
+        color: var(--warning);
+      }
+
+      .recent-item {
+        display: flex;
+        padding: 1rem 0;
+        border-bottom: 1px solid #e2e8f0;
+      }
+
+      .recent-item:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+      }
+
+      .recent-image {
+        position: relative;
+        width: 80px;
+        height: 60px;
+        border-radius: var(--rounded-sm);
+        overflow: hidden;
+        margin-right: 1rem;
+        flex-shrink: 0;
+      }
+
+      .recent-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+      }
+
+      .recent-item:hover .recent-image img {
+        transform: scale(1.05);
+      }
+
+      .recent-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.7);
+        color: white;
+        text-align: center;
+        font-size: 0.7rem;
+        padding: 0.15rem;
+      }
+
+      .recent-content h6 {
+        font-size: 0.9rem;
+        font-weight: 500;
+        margin-bottom: 0.25rem;
+      }
+
+      .recent-content h6 a {
+        color: var(--dark);
+      }
+
+      .recent-content h6 a:hover {
+        color: var(--warning);
+      }
+
+      .recent-content small {
+        color: var(--secondary);
+        font-size: 0.8rem;
+      }
+
+      /* Gallery Grid */
+      .gallery-section {
+        padding: 4rem 0;
+        background-color: var(--light-gray);
+      }
+
+      .gallery-card {
+        background: white;
+        border-radius: var(--rounded-md);
+        overflow: hidden;
+        box-shadow: var(--shadow-sm);
+        transition: var(--transition);
+        height: 100%;
+      }
+
+      .gallery-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-lg);
+      }
+
+      .gallery-image {
+        position: relative;
+        height: 200px;
+        overflow: hidden;
+      }
+
+      .gallery-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+
+      .gallery-card:hover .gallery-image img {
+        transform: scale(1.05);
+      }
+
+      .gallery-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.7);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .gallery-card:hover .gallery-overlay {
+        opacity: 1;
+      }
+
+      .gallery-info {
+        text-align: center;
+        color: white;
+        padding: 1rem;
+      }
+
+      .gallery-info h6 {
+        font-size: 1rem;
+        font-weight: 500;
+        margin-bottom: 0.5rem;
+      }
+
+      .gallery-info p {
+        font-size: 0.8rem;
+        margin-bottom: 1rem;
+      }
+
+      .gallery-info .btn {
+        font-size: 0.8rem;
+        padding: 0.25rem 0.75rem;
+      }
+
+      .gallery-content {
+        padding: 1.25rem;
+      }
+
+      .gallery-content h5 {
+        font-size: 1rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        line-height: 1.4;
+      }
+
+      .gallery-content p {
+        color: var(--secondary);
+        font-size: 0.85rem;
+        line-height: 1.5;
+        margin-bottom: 1rem;
+      }
+
+      .gallery-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .gallery-footer small {
+        color: var(--secondary);
+        font-size: 0.8rem;
+      }
+
+      .gallery-footer small i {
+        margin-right: 0.25rem;
+      }
+
+      /* Pagination */
+      .pagination-custom .page-item .page-link {
+        border-radius: var(--rounded-sm);
+        margin: 0 0.25rem;
+        color: var(--dark);
+        font-weight: 500;
+        border: 1px solid #e2e8f0;
+      }
+
+      .pagination-custom .page-item.active .page-link {
+        background-color: var(--warning);
+        border-color: var(--warning);
+        color: white;
+      }
+
+      .pagination-custom .page-item.disabled .page-link {
+        color: var(--gray);
+      }
+
+      /* Newsletter */
+      .newsletter-section {
+        padding: 4rem 0;
+        background: linear-gradient(135deg, var(--warning) 0%, #f97316 100%);
+        color: white;
+      }
+
+      .newsletter-form {
+        max-width: 500px;
+        margin-left: auto;
+      }
+
+      .newsletter-form .form-control {
+        border-radius: var(--rounded-sm) 0 0 var(--rounded-sm);
+        border: none;
+        padding: 0.75rem 1rem;
+      }
+
+      .newsletter-form .btn {
+        border-radius: 0 var(--rounded-sm) var(--rounded-sm) 0;
+        background-color: var(--primary);
+        border-color: var(--primary);
+        padding: 0.75rem 1.5rem;
+        font-weight: 500;
+      }
+
+      /* Footer */
+      footer {
+        background: linear-gradient(
+          135deg,
+          #1a1a2e 0%,
+          #16213e 50%,
+          #0f3460 100%
+        );
+        position: relative;
+        overflow: hidden;
+      }
+
+      footer::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, #ffc107, transparent);
+        animation: shimmer 3s ease-in-out infinite;
+      }
+
+      @keyframes shimmer {
+        0%,
+        100% {
+          opacity: 0.3;
+        }
+        50% {
+          opacity: 1;
+        }
+      }
+
+      .footer-brand {
+        position: relative;
+        z-index: 2;
+      }
+
+      .footer-brand img {
+        filter: brightness(0) invert(1);
+        transition: var(--transition);
+        animation: float 3s ease-in-out infinite;
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-5px);
+        }
+      }
+
+      .footer-brand:hover img {
+        transform: scale(1.1) rotate(5deg);
+      }
+
+      .footer-brand h5 {
+        background: linear-gradient(45deg, #ffc107, #fff, #ffc107);
+        background-size: 200% 200%;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        animation: gradient-text 3s ease infinite;
+        font-weight: 700;
+        margin-bottom: 1rem;
+      }
+
+      @keyframes gradient-text {
+        0%,
+        100% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+      }
+
+      .footer-links {
+        list-style: none;
+        padding: 0;
+      }
+
+      .footer-links li {
+        margin-bottom: 0.75rem;
+        transform: translateX(-10px);
+        opacity: 0;
+        animation: slideInLeft 0.6s ease forwards;
+      }
+
+      .footer-links li:nth-child(1) {
+        animation-delay: 0.1s;
+      }
+      .footer-links li:nth-child(2) {
+        animation-delay: 0.2s;
+      }
+      .footer-links li:nth-child(3) {
+        animation-delay: 0.3s;
+      }
+      .footer-links li:nth-child(4) {
+        animation-delay: 0.4s;
+      }
+      .footer-links li:nth-child(5) {
+        animation-delay: 0.5s;
+      }
+      .footer-links li:nth-child(6) {
+        animation-delay: 0.6s;
+      }
+
+      @keyframes slideInLeft {
+        to {
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
+
+      .footer-links a {
+        color: rgba(255, 255, 255, 0.8);
+        text-decoration: none;
+        transition: var(--transition);
+        position: relative;
+        display: inline-block;
+        padding: 0.25rem 0;
+      }
+
+      .footer-links a::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: linear-gradient(90deg, #ffc107, #fff);
+        transition: width 0.3s ease;
+      }
+
+      .footer-links a:hover {
+        color: #ffc107;
+        transform: translateX(5px);
+      }
+
+      .footer-links a:hover::before {
+        width: 100%;
+      }
+      /* Back to Top Button */
+      .btn-back-to-top {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 999;
+        opacity: 0;
+        visibility: hidden;
+        transition: var(--transition);
+        background-color: var(--warning);
+        color: white;
+        box-shadow: var(--shadow-md);
+        border: none;
+      }
+
+      .btn-back-to-top:hover {
+        background-color: #f97316;
+        transform: translateY(-3px);
+      }
+
+      .btn-back-to-top.show {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      /* Animations */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .fade-in {
+        animation: fadeIn 0.6s ease forwards;
+      }
+
+      /* Responsive Adjustments */
+      @media (max-width: 1199.98px) {
+        .hero-title {
+          font-size: 2.5rem;
+        }
+
+        .hero-subtitle {
+          font-size: 1.1rem;
+        }
+
+        .section-title {
+          font-size: 1.5rem;
+        }
+      }
+
+      @media (max-width: 991.98px) {
+        .navbar-collapse {
+          padding: 1rem;
+          background-color: var(--primary-dark);
+          border-radius: var(--rounded-sm);
+          margin-top: 1rem;
+        }
+
+        .nav-link {
+          padding: 0.5rem 0 !important;
+          border-radius: 0 !important;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .hero-section {
+          padding: 6rem 0 4rem;
+        }
+
+        .hero-title {
+          font-size: 2.25rem;
+        }
+
+        .featured-gallery-image {
+          height: 250px;
+        }
+
+        .gallery-image {
+          height: 180px;
+        }
+
+        .newsletter-form {
+          margin-left: 0;
+          margin-top: 1.5rem;
+        }
+      }
+
+      @media (max-width: 767.98px) {
+        .hero-section {
+          padding: 5rem 0 3rem;
+        }
+
+        .hero-title {
+          font-size: 2rem;
+        }
+
+        .search-filter-section .row > div {
+          margin-bottom: 1rem;
+        }
+
+        .search-filter-section .row > div:last-child {
+          margin-bottom: 0;
+        }
+
+        .featured-gallery-image {
+          height: 200px;
+        }
+
+        .gallery-image {
+          height: 160px;
+        }
+
+        .footer {
+          padding: 3rem 0 1.5rem;
+        }
+      }
+
+      @media (max-width: 575.98px) {
+        .hero-title {
+          font-size: 1.75rem;
+        }
+
+        .hero-subtitle {
+          font-size: 1rem;
+        }
+
+        .section-title {
+          font-size: 1.35rem;
+        }
+
+        .featured-gallery-image {
+          height: 180px;
+        }
+
+        .gallery-card {
+          margin-bottom: 1.5rem;
+        }
+
+        .gallery-card:last-child {
+          margin-bottom: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <header id="navbar-placeholder"></header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="hero-overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto text-center">
+            <div class="hero-content" data-aos="fade-up">
+              <div class="hero-badge">
+                <i class="bi bi-images me-2"></i>
+                <span>Dokumentasi Kegiatan</span>
+              </div>
+              <h1 class="hero-title mb-3">
+                <span class="title-highlight">Galeri</span> Kegiatan
+              </h1>
+              <p class="hero-subtitle">
+                Dokumentasi kegiatan dan program Kelurahan Tanjungpinang Barat
+              </p>
+              <nav aria-label="breadcrumb" class="mt-4">
+                <ol class="breadcrumb breadcrumb-custom justify-content-center">
+                  <li class="breadcrumb-item">
+                    <a href="index.html">
+                      <i class="bi bi-house-door me-1"></i>Beranda
+                    </a>
+                  </li>
+                  <li class="breadcrumb-item active" aria-current="page">
+                    Galeri
+                  </li>
+                </ol>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-wave">
+        <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <path
+            d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"
+            opacity=".25"
+            class="shape-fill"
+          ></path>
+          <path
+            d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z"
+            opacity=".5"
+            class="shape-fill"
+          ></path>
+          <path
+            d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z"
+            class="shape-fill"
+          ></path>
+        </svg>
+      </div>
+    </section>
+
+    <!-- Search and Filter Section -->
+    <section class="search-filter-section" data-aos="fade-up">
+      <div class="container">
+        <div class="row g-3">
+          <div class="col-lg-6">
+            <div class="search-box">
+              <div class="input-group">
+                <span class="input-group-text">
+                  <i class="bi bi-search text-muted"></i>
+                </span>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="searchInput"
+                  placeholder="Cari kegiatan..."
+                />
+                <button class="btn btn-warning" type="button" id="searchBtn">
+                  <i class="bi bi-search me-1"></i> Cari
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="filter-box">
+              <select class="form-select" id="categoryFilter">
+                <option value="">Semua Kategori</option>
+                <option value="pembangunan">Pembangunan</option>
+                <option value="kesehatan">Kesehatan</option>
+                <option value="sosial">Sosial</option>
+                <option value="pendidikan">Pendidikan</option>
+                <option value="ekonomi">Ekonomi</option>
+                <option value="lingkungan">Lingkungan</option>
+                <option value="olahraga">Olahraga</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="filter-box">
+              <select class="form-select" id="sortFilter">
+                <option value="newest">Terbaru</option>
+                <option value="oldest">Terlama</option>
+                <option value="name">Nama A-Z</option>
+                <option value="popular">Paling Populer</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="stats-section">
+      <div class="container">
+        <div class="row g-4 text-center">
+          <div
+            class="col-lg-3 col-md-6"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="stat-card">
+              <div class="stat-icon bg-warning bg-opacity-10 text-warning">
+                <i class="bi bi-camera"></i>
+              </div>
+              <h3 class="stat-number" data-count="18">0</h3>
+              <p class="stat-label">Total Album</p>
+            </div>
+          </div>
+          <div
+            class="col-lg-3 col-md-6"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="stat-card">
+              <div class="stat-icon bg-primary bg-opacity-10 text-primary">
+                <i class="bi bi-images"></i>
+              </div>
+              <h3 class="stat-number" data-count="247">0</h3>
+              <p class="stat-label">Total Foto</p>
+            </div>
+          </div>
+          <div
+            class="col-lg-3 col-md-6"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <div class="stat-card">
+              <div class="stat-icon bg-success bg-opacity-10 text-success">
+                <i class="bi bi-calendar-event"></i>
+              </div>
+              <h3 class="stat-number" data-count="5">0</h3>
+              <p class="stat-label">Kegiatan Bulan Ini</p>
+            </div>
+          </div>
+          <div
+            class="col-lg-3 col-md-6"
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
+            <div class="stat-card">
+              <div class="stat-icon bg-info bg-opacity-10 text-info">
+                <i class="bi bi-eye"></i>
+              </div>
+              <h3 class="stat-number" data-count="3456">0</h3>
+              <p class="stat-label">Total Views</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Gallery Section -->
+    <section class="featured-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">
+            <i class="bi bi-star-fill text-warning me-2"></i>
+            Album Unggulan
+          </h2>
+        </div>
+        <div class="row g-4">
+          <div class="col-lg-8" data-aos="fade-up">
+            <div class="featured-gallery-card">
+              <div class="featured-gallery-image">
+                <img src="assets/images/gallery1.jpg" alt="Album Unggulan" />
+                <div class="photo-count">
+                  <i class="bi bi-images"></i>
+                  <span>24 Foto</span>
+                </div>
+              </div>
+              <div class="featured-gallery-content">
+                <div class="gallery-meta">
+                  <span class="badge bg-primary">Pembangunan</span>
+                  <small class="text-muted ms-2">15 Januari 2025</small>
+                </div>
+                <h3>Pembangunan Jalan Lingkungan RT 05</h3>
+                <p>
+                  Dokumentasi lengkap proses pembangunan jalan lingkungan di RT
+                  05 mulai dari persiapan, pelaksanaan, hingga selesai. Proyek
+                  ini melibatkan partisipasi aktif masyarakat setempat.
+                </p>
+                <div class="gallery-footer">
+                  <small>
+                    <i class="bi bi-eye me-1"></i
+                    ><span class="view-count" data-id="1">342</span> views
+                  </small>
+                  <a href="detail-galeri.html?id=1" class="btn btn-warning"
+                    >Lihat Album</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="recent-galleries">
+              <div class="recent-header">
+                <i class="bi bi-clock"></i>
+                <h5>Album Terbaru</h5>
+              </div>
+              <div class="recent-item">
+                <div class="recent-image">
+                  <img src="assets/images/gallery2.jpg" alt="Recent Gallery" />
+                  <div class="recent-overlay">
+                    <span>12 Foto</span>
+                  </div>
+                </div>
+                <div class="recent-content">
+                  <h6>
+                    <a href="detail-galeri.html?id=2"
+                      >Posyandu Balita Januari 2025</a
+                    >
+                  </h6>
+                  <small class="text-muted">12 Januari 2025</small>
+                </div>
+              </div>
+              <div class="recent-item">
+                <div class="recent-image">
+                  <img src="assets/images/gallery3.jpg" alt="Recent Gallery" />
+                  <div class="recent-overlay">
+                    <span>18 Foto</span>
+                  </div>
+                </div>
+                <div class="recent-content">
+                  <h6>
+                    <a href="detail-galeri.html?id=3"
+                      >Bantuan Sembako untuk Warga</a
+                    >
+                  </h6>
+                  <small class="text-muted">8 Januari 2025</small>
+                </div>
+              </div>
+              <div class="recent-item">
+                <div class="recent-image">
+                  <img src="assets/images/gallery4.jpg" alt="Recent Gallery" />
+                  <div class="recent-overlay">
+                    <span>15 Foto</span>
+                  </div>
+                </div>
+                <div class="recent-content">
+                  <h6><a href="detail-galeri.html?id=4">Pelatihan UMKM</a></h6>
+                  <small class="text-muted">5 Januari 2025</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery Grid Section -->
+    <section class="gallery-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">
+            <i class="bi bi-collection-fill text-warning me-2"></i>
+            Semua Album
+          </h2>
+        </div>
+        <div class="row g-4" id="galleryGrid">
+          <!-- Gallery items will be populated by JavaScript -->
+        </div>
+
+        <!-- Pagination -->
+        <div class="row mt-5">
+          <div class="col-12">
+            <nav aria-label="Gallery pagination">
+              <ul
+                class="pagination pagination-custom justify-content-center"
+                id="pagination"
+              >
+                <!-- Pagination will be populated by JavaScript -->
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="py-5 text-white position-relative overflow-hidden"
+      style="background: linear-gradient(135deg, #dc3545 0%, #ff8e53 100%)"
+    >
+      <div class="newsletter-pattern"></div>
+      <div class="container position-relative">
+        <div class="row align-items-center">
+          <div class="col-lg-6 mb-4 mb-lg-0">
+            <div class="d-flex align-items-center">
+              <div class="me-4">
+                <i class="bi bi-envelope-fill display-4 text-warning"></i>
+              </div>
+              <div>
+                <h3 class="mb-2">Dapatkan Berita Terbaru</h3>
+                <p class="mb-0">
+                  Berlangganan newsletter kami untuk mendapatkan informasi
+                  terkini dari kelurahan langsung ke email Anda
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="newsletter-form">
+              <div class="input-group">
+                <input
+                  type="email"
+                  class="form-control"
+                  placeholder="Masukkan email Anda"
+                  style="background-color: rgba(255, 255, 255, 0.95)"
+                />
+                <button
+                  class="btn"
+                  type="button"
+                  style="background-color: #dc3545 !important; color: white"
+                >
+                  <i class="bi bi-send-fill me-2"></i>Berlangganan
+                </button>
+              </div>
+              <div class="form-text mt-2 text-white-50">
+                Kami tidak akan mengirim spam. Anda bisa berhenti berlangganan
+                kapan saja.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="bg-dark text-light pt-5 pb-4">
+      <div class="container">
+        <div class="row justify-content-between align-items-start">
+          <!-- Hubungi Kami -->
+          <div class="col-md-4 mb-4">
+            <h5 class="fw-bold text-danger mb-3">Hubungi Kami</h5>
+            <div class="d-flex align-items-start mb-4">
+              <div class="me-3">
+                <img
+                  src="assets/images/logo-tanjungpinang.png"
+                  alt="Logo"
+                  style="width: 80px; height: auto"
+                  class="img-fluid"
+                />
+              </div>
+              <div class="small">
+                <p class="fw-bold mb-1">Kelurahan Tanjungpinang Kota</p>
+                <p class="mb-1">Kecamatan Tanjungpinang Kota</p>
+              </div>
+            </div>
+            <ul class="list-unstyled small">
+              <li class="mb-2">
+                <i class="bi bi-geo-alt-fill me-2 text-danger"></i>
+                Jl. Mesjid No.7, Tanjungpinang Kota, Kota Tanjungpinang,
+                Kepulauan Riau
+              </li>
+              <li class="mb-2">
+                <i class="bi bi-envelope-fill me-2 text-danger"></i>
+                tpitimurkotakel@tanjungpinangkota.go.id
+              </li>
+              <li class="mb-3">
+                <i class="bi bi-telephone-fill me-2 text-danger"></i>
+                (0771) 1234567
+              </li>
+              <li>
+                <div class="d-flex gap-2">
+                  <a
+                    href="#"
+                    class="btn btn-outline-light btn-sm rounded-circle"
+                  >
+                    <i class="bi bi-facebook"></i>
+                  </a>
+                  <a
+                    href="#"
+                    class="btn btn-outline-light btn-sm rounded-circle"
+                  >
+                    <i class="bi bi-instagram"></i>
+                  </a>
+                  <a
+                    href="#"
+                    class="btn btn-outline-light btn-sm rounded-circle"
+                  >
+                    <i class="bi bi-twitter"></i>
+                  </a>
+                  <a
+                    href="#"
+                    class="btn btn-outline-light btn-sm rounded-circle"
+                  >
+                    <i class="bi bi-youtube"></i>
+                  </a>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Menu Utama -->
+          <div class="col-md-3 mb-4">
+            <h5 class="fw-bold text-danger border-bottom pb-2 mb-3">
+              Menu Utama
+            </h5>
+            <ul class="list-unstyled small">
+              <li class="mb-2">
+                <a
+                  href="index.html"
+                  class="text-light text-decoration-none d-flex align-items-center"
+                >
+                  <i class="bi bi-house-door-fill me-2"></i> Beranda
+                </a>
+              </li>
+              <li class="mb-2">
+                <a
+                  href="berita.html"
+                  class="text-light text-decoration-none d-flex align-items-center"
+                >
+                  <i class="bi bi-newspaper me-2"></i> Berita
+                </a>
+              </li>
+              <li class="mb-2">
+                <a
+                  href="download-area.html"
+                  class="text-light text-decoration-none d-flex align-items-center"
+                >
+                  <i class="bi bi-download me-2"></i> Download
+                </a>
+              </li>
+              <li class="mb-2">
+                <a
+                  href="galeri.html"
+                  class="text-light text-decoration-none d-flex align-items-center"
+                >
+                  <i class="bi bi-images me-2"></i> Galeri
+                </a>
+              </li>
+              <li class="mb-2">
+                <a
+                  href="data-statistik.html"
+                  class="text-light text-decoration-none d-flex align-items-center"
+                >
+                  <i class="bi bi-bar-chart-fill me-2"></i> Data Statistik
+                </a>
+              </li>
+              <li class="mb-2">
+                <a
+                  href="peta-kelurahan.html"
+                  class="text-light text-decoration-none d-flex align-items-center"
+                >
+                  <i class="bi bi-map-fill me-2"></i> Peta Kelurahan
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Berita Populer -->
+          <div class="col-md-4 mb-4">
+            <h5 class="fw-bold text-danger border-bottom pb-2 mb-3">
+              Berita Populer
+            </h5>
+            <div class="mb-4">
+              <h6 class="fw-bold text-white border-bottom pb-2 mb-3">
+                Selamat Datang di Website Kelurahan Tanjungpinang Kota
+              </h6>
+              <p class="text-secondary small mb-0">
+                <i class="bi bi-calendar me-2"></i>Rabu, 31 Agustus 2022
+              </p>
+            </div>
+            <div class="mb-4">
+              <h6 class="ffw-bold text-white border-bottom pb-2 mb-3">
+                Penghargaan Kepala Daerah Perempuan Inspiratif dari Tempo Media
+                Grup
+              </h6>
+              <p class="text-secondary small mb-0">
+                <i class="bi bi-calendar me-2"></i>Rabu, 28 September 2022
+              </p>
+            </div>
+            <div class="mb-4">
+              <h6 class="ffw-bold text-white border-bottom pb-2 mb-3">
+                Penyerahan Simbolis Kartu Identitas Anak (KIA)
+              </h6>
+              <p class="text-secondary small mb-0">
+                <i class="bi bi-calendar me-2"></i>Kamis, 15 Desember 2022
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer Bottom Tengah -->
+        <hr class="border-secondary" />
+        <div class="text-center pt-2">
+          <small
+            >Design by
+            <a href="#" class="text-danger fw-bold"
+              >Mahasiswa Teknik Informatika</a
+            >
+            &copy;2025</small
+          >
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="btn btn-back-to-top">
+      <i class="bi bi-arrow-up"></i>
+    </button>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS Animation -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Gallery Data and Functionality -->
+    <script>
+      // Initialize AOS animation
+      AOS.init({
+        duration: 800,
+        easing: "ease-in-out",
+        once: true,
+      });
+
+      // Gallery data
+      const galleryData = [
+        {
+          id: 1,
+          title: "Pembangunan Jalan Lingkungan RT 05",
+          description:
+            "Dokumentasi lengkap proses pembangunan jalan lingkungan di RT 05 mulai dari persiapan, pelaksanaan, hingga selesai",
+          category: "pembangunan",
+          date: "2025-01-15",
+          image: "assets/images/gallery1.jpg",
+          photoCount: 24,
+          views: 342,
+          photographer: "Tim Dokumentasi Kelurahan",
+        },
+        {
+          id: 2,
+          title: "Posyandu Balita Januari 2025",
+          description:
+            "Kegiatan posyandu balita rutin bulan Januari dengan pemeriksaan kesehatan dan pemberian vitamin",
+          category: "kesehatan",
+          date: "2025-01-12",
+          image: "assets/images/gallery2.jpg",
+          photoCount: 12,
+          views: 189,
+          photographer: "Tim Kesehatan",
+        },
+        {
+          id: 3,
+          title: "Bantuan Sembako untuk Warga",
+          description:
+            "Penyaluran bantuan sembako kepada 150 keluarga kurang mampu di wilayah kelurahan",
+          category: "sosial",
+          date: "2025-01-08",
+          image: "assets/images/gallery3.jpg",
+          photoCount: 18,
+          views: 156,
+          photographer: "Bagian Sosial",
+        },
+        {
+          id: 4,
+          title: "Pelatihan UMKM",
+          description:
+            "Workshop dan pelatihan untuk pelaku UMKM dalam meningkatkan kualitas produk dan pemasaran",
+          category: "ekonomi",
+          date: "2025-01-05",
+          image: "assets/images/gallery4.jpg",
+          photoCount: 15,
+          views: 134,
+          photographer: "Bagian Ekonomi",
+        },
+        {
+          id: 5,
+          title: "Gotong Royong Bersih Lingkungan",
+          description:
+            "Kegiatan gotong royong membersihkan lingkungan yang dilaksanakan serentak di seluruh RT/RW",
+          category: "lingkungan",
+          date: "2025-01-03",
+          image: "assets/images/gallery5.jpg",
+          photoCount: 21,
+          views: 98,
+          photographer: "Koordinator Lingkungan",
+        },
+        {
+          id: 6,
+          title: "Sosialisasi Program KB",
+          description:
+            "Sosialisasi program keluarga berencana untuk meningkatkan kesadaran masyarakat",
+          category: "kesehatan",
+          date: "2025-01-01",
+          image: "assets/images/gallery6.jpg",
+          photoCount: 9,
+          views: 87,
+          photographer: "Tim Kesehatan",
+        },
+        {
+          id: 7,
+          title: "Pembagian Bibit Tanaman",
+          description:
+            "Pembagian bibit tanaman produktif kepada warga untuk mendukung ketahanan pangan",
+          category: "ekonomi",
+          date: "2024-12-28",
+          image: "assets/images/news1.jpg",
+          photoCount: 16,
+          views: 76,
+          photographer: "Bagian Pertanian",
+        },
+        {
+          id: 8,
+          title: "Peringatan HUT RI ke-79",
+          description:
+            "Peringatan Hari Kemerdekaan RI ke-79 dengan berbagai lomba dan kegiatan menarik",
+          category: "sosial",
+          date: "2024-08-17",
+          image: "assets/images/news2.jpg",
+          photoCount: 45,
+          views: 234,
+          photographer: "Panitia HUT RI",
+        },
+        {
+          id: 9,
+          title: "Vaksinasi COVID-19 Booster",
+          description:
+            "Pelaksanaan vaksinasi COVID-19 dosis booster untuk masyarakat umum",
+          category: "kesehatan",
+          date: "2024-12-20",
+          image: "assets/images/news3.jpg",
+          photoCount: 13,
+          views: 145,
+          photographer: "Tim Kesehatan",
+        },
+        {
+          id: 10,
+          title: "Workshop Digital Marketing",
+          description:
+            "Workshop pemasaran digital untuk membantu UMKM meningkatkan penjualan online",
+          category: "ekonomi",
+          date: "2024-12-15",
+          image: "assets/images/gallery1.jpg",
+          photoCount: 19,
+          views: 112,
+          photographer: "Bagian Ekonomi",
+        },
+        {
+          id: 11,
+          title: "Pembangunan Taman Bermain",
+          description:
+            "Pembangunan taman bermain anak di area kelurahan untuk sarana rekreasi keluarga",
+          category: "pembangunan",
+          date: "2024-12-10",
+          image: "assets/images/gallery2.jpg",
+          photoCount: 27,
+          views: 89,
+          photographer: "Tim Pembangunan",
+        },
+        {
+          id: 12,
+          title: "Pelatihan Keterampilan Menjahit",
+          description:
+            "Pelatihan keterampilan menjahit untuk ibu-ibu rumah tangga guna meningkatkan ekonomi keluarga",
+          category: "pendidikan",
+          date: "2024-12-05",
+          image: "assets/images/gallery3.jpg",
+          photoCount: 14,
+          views: 67,
+          photographer: "Bagian Pemberdayaan",
+        },
+        {
+          id: 13,
+          title: "Turnamen Futsal RT/RW",
+          description:
+            "Turnamen futsal antar RT/RW untuk mempererat tali silaturahmi dan meningkatkan sportivitas",
+          category: "olahraga",
+          date: "2024-11-25",
+          image: "assets/images/gallery4.jpg",
+          photoCount: 32,
+          views: 198,
+          photographer: "Panitia Turnamen",
+        },
+        {
+          id: 14,
+          title: "Senam Sehat Lansia",
+          description:
+            "Kegiatan senam sehat untuk lansia yang dilaksanakan rutin setiap minggu",
+          category: "kesehatan",
+          date: "2024-11-20",
+          image: "assets/images/gallery5.jpg",
+          photoCount: 11,
+          views: 78,
+          photographer: "Tim Kesehatan",
+        },
+        {
+          id: 15,
+          title: "Penanaman Pohon Bersama",
+          description:
+            "Kegiatan penanaman pohon bersama untuk menjaga kelestarian lingkungan",
+          category: "lingkungan",
+          date: "2024-11-15",
+          image: "assets/images/gallery6.jpg",
+          photoCount: 22,
+          views: 95,
+          photographer: "Koordinator Lingkungan",
+        },
+      ];
+
+      let currentPage = 1;
+      const itemsPerPage = 9;
+      let filteredGallery = [...galleryData];
+
+      // Format date
+      function formatDate(dateString) {
+        const options = { year: "numeric", month: "long", day: "numeric" };
+        return new Date(dateString).toLocaleDateString("id-ID", options);
+      }
+
+      // Format short date
+      function formatShortDate(dateString) {
+        const options = { day: "numeric", month: "short", year: "numeric" };
+        return new Date(dateString).toLocaleDateString("id-ID", options);
+      }
+
+      // Get category badge class
+      function getCategoryBadgeClass(category) {
+        const classes = {
+          pembangunan: "bg-primary",
+          kesehatan: "bg-success",
+          sosial: "bg-warning",
+          ekonomi: "bg-info",
+          lingkungan: "bg-success",
+          pendidikan: "bg-secondary",
+          olahraga: "bg-danger",
+        };
+        return classes[category] || "bg-secondary";
+      }
+
+      // Update view count
+      function updateViewCount(galleryId) {
+        const viewKey = `gallery_view_${galleryId}`;
+        let currentViews = localStorage.getItem(viewKey);
+
+        if (!currentViews) {
+          const gallery = galleryData.find((g) => g.id == galleryId);
+          if (gallery) {
+            currentViews = gallery.views + 1;
+            localStorage.setItem(viewKey, currentViews);
+          }
+        } else {
+          currentViews = parseInt(currentViews) + 1;
+          localStorage.setItem(viewKey, currentViews);
+        }
+
+        return currentViews;
+      }
+
+      // Get view count
+      function getViewCount(galleryId) {
+        const viewKey = `gallery_view_${galleryId}`;
+        let currentViews = localStorage.getItem(viewKey);
+
+        if (!currentViews) {
+          const gallery = galleryData.find((g) => g.id == galleryId);
+          return gallery ? gallery.views : 0;
+        }
+
+        return parseInt(currentViews);
+      }
+
+      // Render gallery grid
+      function renderGalleryGrid() {
+        const galleryGrid = document.getElementById("galleryGrid");
+        const startIndex = (currentPage - 1) * itemsPerPage;
+        const endIndex = startIndex + itemsPerPage;
+        const currentGalleries = filteredGallery.slice(startIndex, endIndex);
+
+        galleryGrid.innerHTML = currentGalleries
+          .map(
+            (gallery) => `
+                <div class="col-lg-4 col-md-6" data-aos="fade-up">
+                    <div class="gallery-card">
+                        <div class="gallery-image">
+                            <img src="${gallery.image}" alt="${gallery.title}">
+                            <div class="gallery-overlay">
+                                <div class="gallery-info">
+                                    <h6>${gallery.title}</h6>
+                                    <p><i class="bi bi-images me-1"></i>${
+                                      gallery.photoCount
+                                    } Foto</p>
+                                    <a href="detail-galeri.html?id=${
+                                      gallery.id
+                                    }" class="btn btn-warning btn-sm">Lihat Album</a>
+                                </div>
+                            </div>
+                            <div class="photo-count">
+                                <i class="bi bi-images"></i>
+                                <span>${gallery.photoCount}</span>
+                            </div>
+                        </div>
+                        <div class="gallery-content">
+                            <div class="gallery-meta">
+                                <span class="badge ${getCategoryBadgeClass(
+                                  gallery.category
+                                )}">${
+              gallery.category.charAt(0).toUpperCase() +
+              gallery.category.slice(1)
+            }</span>
+                                <small class="text-muted ms-2">${formatShortDate(
+                                  gallery.date
+                                )}</small>
+                            </div>
+                            <h5>${gallery.title}</h5>
+                            <p>${gallery.description}</p>
+                            <div class="gallery-footer">
+                                <small>
+                                    <i class="bi bi-eye me-1"></i><span class="view-count" data-id="${
+                                      gallery.id
+                                    }">${getViewCount(gallery.id)}</span> views
+                                </small>
+                                <small>
+                                    <i class="bi bi-person me-1"></i>${
+                                      gallery.photographer
+                                    }
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `
+          )
+          .join("");
+
+        renderPagination();
+      }
+
+      // Render pagination
+      function renderPagination() {
+        const pagination = document.getElementById("pagination");
+        const totalPages = Math.ceil(filteredGallery.length / itemsPerPage);
+
+        let paginationHTML = "";
+
+        // Previous button
+        paginationHTML += `
+                <li class="page-item ${currentPage === 1 ? "disabled" : ""}">
+                    <a class="page-link" href="#" onclick="changePage(${
+                      currentPage - 1
+                    })">
+                        <i class="bi bi-chevron-left"></i>
+                    </a>
+                </li>
+            `;
+
+        // Page numbers
+        for (let i = 1; i <= totalPages; i++) {
+          if (
+            i === 1 ||
+            i === totalPages ||
+            (i >= currentPage - 1 && i <= currentPage + 1)
+          ) {
+            paginationHTML += `
+                        <li class="page-item ${
+                          i === currentPage ? "active" : ""
+                        }">
+                            <a class="page-link" href="#" onclick="changePage(${i})">${i}</a>
+                        </li>
+                    `;
+          } else if (i === currentPage - 2 || i === currentPage + 2) {
+            paginationHTML += `<li class="page-item disabled"><span class="page-link">...</span></li>`;
+          }
+        }
+
+        // Next button
+        paginationHTML += `
+                <li class="page-item ${
+                  currentPage === totalPages ? "disabled" : ""
+                }">
+                    <a class="page-link" href="#" onclick="changePage(${
+                      currentPage + 1
+                    })">
+                        <i class="bi bi-chevron-right"></i>
+                    </a>
+                </li>
+            `;
+
+        pagination.innerHTML = paginationHTML;
+      }
+
+      // Change page
+      function changePage(page) {
+        const totalPages = Math.ceil(filteredGallery.length / itemsPerPage);
+        if (page >= 1 && page <= totalPages) {
+          currentPage = page;
+          renderGalleryGrid();
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+      }
+
+      // Filter gallery
+      function filterGallery() {
+        const searchTerm = document
+          .getElementById("searchInput")
+          .value.toLowerCase();
+        const category = document.getElementById("categoryFilter").value;
+        const sortBy = document.getElementById("sortFilter").value;
+
+        filteredGallery = galleryData.filter((gallery) => {
+          const matchesSearch =
+            gallery.title.toLowerCase().includes(searchTerm) ||
+            gallery.description.toLowerCase().includes(searchTerm);
+          const matchesCategory = !category || gallery.category === category;
+          return matchesSearch && matchesCategory;
+        });
+
+        // Sort galleries
+        switch (sortBy) {
+          case "newest":
+            filteredGallery.sort((a, b) => new Date(b.date) - new Date(a.date));
+            break;
+          case "oldest":
+            filteredGallery.sort((a, b) => new Date(a.date) - new Date(b.date));
+            break;
+          case "name":
+            filteredGallery.sort((a, b) => a.title.localeCompare(b.title));
+            break;
+          case "popular":
+            filteredGallery.sort(
+              (a, b) => getViewCount(b.id) - getViewCount(a.id)
+            );
+            break;
+        }
+
+        currentPage = 1;
+        renderGalleryGrid();
+      }
+
+      // Event listeners
+      document
+        .getElementById("searchBtn")
+        .addEventListener("click", filterGallery);
+      document
+        .getElementById("searchInput")
+        .addEventListener("keypress", function (e) {
+          if (e.key === "Enter") {
+            filterGallery();
+          }
+        });
+      document
+        .getElementById("categoryFilter")
+        .addEventListener("change", filterGallery);
+      document
+        .getElementById("sortFilter")
+        .addEventListener("change", filterGallery);
+
+      // Initialize
+      document.addEventListener("DOMContentLoaded", function () {
+        renderGalleryGrid();
+
+        // Animate counting numbers
+        const counters = document.querySelectorAll(".stat-number");
+        const speed = 200;
+
+        counters.forEach((counter) => {
+          const target = +counter.getAttribute("data-count");
+          const count = +counter.innerText;
+          const increment = target / speed;
+
+          if (count < target) {
+            counter.innerText = Math.ceil(count + increment);
+            setTimeout(updateCount, 1);
+          } else {
+            counter.innerText = target;
+          }
+
+          function updateCount() {
+            const count = +counter.innerText;
+            const increment = target / speed;
+
+            if (count < target) {
+              counter.innerText = Math.ceil(count + increment);
+              setTimeout(updateCount, 1);
+            } else {
+              counter.innerText = target;
+            }
+          }
+        });
+
+        // Back to top button
+        const backToTopButton = document.getElementById("backToTop");
+
+        window.addEventListener("scroll", function () {
+          if (window.pageYOffset > 300) {
+            backToTopButton.classList.add("show");
+          } else {
+            backToTopButton.classList.remove("show");
+          }
+        });
+
+        backToTopButton.addEventListener("click", function (e) {
+          e.preventDefault();
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="assets/js/nav.js"></script>
+  </body>
+</html>

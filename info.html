@@ -1,0 +1,2849 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pengumuman - Kelurahan Tanjungpinang Barat</title>
+    <meta
+      name="description"
+      content="Pengumuman resmi dari Kelurahan Tanjungpinang Barat, Kecamatan Tanjungpinang Barat, Kota Tanjungpinang"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="assets/css/style.css" />
+
+    <style>
+      :root {
+        --primary-color: #dc3545; /* Diubah ke warna merah */
+        --primary-light: #e8f1ff;
+        --secondary-color: #6c757d;
+        --success-color: #198754;
+        --info-color: #0dcaf0;
+        --warning-color: #ffc107;
+        --danger-color: #dc3545;
+        --light-color: #f8f9fa;
+        --dark-color: #212529;
+        --gray-100: #f8f9fa;
+        --gray-200: #e9ecef;
+        --gray-300: #dee2e6;
+        --gray-400: #ced4da;
+        --gray-500: #adb5bd;
+        --gray-600: #6c757d;
+        --gray-700: #495057;
+        --gray-800: #343a40;
+        --gray-900: #212529;
+
+        --font-primary: "Poppins", sans-serif;
+        --font-secondary: "Open Sans", sans-serif;
+
+        --border-radius: 0.5rem;
+        --box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+        --transition: all 0.3s ease;
+      }
+
+      /* ===== Desain Ulang Kolom Pencarian Elegan ===== */
+.search-box .form-control {
+    border-radius: 50px 0 0 50px; /* Membuat sisi kiri membulat total */
+    padding: 0.75rem 1.25rem; /* Padding agar lebih lega */
+    border: 2px solid #e9ecef; /* Border lebih tebal dan berwarna lembut */
+    transition: all 0.3s ease-in-out;
+    font-size: 1rem;
+    box-shadow: none; /* Menghapus shadow default dari Bootstrap */
+}
+
+/* Efek saat input difokuskan (diklik) */
+.search-box .form-control:focus {
+    border-color: var(--primary-color); /* Border menjadi merah */
+    box-shadow: 0 0 0 4px rgba(220, 53, 69, 0.15); /* Memberi efek glow merah lembut */
+    background-color: #fff;
+}
+
+/* Tombol Cari */
+.search-box .btn {
+    border-radius: 0 50px 50px 0; /* Membuat sisi kanan membulat total */
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    padding: 0.75rem 1.5rem; /* Sesuaikan padding agar tinggi sejajar */
+    transition: all 0.3s ease-in-out;
+}
+
+/* Efek hover pada tombol */
+.search-box .btn:hover {
+    background-color: #b02a37; /* Warna merah lebih gelap saat disentuh */
+    border-color: #b02a37;
+    transform: scale(1.05); /* Sedikit membesar saat disentuh */
+}
+
+/* Efek focus pada tombol (saat di-klik atau di-tab) */
+.search-box .btn:focus {
+    box-shadow: 0 0 0 4px rgba(220, 53, 69, 0.15); /* Glow merah lembut, sama seperti input */
+}
+
+/* Perbaikan Desain Ikon Judul "Semua Pengumuman" */
+.icon-wrapper {
+    background: linear-gradient(135deg, #dc3545 0%, #ff8e53 100%);
+    box-shadow: 0 4px 15px rgba(220, 53, 69, 0.3);
+    transition: all 0.3s ease;
+    /* --- TAMBAHAN --- */
+    width: 60px; /* Atur lebar yang pasti */
+    height: 60px; /* Atur tinggi yang sama dengan lebar */
+    display: flex; /* Gunakan flexbox untuk menengahkan ikon */
+    align-items: center; /* Tengahkan ikon secara vertikal */
+    justify-content: center; /* Tengahkan ikon secara horizontal */
+    border-radius: 50%; /* Pastikan bentuknya bulat sempurna */
+}
+
+.icon-wrapper i {
+    transition: all 0.3s ease;
+}
+
+/* Efek hover untuk membuatnya lebih interaktif */
+.d-flex.align-items-center:hover .icon-wrapper {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 6px 20px rgba(220, 53, 69, 0.4);
+}
+
+.d-flex.align-items-center:hover .icon-wrapper i {
+    transform: rotate(-10deg);
+}
+
+/* 1. Animasi untuk Tombol Merah (Download Area) */
+.btn-outline-primary {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+.btn-outline-primary::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: var(--primary-color); /* Menggunakan warna merah dari root */
+    transition: left 0.4s ease;
+    z-index: -1;
+}
+.btn-outline-primary:hover {
+    color: white;
+    background-color: transparent !important; /* Mencegah override dari Bootstrap */
+}
+.btn-outline-primary:hover::before {
+    left: 0;
+}
+
+/* 2. Animasi untuk Tombol Hijau (Galeri Kegiatan) */
+.btn-outline-success {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+.btn-outline-success::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: var(--success-color); /* Menggunakan warna hijau dari root */
+    transition: left 0.4s ease;
+    z-index: -1;
+}
+.btn-outline-success:hover {
+    color: white;
+    background-color: transparent !important;
+}
+.btn-outline-success:hover::before {
+    left: 0;
+}
+
+/* 3. Animasi untuk Tombol Biru (Peta Kelurahan) */
+.btn-outline-info {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+.btn-outline-info::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: var(--info-color); /* Menggunakan warna biru dari root */
+    transition: left 0.4s ease;
+    z-index: -1;
+}
+.btn-outline-info:hover {
+    color: white;
+    background-color: transparent !important;
+}
+.btn-outline-info:hover::before {
+    left: 0;
+}
+
+      /* ===== PERBAIKAN WARNA TOMBOL FAB ===== */
+/* ===== PERBAIKAN WARNA TOMBOL FAB ===== */ .fab-main { background: var(--danger-color) !important; /* Menggunakan variabel warna merah yang konsisten */ }
+
+
+      /* body {
+            font-family: var(--font-secondary);
+            color: var(--gray-800);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-color: var(--gray-100);
+        } */
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      .header-title,
+      .section-title {
+        font-family: var(--font-primary);
+        font-weight: 600;
+        color: var(--dark-color);
+      }
+      
+      .info-card {
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  overflow: hidden;
+  height: 100%;
+}
+
+.info-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.info-card .card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+
+.info-card .card-body {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem; /* Menambahkan padding yang hilang */
+}
+
+.info-card .card-title {
+  font-weight: 700;
+  font-size: 1.25rem;
+  flex-grow: 1; /* Mendorong tombol ke bawah */
+  margin-bottom: 1rem; /* Menambahkan margin bawah */
+}
+
+
+
+.info-card .btn-primary i {
+  transition: transform 0.3s ease;
+}
+
+.info-card .btn-primary:hover i {
+  transform: translateX(4px);
+}
+      
+      .fab-main i {
+      transition: transform 0.3s ease-in-out; /* Tambahkan transisi */
+      }
+
+        .fab-main i.rotate {
+        transform: rotate(45deg);
+        }
+
+      /* Improved Header Section */
+      /* Header Section dengan Warna Merah */
+      .page-header {
+        position: relative;
+        padding: 120px 0 80px;
+        background: var(
+          --gradient-primary
+        ); /* Menggunakan gradien merah dari root */
+        color: white;
+        overflow: hidden;
+        margin-bottom: 2rem;
+      }
+
+      .pengumuman-header {
+        background: var(--gradient-primary); /* Gradien yang sama */
+      }
+
+      /* Penyesuaian elemen pendukung */
+      .page-header .header-overlay {
+        background: rgba(0, 0, 0, 0.2); /* Overlay gelap untuk kontras */
+      }
+
+      .header-content {
+        position: relative;
+        z-index: 2;
+      }
+
+      .header-badge {
+        background: rgba(255, 255, 255, 0.2);
+        color: white;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+      }
+
+      .header-title {
+        font-size: 2.8rem;
+        font-weight: 700;
+        line-height: 1.2;
+        margin-bottom: 1rem;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .title-highlight {
+        color: #ffeb3b; /* Kuning untuk kontras dengan merah */
+      }
+
+      .title-highlight:after {
+        background: rgba(255, 235, 59, 0.3); /* Efek highlight kuning */
+      }
+
+      .header-subtitle {
+        font-size: 1.2rem;
+        opacity: 0.9;
+        max-width: 600px;
+        margin-bottom: 2rem;
+        font-weight: 400;
+      }
+
+      .section-title {
+  position: relative;
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #343a40;
+  text-transform: uppercase;
+  display: inline-block; /* <<< TAMBAHKAN BARIS INI */
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0; /* <<< UBAH MENJADI 0 */
+  /* transform: translateX(-50%); */ /* <<< HAPUS ATAU KOMENTARI BARIS INI */
+  width: 100%; /* <<< UBAH MENJADI 100% */
+  height: 4px;
+  background-color: var(--primary-color);
+  border-radius: 2px;
+}
+
+      /* Search and Filter Section */
+      /* Search and Filter Section */
+      /* Search and Filter Section */
+      .search-filter-section {
+        background-color: white;
+        padding: 1.5rem;
+        border-radius: var(--border-radius);
+        box-shadow: var(--box-shadow);
+        margin-top: -1rem; /* Diubah dari -3rem ke -1rem (turun lebih banyak) */
+        position: relative;
+        z-index: 10;
+        margin-bottom: 1.5rem; /* Ditambahkan margin bottom lebih besar */
+      }
+
+      .search-box .input-group-text {
+        background-color: white;
+        border-right: none;
+        padding-left: 1.25rem;
+      }
+
+      .search-box input {
+        border-left: none;
+        padding-left: 0;
+      }
+
+      .search-box input:focus {
+        box-shadow: none;
+        border-color: var(--gray-300);
+      }
+
+      /* Category Tabs */
+
+      /* Category Tabs */
+      .category-tabs {
+        background: white;
+        padding: 1.5rem;
+        border-radius: var(--border-radius);
+        box-shadow: var(--box-shadow);
+        margin-bottom: 2rem; /* Mengembalikan ke nilai semula */
+        margin-top: 0; /* Menghapus margin top tambahan */
+      }
+
+      .category-tabs .nav-pills {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+      }
+
+      .category-tabs .nav-link {
+        border-radius: 50px;
+        padding: 0.5rem 1.25rem;
+        color: var(--gray-700);
+        font-weight: 500;
+        border: 1px solid var(--gray-200);
+        background: white;
+        display: flex;
+        align-items: center;
+        transition: var(--transition);
+        margin: 0;
+      }
+
+      .category-tabs .nav-link:hover {
+        border-color: var(--primary-color);
+        color: var(--primary-color);
+        transform: translateY(-2px);
+      }
+
+      .category-tabs .nav-link.active {
+        background: linear-gradient(
+          135deg,
+          var(--primary-color) 0%,
+          #0b5ed7 100%
+        );
+        color: white;
+        border-color: var(--primary-color);
+        box-shadow: 0 5px 15px rgba(13, 110, 253, 0.2);
+        transform: translateY(-2px);
+      }
+
+      /* Announcement Card */
+      .announcement-card {
+        background: white;
+        border-radius: var(--border-radius);
+        box-shadow: var(--box-shadow);
+        overflow: hidden;
+        transition: var(--transition);
+        height: 100%;
+        border: 1px solid rgba(0, 0, 0, 0.03);
+        display: flex;
+        flex-direction: column;
+      }
+
+      .announcement-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+        border-color: rgba(13, 110, 253, 0.2);
+      }
+
+      .announcement-card .announcement-image {
+        position: relative;
+        height: 200px;
+        overflow: hidden;
+        flex-shrink: 0;
+      }
+
+      .announcement-card .announcement-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+
+      .announcement-card:hover .announcement-image img {
+        transform: scale(1.05);
+      }
+
+      .announcement-card .announcement-date {
+        position: absolute;
+        top: 1rem; /* Posisi di atas */
+        left: 1rem;
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 10px;
+        padding: 0.5rem 0.75rem;
+        text-align: center;
+        min-width: 60px;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        z-index: 2;
+      }
+
+      /* Hapus properti bottom jika ada */
+      .announcement-date {
+        bottom: auto !important; /* Pastikan tidak ada posisi bottom */
+      }
+
+      .announcement-date .day {
+        display: block;
+        font-size: 1.25rem; /* Sedikit diperkecil */
+        font-weight: bold;
+        color: var(--primary-color);
+        line-height: 1;
+      }
+
+      .announcement-date .month {
+        display: block;
+        font-size: 0.75rem; /* Sedikit diperkecil */
+        color: var(--gray-600);
+        text-transform: uppercase;
+        margin-top: 2px;
+      }
+
+      .announcement-card .announcement-content {
+        padding: 1.75rem;
+        position: relative;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .announcement-card .announcement-content h5 {
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-bottom: 0.75rem;
+        line-height: 1.4;
+        transition: color 0.3s ease;
+      }
+
+      .announcement-card:hover .announcement-content h5 {
+        color: var(--primary-color);
+      }
+
+      .announcement-card .announcement-content p {
+        color: var(--gray-600);
+        font-size: 0.95rem;
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+        flex-grow: 1;
+      }
+
+      .announcement-card .announcement-meta {
+        position: absolute;
+        top: -25px;
+        right: 20px;
+        z-index: 2;
+      }
+
+      .announcement-card .announcement-meta .badge {
+        font-size: 0.7rem;
+        font-weight: 500;
+        padding: 5px 10px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        border-radius: 4px;
+      }
+
+      .badge-resmi {
+        background-color: var(--primary-color);
+      }
+
+      .badge-lelang {
+        background-color: var(--warning-color);
+        color: var(--dark-color);
+      }
+
+      .badge-lowongan {
+        background-color: var(--success-color);
+      }
+
+      .badge-jadwal {
+        background-color: var(--info-color);
+        color: var(--dark-color);
+      }
+
+      .badge-darurat {
+        background-color: var(--danger-color);
+        animation: pulse 2s infinite;
+      }
+
+      @keyframes pulse {
+        0% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.7;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+
+      .announcement-card .announcement-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-top: 1px solid var(--gray-200);
+        padding-top: 1rem;
+        margin-top: auto;
+      }
+
+      .announcement-card .announcement-footer small {
+        font-size: 0.85rem;
+        color: var(--gray-600);
+      }
+
+      .announcement-card .announcement-footer .btn {
+        padding: 5px 15px;
+        border-radius: 50px;
+        font-size: 0.85rem;
+        transition: var(--transition);
+      }
+
+      /* Important Announcement */
+      /* Hapus atau komentari bagian ini */
+
+      .announcement-important {
+        /* border-left: 4px solid var(--danger-color); */ /* Dihapus */
+        position: relative;
+      }
+
+      /* Highlight Announcement Styles */
+      .highlight-announcement {
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        overflow: hidden;
+        position: relative;
+        height: 100%;
+        transition: transform 0.3s ease;
+      }
+
+      .highlight-announcement:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12);
+      }
+
+      .highlight-badge {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        background: linear-gradient(135deg, #ff6b6b 0%, #ff8e53 100%);
+        color: white;
+        padding: 6px 12px;
+        border-radius: 4px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        z-index: 2;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .announcement-image {
+        position: relative;
+        height: 100%;
+        overflow: hidden;
+      }
+
+      .announcement-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+
+      .highlight-announcement:hover .announcement-image img {
+        transform: scale(1.05);
+      }
+
+      .announcement-date {
+        position: absolute;
+        bottom: 15px;
+        left: 15px;
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 8px;
+        padding: 10px;
+        text-align: center;
+        min-width: 60px;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .announcement-date .day {
+        display: block;
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #ff6b6b;
+        line-height: 1;
+      }
+
+      .announcement-date .month {
+        display: block;
+        font-size: 0.8rem;
+        color: #666;
+        text-transform: uppercase;
+        margin-top: 3px;
+      }
+
+      .announcement-content {
+        padding: 1.5rem;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .event-title {
+        margin-bottom: 1rem;
+      }
+
+      .event-title h4 {
+        font-size: 1.1rem;
+        color: #ff6b6b;
+        margin-bottom: 0.25rem;
+        font-weight: 600;
+      }
+
+      .event-title .event-date {
+        font-size: 0.9rem;
+        color: #666;
+        margin-bottom: 0;
+      }
+
+      .announcement-content h3 {
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: #333;
+        margin-bottom: 1rem;
+        line-height: 1.4;
+      }
+
+      .announcement-content p {
+        color: #555;
+        font-size: 0.95rem;
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+        flex-grow: 1;
+      }
+
+      .announcement-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: auto;
+      }
+
+      .views-author {
+        display: flex;
+        flex-direction: column;
+        font-size: 0.85rem;
+      }
+
+      .views-author .views {
+        color: #777;
+        margin-bottom: 0.25rem;
+      }
+
+      .views-author .author {
+        color: #444;
+        font-weight: 500;
+      }
+
+      .read-more {
+        display: flex;
+        align-items: center;
+        color: #ff6b6b;
+        font-weight: 500;
+        text-decoration: none;
+        transition: all 0.3s ease;
+      }
+
+      .read-more i {
+        margin-left: 5px;
+        transition: transform 0.3s ease;
+      }
+
+      .read-more:hover {
+        color: #ff8e53;
+      }
+
+      .read-more:hover i {
+        transform: translateX(3px);
+      }
+
+      /* Responsive Adjustments */
+      @media (max-width: 992px) {
+        .announcement-content h3 {
+          font-size: 1.2rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .highlight-announcement .row {
+          flex-direction: column;
+        }
+
+        .announcement-image {
+          height: 200px;
+        }
+
+        .announcement-content {
+          padding: 1.25rem;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .announcement-footer {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .read-more {
+          margin-top: 10px;
+        }
+      }
+      /* Trending News */
+      .trending-news {
+        background: white;
+        border-radius: var(--border-radius);
+        padding: 1.5rem;
+        box-shadow: var(--box-shadow);
+        height: 100%;
+      }
+
+      .trending-item {
+        display: flex;
+        padding: 1rem 0;
+        border-bottom: 1px solid var(--gray-200);
+      }
+
+      .trending-item:last-child {
+        border-bottom: none;
+      }
+
+      .trending-number {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: var(--gray-400);
+        margin-right: 1rem;
+        min-width: 30px;
+      }
+
+      .trending-content h6 {
+        font-size: 0.95rem;
+        font-weight: 600;
+        margin-bottom: 0.25rem;
+      }
+
+      .trending-content h6 a {
+        color: var(--gray-800);
+        text-decoration: none;
+        transition: color 0.2s ease;
+      }
+
+      .trending-content h6 a:hover {
+        color: var(--primary-color);
+      }
+
+      /* Pagination */
+      .pagination .page-item .page-link {
+        border-radius: 50% !important;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 5px;
+        border: 1px solid var(--gray-300);
+        color: var(--gray-700);
+        transition: var(--transition);
+      }
+
+      .pagination .page-item.active .page-link {
+        background: linear-gradient(
+          135deg,
+          var(--primary-color) 0%,
+          #0b5ed7 100%
+        );
+        border-color: var(--primary-color);
+        color: white;
+        box-shadow: 0 5px 15px rgba(13, 110, 253, 0.2);
+      }
+
+      .pagination .page-item:not(.active) .page-link:hover {
+        background: var(--gray-100);
+        border-color: var(--primary-color);
+        color: var(--primary-color);
+      }
+
+      /* Newsletter Styles */
+      .newsletter-section {
+        background: var(--gradient-primary); /* Gradien merah ke oranye */
+        color: white;
+        position: relative;
+        overflow: hidden;
+      }
+      .newsletter-card {
+        background: rgba(255, 255, 255, 0.1); /* Card semi-transparan */
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+      .newsletter-pattern {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: radial-gradient(
+          circle,
+          rgba(255, 255, 255, 0.1) 1px,
+          transparent 1px
+        );
+        background-size: 20px 20px;
+        opacity: 0.5;
+      }
+
+      .newsletter-form .form-control {
+        background: rgba(255, 255, 255, 0.9);
+        border: none;
+      }
+
+      .newsletter-form .btn {
+        background-color: var(--danger-color); /* Merah gelap */
+        border-color: var(--danger-color);
+        color: white;
+        transition: all 0.3s;
+      }
+
+      .newsletter-form .btn:hover {
+        background-color: #c82333; /* Merah lebih gelap saat hover */
+        transform: translateY(-2px);
+      }
+
+      /* Icon dan teks pendukung */
+      .newsletter-section .bi-envelope-check-fill {
+        color: var(--warning-color); /* Kuning untuk kontras */
+      }
+
+      .newsletter-section .text-white-50 {
+        color: rgba(255, 255, 255, 0.8) !important;
+      }
+
+      /* Pattern decorative */
+      .newsletter-pattern {
+        background-image: radial-gradient(
+          circle,
+          rgba(255, 255, 255, 0.1) 1px,
+          transparent 1px
+        );
+        background-size: 20px 20px;
+        opacity: 0.3;
+      }
+
+      /* Quick Link Styles */
+      .quick-link-card {
+        background: white;
+        border-radius: 12px;
+        padding: 1.5rem;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+        display: flex;
+        border: 1px solid rgba(0, 0, 0, 0.03);
+      }
+
+      .quick-link-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        border-color: rgba(13, 110, 253, 0.2);
+      }
+
+      .quick-link-icon {
+        width: 60px;
+        height: 60px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        margin-right: 1.5rem;
+        flex-shrink: 0;
+        transition: all 0.3s ease;
+      }
+
+      .quick-link-card:hover .quick-link-icon {
+        transform: scale(1.1);
+      }
+
+      .quick-link-content {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+      }
+
+      .quick-link-content h5 {
+        font-size: 1.1rem;
+        margin-bottom: 0.75rem;
+        color: var(--dark-color);
+      }
+
+      .quick-link-content p {
+        font-size: 0.9rem;
+        color: var(--gray-600);
+        margin-bottom: 1.5rem;
+        flex-grow: 1;
+      }
+
+      /* Responsive Adjustments */
+      @media (max-width: 768px) {
+        .quick-link-card {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .quick-link-icon {
+          margin-right: 0;
+          margin-bottom: 1rem;
+        }
+
+        .newsletter-form .btn span {
+          display: inline;
+        }
+      }
+
+         /*====================================
+  Quick Links Section Styles
+====================================*/
+
+/* Tambahkan atau pastikan variabel warna ini ada di `:root` atau diakses global */
+:root {
+    --bs-primary: #dc3545; /* Merah */
+    --bs-secondary: #6c757d; /* Abu-abu */
+    --bs-info: #0dcaf0; /* Biru terang untuk info/peta (di gambar ini lebih ke cyan) */
+    --bs-success: #198754; /* Hijau */
+    --bs-dark: #343a40; /* Teks gelap */
+    --bs-light: #f8f9fa; /* Latar belakang terang */
+
+    /* Warna Kustom untuk Quick Link Icons & Buttons */
+    --ql-icon-blue: #0d6efd;   /* Biru cerah untuk info/kalender */
+    --ql-icon-green: #198754;  /* Hijau untuk galeri */
+    --ql-icon-cyan: #0dcaf0;   /* Cyan untuk peta */
+}
+
+.quick-link-card {
+    display: flex;
+    align-items: flex-start; /* Tetap flex-start agar ikon di atas */
+    background: white;
+    border-radius: 12px; /* Sedikit lebih membulat */
+    padding: 1.8rem; /* Padding lebih besar */
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08); /* Bayangan lebih menonjol */
+    height: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transisi bayangan juga */
+    border: 1px solid rgba(0,0,0,0.05); /* Tambah border halus */
+}
+
+.quick-link-card:hover {
+    transform: translateY(-7px); /* Efek mengangkat lebih kuat */
+    box-shadow: 0 15px 35px rgba(0,0,0,0.12); /* Bayangan lebih gelap saat hover */
+}
+
+.quick-link-icon {
+    width: 65px; /* Ukuran ikon lebih besar */
+    height: 65px; /* Ukuran ikon lebih besar */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem; /* Ukuran ikon font lebih besar */
+    margin-right: 1.8rem; /* Jarak kanan lebih besar */
+    flex-shrink: 0;
+    color: white; /* Warna ikon selalu putih */
+    /* Latar belakang akan diatur secara spesifik di HTML atau dengan modifier class */
+}
+
+/* Modifiers untuk Warna Ikon */
+.quick-link-icon.icon-blue {
+    background-color: var(--ql-icon-blue);
+}
+.quick-link-icon.icon-green {
+    background-color: var(--ql-icon-green);
+}
+.quick-link-icon.icon-cyan {
+    background-color: var(--ql-icon-cyan);
+}
+
+
+.quick-link-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    flex-grow: 1;
+}
+
+.quick-link-content h5 {
+    font-size: 1.2rem; /* Ukuran judul lebih besar */
+    font-weight: 700; /* Lebih tebal */
+    color: var(--bs-dark); /* Warna teks judul gelap */
+    margin-bottom: 0.6rem; /* Jarak bawah judul */
+}
+
+.quick-link-content p {
+    font-size: 0.95rem; /* Ukuran paragraf sedikit lebih besar */
+    color: var(--bs-secondary); /* Warna teks paragraf abu-abu */
+    margin-bottom: 1.2rem; /* Jarak bawah paragraf */
+    flex-grow: 1;
+    line-height: 1.6; /* Kerapatan baris */
+}
+
+/* Tombol Kunjungi */
+.quick-link-content .btn {
+    align-self: flex-start;
+    margin-top: auto;
+    padding: 8px 20px; /* Padding tombol */
+    border-radius: 25px; /* Bentuk pil */
+    font-size: 0.9rem; /* Ukuran font tombol */
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-flex; /* Agar ikon dan teks sejajar */
+    align-items: center;
+    gap: 8px; /* Jarak antara teks dan ikon */
+    text-decoration: none; /* Hilangkan underline */
+}
+
+.quick-link-content .btn i {
+    font-size: 1rem; /* Ukuran ikon panah */
+    transition: transform 0.3s ease;
+}
+
+/* Modifier untuk Warna Tombol */
+.quick-link-content .btn.btn-outline-red {
+    border: 2px solid var(--bs-primary);
+    color: var(--bs-primary);
+}
+.quick-link-content .btn.btn-outline-red:hover {
+    background-color: var(--bs-primary);
+    color: white;
+}
+
+.quick-link-content .btn.btn-outline-green {
+    border: 2px solid var(--ql-icon-green);
+    color: var(--ql-icon-green);
+}
+.quick-link-content .btn.btn-outline-green:hover {
+    background-color: var(--ql-icon-green);
+    color: white;
+}
+
+.quick-link-content .btn.btn-outline-cyan {
+    border: 2px solid var(--ql-icon-cyan);
+    color: var(--ql-icon-cyan);
+}
+.quick-link-content .btn.btn-outline-cyan:hover {
+    background-color: var(--ql-icon-cyan);
+    color: white;
+}
+
+/* Efek panah saat hover */
+.quick-link-content .btn:hover i {
+    transform: translateX(5px); /* Panah bergerak sedikit ke kanan */
+}
+
+/* Responsive adjustment (contoh sederhana, sesuaikan dengan breakpoint Anda) */
+@media (max-width: 768px) {
+    .quick-link-card {
+        flex-direction: column; /* Ikon di atas, konten di bawah */
+        align-items: center;
+        text-align: center;
+    }
+    .quick-link-icon {
+        margin-right: 0;
+        margin-bottom: 1rem; /* Jarak bawah ikon */
+    }
+    .quick-link-content .btn {
+        align-self: center; /* Tombol di tengah */
+    }
+}
+         /* Footer */
+footer {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #ffc107, transparent);
+    animation: shimmer 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 1; }
+}
+
+.footer-brand {
+    position: relative;
+    z-index: 2;
+}
+
+.footer-brand img {
+    filter: brightness(0) invert(1);
+    transition: var(--transition);
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-5px); }
+}
+
+.footer-brand:hover img {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.footer-brand h5 {
+    background: linear-gradient(45deg, #ffc107, #fff, #ffc107);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradient-text 3s ease infinite;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+@keyframes gradient-text {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 0.75rem;
+    transform: translateX(-10px);
+    opacity: 0;
+    animation: slideInLeft 0.6s ease forwards;
+}
+
+.footer-links li:nth-child(1) { animation-delay: 0.1s; }
+.footer-links li:nth-child(2) { animation-delay: 0.2s; }
+.footer-links li:nth-child(3) { animation-delay: 0.3s; }
+.footer-links li:nth-child(4) { animation-delay: 0.4s; }
+.footer-links li:nth-child(5) { animation-delay: 0.5s; }
+.footer-links li:nth-child(6) { animation-delay: 0.6s; }
+
+@keyframes slideInLeft {
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.footer-links a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: var(--transition);
+    position: relative;
+    display: inline-block;
+    padding: 0.25rem 0;
+}
+
+.footer-links a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #ffc107, #fff);
+    transition: width 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #ffc107;
+    transform: translateX(5px);
+}
+
+.footer-links a:hover::before {
+    width: 100%;
+}
+        .popular-news-item h6 {
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+        
+        .popular-news-item:hover h6 {
+            color: var(--primary-color) !important;
+        }
+        
+      /* Back to Top Button */
+      .btn-back-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        visibility: hidden;
+        transition: var(--transition);
+        z-index: 999;
+      }
+
+      .btn-back-to-top.show {
+        opacity: 1;
+        visibility: visible;
+      }
+
+       /* Floating Action Button */
+    .fab-container {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        z-index: 999;
+    }
+    
+    .fab {
+        width: 60px;
+        height: 60px;
+        background: var(--primary-color);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 1.5rem;
+        box-shadow: 0 5px 20px rgba(13, 110, 253, 0.3);
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    
+    .fab:hover {
+        transform: scale(1.1);
+    }
+    
+    .fab-main {
+        position: relative;
+        z-index: 2;
+    }
+    
+    .fab-options {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        position: absolute;
+        bottom: 70px;
+        right: 0;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+    }
+    
+    .fab-options.show {
+        opacity: 1;
+        visibility: visible;
+        bottom: 80px;
+    }
+    
+    .fab-option {
+        width: 50px;
+        height: 50px;
+        background: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 10px;
+        color: var(--dark-color);
+        box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        transition: all 0.3s ease;
+        position: relative;
+    }
+    
+    .fab-option:hover {
+        transform: translateY(-3px);
+        color: var(--primary-color);
+    }
+    
+    .fab-option[data-tooltip]:hover:after {
+        content: attr(data-tooltip);
+        position: absolute;
+        right: 60px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: var(--dark-color);
+        color: white;
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-size: 0.8rem;
+        white-space: nowrap;
+    }
+    
+    .fab-option[data-tooltip]:hover:before {
+        content: '';
+        position: absolute;
+        right: 55px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 0;
+        height: 0;
+        border-top: 5px solid transparent;
+        border-bottom: 5px solid transparent;
+        border-left: 5px solid var(--dark-color);
+    }
+    
+    .rotate {
+        transform: rotate(45deg);
+    }
+
+         /* Improved Stats Container */
+.header-stats {
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 20px;
+    position: relative;
+    z-index: 2;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+.stats-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Stat Card Design - Right Aligned */
+.stat-card {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: 15px 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    width: 100%;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Stat Icon - Right Aligned */
+.stat-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin-left: 15px; /* Changed from margin-right */
+    flex-shrink: 0;
+}
+
+.bg-primary-light {
+    background-color: rgba(13, 110, 253, 0.1);
+}
+
+.bg-success-light {
+    background-color: rgba(25, 135, 84, 0.1);
+}
+
+.bg-warning-light {
+    background-color: rgba(255, 193, 7, 0.1);
+}
+
+/* Stat Content - Right Aligned */
+.stat-content {
+    flex: 1;
+    text-align: right; /* Align text to right */
+}
+
+.stat-value {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+}
+
+.stat-label {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 0;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    .stats-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .stat-card {
+        padding: 15px;
+    }
+    
+    .stat-icon {
+        width: 45px;
+        height: 45px;
+        font-size: 1.3rem;
+    }
+    
+    .stat-value {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-stats {
+        margin-top: 30px;
+    }
+    
+    .stats-container {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .stat-card {
+        width: calc(50% - 10px);
+    }
+}
+.hero-wave {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        overflow: hidden;
+        line-height: 0;
+        transform: rotate(180deg);
+      }
+
+      .hero-wave svg {
+        position: relative;
+        display: block;
+        width: calc(100% + 1.3px);
+        height: 120px;
+      }
+
+      .hero-wave .shape-fill {
+        fill: #f8f9fa;
+      }
+
+
+      /* Empty State */
+      .empty-state {
+        text-align: center;
+        padding: 3rem 0;
+      }
+
+      .empty-state i {
+        font-size: 4rem;
+        color: var(--gray-400);
+        margin-bottom: 1.5rem;
+      }
+
+      .empty-state h4 {
+        color: var(--gray-600);
+        margin-bottom: 1rem;
+      }
+
+      /* Responsive Adjustments */
+      @media (max-width: 992px) {
+        .header-title {
+          font-size: 2.2rem;
+        }
+
+        .header-subtitle {
+          font-size: 1rem;
+        }
+
+        .section-title {
+          font-size: 1.8rem;
+        }
+
+        .announcement-card .announcement-image {
+          height: 180px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .page-header {
+          padding: 100px 0 60px;
+        }
+
+        .header-title {
+          font-size: 2rem;
+        }
+
+        .search-filter-section {
+          margin-top: -2rem;
+        }
+
+        .featured-announcement .col-md-6 {
+          width: 100%;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .header-title {
+          font-size: 1.8rem;
+        }
+
+        .section-title {
+          font-size: 1.5rem;
+        }
+
+        .header-badge {
+          font-size: 0.8rem;
+        }
+
+        .header-subtitle {
+          font-size: 0.95rem;
+        }
+
+        .announcement-card .announcement-image {
+          height: 160px;
+        }
+
+        .announcement-card .announcement-content {
+          padding: 1.25rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header id="navbar-placeholder"></header>
+
+    <header class="page-header pengumuman-header">
+      <div class="header-overlay"></div>
+      <div class="container">
+        <div class="row align-items-center min-vh-60">
+          <div class="col-lg-8">
+            <div class="header-content">
+              <div class="header-badge mb-3">
+                <i class="bi bi-megaphone-fill me-2"></i>
+                <span>Pengumuman Resmi</span>
+              </div>
+             <h1 class="header-title mb-3">
+    <span class="title-highlight">Pengumuman</span> <span class="text-white">Terkini</span>
+</h1>
+              <p class="header-subtitle mb-4">
+                Informasi resmi dan penting dari Kelurahan Tanjungpinang Barat.
+                Dapatkan update terbaru seputar kegiatan, program, dan informasi
+                penting kelurahan.
+              </p>
+              <div class="d-flex flex-wrap gap-3">
+                <a
+                  href="#pengumuman-terkini"
+                  class="btn btn-primary btn-lg px-4"
+                >
+                  <i class="bi bi-arrow-down me-2"></i>Pengumuman Terbaru
+                </a>
+                <a
+                  href="#pengumuman-penting"
+                  class="btn btn-outline-light btn-lg px-4"
+                >
+                  <i class="bi bi-exclamation-triangle me-2"></i>Pengumuman
+                  Penting
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+    <div class="header-stats">
+        <div class="stat-item">
+            <div class="stat-icon">
+                <i class="bi bi-megaphone-fill"></i>
+            </div>
+            <div class="stat-info">
+                <h3 class="stat-number" data-count="42">0</h3>
+                <p class="stat-label">Total Pengumuman</p>
+            </div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-icon">
+                <i class="bi bi-eye"></i>
+            </div>
+            <div class="stat-info">
+                <h3 class="stat-number" data-count="8720">0</h3>
+                <p class="stat-label">Total Dilihat</p>
+            </div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-icon">
+                <i class="bi bi-files"></i>
+            </div>
+            <div class="stat-info">
+                <h3 class="stat-number" data-count="5">0</h3>
+                <p class="stat-label">Kategori</p>
+            </div>
+        </div>
+    </div>
+</div>  </div>
+          </div>
+        </div>
+      </div>
+
+      </div>
+        </div>
+      </div>
+      <div class="hero-wave">
+        <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <path
+            d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"
+            opacity=".25"
+            class="shape-fill"
+          ></path>
+          <path
+            d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z"
+            opacity=".5"
+            class="shape-fill"
+          ></path>
+          <path
+            d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z"
+            class="shape-fill"
+          ></path>
+        </svg>
+      </div>
+    </header>
+
+    
+
+    <section class="py-5" id="pengumuman-terkini">
+      <div class="container">
+        <div class="row mb-4">
+          <div class="col-12">
+            <h2 class="section-title">
+              <i class="bi bi-megaphone-fill text-primary me-2"></i>
+              Pengumuman Utama
+            </h2>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-8 mb-4" data-aos="fade-right">
+            <div class="highlight-announcement">
+              <div class="highlight-badge">HIGHLIGHT</div>
+              <div class="row g-0">
+                <div class="col-md-5">
+                  <div class="announcement-image">
+                    <img
+                      src="https://www.tanjungpinangkota.go.id/images/logo/banner_lapor_2025.png"
+                      class="img-fluid h-100 object-cover"
+                      alt="Hari Lanjut Usia Nasional"
+                    />
+                    <div class="announcement-date">
+                      <span class="day">20</span>
+                      <span class="month">Jun</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-7">
+                  <div class="announcement-content">
+                    <div class="event-title">
+                      <h4>Hari Lanjut Usia Nasional</h4>
+                      <p class="event-date">21 Juni 2024</p>
+                    </div>
+                    <h3 class="mb-3">
+                      PENYERAHAN BINGKISAN DALAM RANGKA HARI LANJUT USIA
+                      NASIONAL
+                    </h3>
+                    <p class="mb-4">
+                      Kamis, 20 Juni 2024 Kelurahan Tanjungpinang menyalurkan
+                      Paket Bingkisan dalam rangka Hari Lanjut Usia Nasional
+                      Tahun 2024. Lurah, Kasi Pelayanan berserta staf ikut
+                      berpartisipasi dalam menyalurkan paket bingkisan tersebut.
+                    </p>
+                    <div class="announcement-footer">
+                      <div class="views-author">
+                        <span class="views"
+                          ><i class="bi bi-eye me-1"></i>245 views</span
+                        >
+                        <span class="author">Admin Kelurahan</span>
+                      </div>
+                      <a href="#" class="read-more">
+                        <span>Baca Selengkapnya</span>
+                        <i class="bi bi-arrow-right"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-lg-4"
+            data-aos="fade-left"
+            style="margin-top: -110px; position: relative; z-index: 2"
+          >
+            <div class="trending-news" id="pengumuman-penting">
+              <div
+                class="d-flex justify-content-between align-items-center mb-3"
+              >
+                <h5 class="fw-bold">
+                  <i class="bi bi-exclamation-triangle text-danger me-2"></i
+                  >Pengumuman Penting
+                </h5>
+                <a href="#" class="small text-primary">Lihat Semua</a>
+              </div>
+
+              <div class="trending-item">
+                <div class="trending-number">1</div>
+                <div class="trending-content">
+                  <div class="d-flex justify-content-between">
+                    <span class="badge bg-danger mb-1">DARURAT</span>
+                    <small class="text-muted">10 Jul 2024</small>
+                  </div>
+                  <h6>
+                    <a href="detail-pengumuman.html?id=2"
+                      >PEMADAMAN LISTRIK BERGILIR WILAYAH RT 05-08</a
+                    >
+                  </h6>
+                  <div class="d-flex justify-content-between">
+                    <small class="text-muted">
+                      <i class="bi bi-eye me-1"></i>189 views
+                    </small>
+                    <small class="text-muted">
+                      <i class="bi bi-person me-1"></i>PLN Cabang Tanjungpinang
+                    </small>
+                  </div>
+                </div>
+              </div>
+
+              <div class="trending-item">
+                <div class="trending-number">2</div>
+                <div class="trending-content">
+                  <div class="d-flex justify-content-between">
+                    <span class="badge bg-primary mb-1">RESMI</span>
+                    <small class="text-muted">5 Jul 2024</small>
+                  </div>
+                  <h6>
+                    <a href="detail-pengumuman.html?id=3"
+                      >PENDAFTARAN BANTUAN SOSIAL TAHAP II TAHUN 2024</a
+                    >
+                  </h6>
+                  <div class="d-flex justify-content-between">
+                    <small class="text-muted">
+                      <i class="bi bi-eye me-1"></i>156 views
+                    </small>
+                    <small class="text-muted">
+                      <i class="bi bi-person me-1"></i>Bidang Sosial
+                    </small>
+                  </div>
+                </div>
+              </div>
+
+              <div class="trending-item">
+                <div class="trending-number">3</div>
+                <div class="trending-content">
+                  <div class="d-flex justify-content-between">
+                    <span class="badge bg-warning text-dark mb-1">LELANG</span>
+                    <small class="text-muted">1 Jul 2024</small>
+                  </div>
+                  <h6>
+                    <a href="detail-pengumuman.html?id=4"
+                      >LELANG PEMBANGUNAN TAMAN KELURAHAN TAHAP II</a
+                    >
+                  </h6>
+                  <div class="d-flex justify-content-between">
+                    <small class="text-muted">
+                      <i class="bi bi-eye me-1"></i>134 views
+                    </small>
+                    <small class="text-muted">
+                      <i class="bi bi-person me-1"></i>Bidang Pembangunan
+                    </small>
+                  </div>
+                </div>
+              </div>
+
+              <div class="trending-item">
+                <div class="trending-number">4</div>
+                <div class="trending-content">
+                  <div class="d-flex justify-content-between">
+                    <span class="badge bg-info text-dark mb-1">JADWAL</span>
+                    <small class="text-muted">15 Jun 2024</small>
+                  </div>
+                  <h6>
+                    <a href="detail-pengumuman.html?id=8">PENYULUHAN HUKUM GRATIS BAGI WARGA</a>
+                  </h6>
+                  <div class="d-flex justify-content-between">
+                    <small class="text-muted">
+                      <i class="bi bi-eye me-1"></i>65 views
+                    </small>
+                    <small class="text-muted">
+                      <i class="bi bi-person me-1"></i>Bidang Hukum
+                    </small>
+                  </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-5 bg-light">
+      <div class="container">
+        <div class="row mb-4">
+          <div class="col-12">
+            <div class="d-flex align-items-center mb-3">
+              <div class="icon-wrapper me-3">
+    <i class="bi bi-megaphone-fill text-white fs-4"></i>
+</div>
+              <div>
+                <h2 class="section-title mb-1">Semua Pengumuman</h2>
+                <p class="text-muted mb-0">
+                  Informasi terbaru dari instansi kami
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mb-4">
+          <div class="col-12">
+            <div class="category-tabs bg-white rounded-3 shadow-sm p-3">
+              <div
+                class="nav nav-pills justify-content-center"
+                id="category-tab"
+                role="tablist"
+              >
+                <button
+                  class="nav-link active d-flex align-items-center"
+                  id="all-tab"
+                  data-bs-toggle="pill"
+                  data-bs-target="#all"
+                  type="button"
+                  onclick="filterByCategory('')"
+                >
+                  <i class="bi bi-grid-fill me-2"></i> Semua
+                </button>
+                <button
+                  class="nav-link d-flex align-items-center"
+                  id="resmi-tab"
+                  data-bs-toggle="pill"
+                  data-bs-target="#resmi"
+                  type="button"
+                  onclick="filterByCategory('Resmi')"
+                >
+                  <i class="bi bi-file-earmark-text me-2"></i> Resmi
+                </button>
+                <button
+                  class="nav-link d-flex align-items-center"
+                  id="lelang-tab"
+                  data-bs-toggle="pill"
+                  data-bs-target="#lelang"
+                  type="button"
+                  onclick="filterByCategory('Lelang')"
+                >
+                  <i class="bi bi-hammer me-2"></i> Lelang
+                </button>
+                <button
+                  class="nav-link d-flex align-items-center"
+                  id="lowongan-tab"
+                  data-bs-toggle="pill"
+                  data-bs-target="#lowongan"
+                  type="button"
+                  onclick="filterByCategory('Lowongan')"
+                >
+                  <i class="bi bi-person-lines-fill me-2"></i> Lowongan
+                </button>
+                <button
+                  class="nav-link d-flex align-items-center"
+                  id="jadwal-tab"
+                  data-bs-toggle="pill"
+                  data-bs-target="#jadwal"
+                  type="button"
+                  onclick="filterByCategory('Jadwal')"
+                >
+                  <i class="bi bi-calendar-event me-2"></i> Jadwal
+                </button>
+                <button
+                  class="nav-link d-flex align-items-center"
+                  id="darurat-tab"
+                  data-bs-toggle="pill"
+                  data-bs-target="#darurat"
+                  type="button"
+                  onclick="filterByCategory('Darurat')"
+                >
+                  <i class="bi bi-exclamation-triangle me-2"></i> Darurat
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mb-4">
+          <div class="col-md-6 mb-3 mb-md-0">
+            <div class="input-group search-box">
+              <input
+                type="text"
+                class="form-control"
+                id="mainSearchInput"
+                placeholder="Cari pengumuman..."
+              />
+              <button class="btn btn-primary" type="button" id="mainSearchBtn">
+                <i class="bi bi-search"></i>
+              </button>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="d-flex align-items-center justify-content-md-end">
+              <label for="sortSelect" class="me-2 mb-0 text-muted"
+                >Urutkan:</label
+              >
+              <select class="form-select w-auto" id="sortSelect">
+                <option value="newest">Terbaru</option>
+                <option value="oldest">Terlama</option>
+                <option value="popular">Terpopuler</option>
+                <option value="az">A-Z Judul</option>
+                <option value="za">Z-A Judul</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="row g-4" id="announcementGrid">
+          <div class="col-12 text-center py-5" id="loadingIndicator">
+            <div class="spinner-border text-primary" role="status">
+              <span class="visually-hidden">Memuat...</span>
+            </div>
+            <p class="mt-2 text-muted">Memuat pengumuman...</p>
+          </div>
+        </div>
+
+        <div class="row mt-5">
+          <div class="col-12">
+            <nav aria-label="Announcement pagination">
+              <ul class="pagination justify-content-center" id="pagination">
+                <li class="page-item disabled">
+                  <a
+                    class="page-link"
+                    href="#"
+                    tabindex="-1"
+                    aria-disabled="true"
+                  >
+                    <i class="bi bi-chevron-left"></i>
+                  </a>
+                </li>
+                <li class="page-item active">
+                  <a class="page-link" href="#">1</a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                  <a class="page-link" href="#">
+                    <i class="bi bi-chevron-right"></i>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-5 text-white position-relative overflow-hidden" style="background: linear-gradient(135deg,#dc3545 0%, #ff8e53 100%);">
+    <div class="newsletter-pattern"></div>
+    <div class="container position-relative">
+        <div class="row align-items-center">
+            <div class="col-lg-6 mb-4 mb-lg-0">
+                <div class="d-flex align-items-center">
+                    <div class="me-4">
+                        <i class="bi bi-envelope-fill display-4 text-warning"></i>
+                    </div>
+                    <div>
+                        <h3 class="mb-2">Dapatkan Berita Terbaru</h3>
+                        <p class="mb-0">Berlangganan newsletter kami untuk mendapatkan informasi terkini dari kelurahan langsung ke email Anda</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="newsletter-form">
+                    <div class="input-group">
+                        <input type="email" class="form-control" placeholder="Masukkan email Anda" style="background-color: rgba(255, 255, 255, 0.95);">
+                        <button class="btn" type="button" style="background-color: #dc3545 !important; color: white;">
+                            <i class="bi bi-send-fill me-2"></i>Berlangganan
+                        </button>
+                    </div>
+                    <div class="form-text mt-2 text-white-50">
+                        Kami tidak akan mengirim spam. Anda bisa berhenti berlangganan kapan saja.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    <section class="py-5 bg-white">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="quick-link-card">
+              <div class="quick-link-icon bg-primary">
+                <i class="bi bi-download text-white"></i>
+              </div>
+              <div class="quick-link-content">
+                <h5>Download Area</h5>
+                <p>Formulir dan dokumen penting yang bisa diunduh</p>
+                <a
+                  href="download-area.html"
+                  class="btn btn-sm btn-outline-primary"
+                >
+                  Kunjungi <i class="bi bi-arrow-right ms-1"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="quick-link-card">
+              <div class="quick-link-icon bg-success">
+                <i class="bi bi-images text-white"></i>
+              </div>
+              <div class="quick-link-content">
+                <h5>Galeri Kegiatan</h5>
+                <p>Kumpulan foto kegiatan kelurahan</p>
+                <a href="galeri.html" class="btn btn-sm btn-outline-success">
+                  Kunjungi <i class="bi bi-arrow-right ms-1"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="quick-link-card">
+              <div class="quick-link-icon bg-info">
+                <i class="bi bi-map text-white"></i>
+              </div>
+              <div class="quick-link-content">
+                <h5>Peta Kelurahan</h5>
+                <p>Peta wilayah dan batas Kelurahan Tanjungpinang Barat</p>
+                <a
+                  href="peta-kelurahan.html"
+                  class="btn btn-sm btn-outline-info"
+                >
+                  Kunjungi <i class="bi bi-arrow-right ms-1"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-dark text-light pt-5 pb-4">
+        <div class="container">
+            <div class="row justify-content-between align-items-start">
+                <div class="col-md-4 mb-4">
+                    <h5 class="fw-bold text-danger mb-3">Hubungi Kami</h5>
+                    <div class="d-flex align-items-start mb-4">
+                        <div class="me-3">
+                            <img src="assets/images/logo-tanjungpinang.png" alt="Logo" style="width: 80px; height: auto;" class="img-fluid">
+                        </div>
+                        <div class="small">
+                            <p class="fw-bold mb-1">Kelurahan Tanjungpinang Kota</p>
+                            <p class="mb-1">Kecamatan Tanjungpinang Kota</p>
+                        </div>
+                    </div>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2">
+                            <i class="bi bi-geo-alt-fill me-2 text-danger"></i>
+                            Jl. Mesjid No.7, Tanjungpinang Kota, Kota Tanjungpinang, Kepulauan Riau
+                        </li>
+                        <li class="mb-2">
+                            <i class="bi bi-envelope-fill me-2 text-danger"></i>
+                            tpitimurkotakel@tanjungpinangkota.go.id
+                        </li>
+                        <li class="mb-3">
+                            <i class="bi bi-telephone-fill me-2 text-danger"></i>
+                            (0771) 1234567
+                        </li>
+                        <li>
+                            <div class="d-flex gap-2">
+                                <a href="#" class="btn btn-outline-light btn-sm rounded-circle">
+                                    <i class="bi bi-facebook"></i>
+                                </a>
+                                <a href="#" class="btn btn-outline-light btn-sm rounded-circle">
+                                    <i class="bi bi-instagram"></i>
+                                </a>
+                                <a href="#" class="btn btn-outline-light btn-sm rounded-circle">
+                                    <i class="bi bi-twitter"></i>
+                                </a>
+                                <a href="#" class="btn btn-outline-light btn-sm rounded-circle">
+                                    <i class="bi bi-youtube"></i>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+      <div class="col-md-3 mb-4">
+  <h5 class="fw-bold text-danger border-bottom pb-2 mb-3">Menu Utama</h5>
+  <ul class="list-unstyled small">
+    <li class="mb-2">
+      <a href="index.html" class="text-light text-decoration-none d-flex align-items-center">
+        <i class="bi bi-house-door-fill me-2"></i> Beranda
+      </a>
+    </li>
+    <li class="mb-2">
+      <a href="berita.html" class="text-light text-decoration-none d-flex align-items-center">
+        <i class="bi bi-newspaper me-2"></i> Berita
+      </a>
+    </li>
+    <li class="mb-2">
+      <a href="download-area.html" class="text-light text-decoration-none d-flex align-items-center">
+        <i class="bi bi-download me-2"></i> Download
+      </a>
+    </li>
+    <li class="mb-2">
+      <a href="galeri.html" class="text-light text-decoration-none d-flex align-items-center">
+        <i class="bi bi-images me-2"></i> Galeri
+      </a>
+    </li>
+    <li class="mb-2">
+      <a href="data-statistik.html" class="text-light text-decoration-none d-flex align-items-center">
+        <i class="bi bi-bar-chart-fill me-2"></i> Data Statistik
+      </a>
+    </li>
+    <li class="mb-2">
+      <a href="peta-kelurahan.html" class="text-light text-decoration-none d-flex align-items-center">
+        <i class="bi bi-map-fill me-2"></i> Peta Kelurahan
+      </a>
+    </li>
+  </ul>
+</div>
+
+ <div class="col-md-4 mb-4">
+        <h5 class="fw-bold text-danger border-bottom pb-2 mb-3">Berita Populer</h5>
+        <div class="mb-4">
+            <h6 class="fw-bold mb-1 text-white">Selamat Datang di Website Kelurahan Tanjungpinang Kota</h6>
+            <p class="text-secondary small mb-0"><i class="bi bi-calendar me-2"></i>Rabu, 31 Agustus 2022</p>
+        </div>
+        <div class="mb-4">
+            <h6 class="fw-bold mb-1 text-white">Penghargaan Kepala Daerah Perempuan Inspiratif dari Tempo Media Grup</h6>
+            <p class="text-secondary small mb-0"><i class="bi bi-calendar me-2"></i>Rabu, 28 September 2022</p>
+        </div>
+        <div class="mb-4">
+            <h6 class="fw-bold mb-1 text-white">Penyerahan Simbolis Kartu Identitas Anak (KIA)</h6>
+            <p class="text-secondary small mb-0"><i class="bi bi-calendar me-2"></i>Kamis, 15 Desember 2022</p>
+        </div>
+        </div>
+
+      
+
+
+   
+   
+
+    <hr class="border-secondary">
+    <div class="text-center pt-2">
+      <small>Design by <a href="#" class="text-danger fw-bold">Mahasiswa Teknik Informatika</a> &copy;2025</small>
+    </div>
+  </div>
+</footer>
+
+  <div class="fab-container">
+    <div class="fab fab-main">
+        <i class="bi bi-question-circle"></i>
+    </div>
+    <ul class="fab-options">
+        <li>
+            <a href="galeri.html" class="fab-option" data-tooltip="Galeri">
+                <i class="bi bi-images"></i>
+            </a>
+        </li>
+        <li>
+            <a href="data-statistik.html" class="fab-option" data-tooltip="Data Statistik">
+                <i class="bi bi-bar-chart-fill"></i>
+            </a>
+        </li>
+        <li>
+            <a href="OPD.html" class="fab-option" data-tooltip="OPD">
+                <i class="bi bi-building"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+      // Initialize AOS animation
+      AOS.init({
+        duration: 800,
+        easing: "ease-in-out",
+        once: true,
+      });
+
+      // Announcement data
+      const announcementData = [
+        {
+          id: 1,
+          title: "PENUTUPAN JALAN SEMENTARA UNTUK PERBAIKAN DRAINASE",
+          excerpt:
+            "Diberitahukan kepada seluruh warga bahwa Jalan Merdeka akan ditutup sementara pada tanggal 20-25 Juli 2024 untuk perbaikan sistem drainase. Mohon perhatian dan pengertiannya.",
+          category: "Darurat",
+          date: "2024-07-15",
+          image:
+            "https://icms.tanjungpinangkota.go.id/image/posting/berita/7243000000/original/1718954728_47d9af74ec712bd51c9a.jpg",
+          views: 245,
+          author: "Kelurahan Tanjungpinang Barat",
+          important: true,
+        },
+        {
+          id: 2,
+          title: "PEMADAMAN LISTRIK BERGILIR WILAYAH RT 05-08",
+          excerpt:
+            "Diberitahukan bahwa akan dilakukan pemadaman listrik bergilir pada wilayah RT 05-08 pada tanggal 18 Juli 2024 pukul 08.00-16.00 WIB untuk perbaikan jaringan.",
+          category: "Darurat",
+          date: "2024-07-10",
+          image:
+            "https://icms.tanjungpinangkota.go.id/image/posting/berita/7243000000/original/1698135311_4d9ad52f32bb9cf5522d.jpg",
+          views: 189,
+          author: "PLN Cabang Tanjungpinang",
+          important: true,
+        },
+        {
+          id: 3,
+          title: "PENDAFTARAN BANTUAN SOSIAL TAHAP II TAHUN 2024",
+          excerpt:
+            "Dibuka pendaftaran bantuan sosial tahap II tahun 2024. Pendaftaran dapat dilakukan di kantor kelurahan mulai tanggal 5-20 Juli 2024 dengan membawa persyaratan yang diperlukan.",
+          category: "Resmi",
+          date: "2024-07-05",
+          image:
+            "https://icms.tanjungpinangkota.go.id/image/posting/berita/7243000000/original/1698381393_c4ea38defc01379b740e.jpg",
+          views: 156,
+          author: "Bidang Sosial",
+          important: false,
+        },
+        {
+          id: 4,
+          title: "LELANG PEMBANGUNAN TAMAN KELURAHAN TAHAP II",
+          excerpt:
+            "Diumumkan lelang pembangunan Taman Kelurahan Tahap II dengan nilai pagu Rp. 250.000.000. Pendaftaran sampai dengan 30 Juli 2024.",
+          category: "Lelang",
+          date: "2024-07-01",
+          image:
+            "https://icms.tanjungpinangkota.go.id/image/posting/berita/7243000000/original/1698380085_9b925f0b8a64f1cd0589.jpg",
+          views: 134,
+          author: "Bidang Pembangunan",
+          important: false,
+        },
+        {
+          id: 5,
+          title: "LOWONGAN TENAGA KEBERSIHAN KELURAHAN",
+          excerpt:
+            "Dibuka lowongan tenaga kebersihan kelurahan untuk 5 orang. Persyaratan: usia maksimal 45 tahun, sehat jasmani rohani. Pendaftaran di kantor kelurahan.",
+          category: "Lowongan",
+          date: "2024-06-28",
+          image:
+            "https://icms.tanjungpinangkota.go.id/image/posting/berita/7243000000/original/1698139006_720de976749805e4c099.jpg",
+          views: 98,
+          author: "Bidang Umum",
+          important: false,
+        },
+        {
+          id: 6,
+          title: "JADWAL POSYANDU BULAN JULI 2024",
+          excerpt:
+            "Berikut jadwal posyandu bulan Juli 2024: RT 01 (5 Juli), RT 02 (6 Juli), RT 03 (7 Juli), RT 04 (8 Juli), RT 05 (9 Juli). Pukul 08.00-12.00 WIB.",
+          category: "Jadwal",
+          date: "2024-06-25",
+          image:
+            "https://icms.tanjungpinangkota.go.id/image/posting/berita/7243000000/original/1698120844_9fb65b9809f72a2b7661.jpg",
+          views: 87,
+          author: "Bidang Kesehatan",
+          important: false,
+        },
+        {
+          id: 7,
+          title: "PENGUMUMAN HASIL SELEKSI BANTUAN UMKM",
+          excerpt:
+            "Diinformasikan hasil seleksi bantuan UMKM tahun 2024 dapat dilihat di kantor kelurahan mulai tanggal 22 Juni 2024. Penerima bantuan diharapkan hadir pada pengarahan tanggal 25 Juni 2024.",
+          category: "Resmi",
+          date: "2024-06-20",
+          image:
+            "https://icms.tanjungpinangkota.go.id/image/posting/berita/7243000000/original/1698125718_e3284ad15346da7f4714.jpg",
+          views: 76,
+          author: "Bidang Ekonomi",
+          important: false,
+        },
+        {
+          id: 8,
+          title: "PENYULUHAN HUKUM GRATIS BAGI WARGA",
+          excerpt:
+            "Akan diselenggarakan penyuluhan hukum gratis bagi warga pada tanggal 15 Juli 2024 pukul 09.00 WIB di Aula Kelurahan. Materi: Hak dan Kewajiban Warga Negara.",
+          category: "Jadwal",
+          date: "2024-06-15",
+          image:
+            "https://icms.tanjungpinangkota.go.id/ckeditor/posting/7243000000/berita/small/small_1681717692_4a2288e37b684590c669.jpg",
+          views: 65,
+          author: "Bidang Hukum",
+          important: false,
+        },
+      ];
+
+      let currentPage = 1;
+      const itemsPerPage = 6;
+      let filteredAnnouncements = [...announcementData];
+
+      // Format date
+      function formatDate(dateString) {
+        const options = { year: "numeric", month: "long", day: "numeric" };
+        return new Date(dateString).toLocaleDateString("id-ID", options);
+      }
+
+      // Format short date
+      function formatShortDate(dateString) {
+        const options = { day: "numeric", month: "short", year: "numeric" };
+        return new Date(dateString).toLocaleDateString("id-ID", options);
+      }
+
+      // Function to sort announcements
+      function sortAnnouncements(sortBy) {
+        switch (sortBy) {
+          case "newest":
+            filteredAnnouncements.sort(
+              (a, b) => new Date(b.date) - new Date(a.date)
+            );
+            break;
+          case "oldest":
+            filteredAnnouncements.sort(
+              (a, b) => new Date(a.date) - new Date(b.date)
+            );
+            break;
+          case "popular":
+            filteredAnnouncements.sort((a, b) => b.views - a.views);
+            break;
+          case "az":
+            filteredAnnouncements.sort((a, b) =>
+              a.title.localeCompare(b.title)
+            );
+            break;
+          case "za":
+            filteredAnnouncements.sort((a, b) =>
+              b.title.localeCompare(a.title)
+            );
+            break;
+          default:
+            // Default sorting (newest first)
+            filteredAnnouncements.sort(
+              (a, b) => new Date(b.date) - new Date(a.date)
+            );
+        }
+
+        currentPage = 1;
+        renderAnnouncementGrid();
+      }
+
+      // Get category badge class
+      function getCategoryBadgeClass(category) {
+        const classes = {
+          Resmi: "bg-primary",
+          Lelang: "bg-warning text-dark",
+          Lowongan: "bg-success",
+          Jadwal: "bg-info text-dark",
+          Darurat: "bg-danger",
+        };
+        return classes[category] || "bg-secondary";
+      }
+
+      // Render announcement grid
+      function renderAnnouncementGrid() {
+        const announcementGrid = document.getElementById("announcementGrid");
+        const startIndex = (currentPage - 1) * itemsPerPage;
+        const endIndex = startIndex + itemsPerPage;
+        const currentAnnouncements = filteredAnnouncements.slice(
+          startIndex,
+          endIndex
+        );
+
+        if (filteredAnnouncements.length === 0) {
+          announcementGrid.innerHTML = `
+                    <div class="col-12">
+                        <div class="empty-state">
+                            <i class="bi bi-megaphone"></i>
+                            <h4>Tidak ada pengumuman yang ditemukan</h4>
+                            <p class="mb-4">Silakan coba dengan kata kunci atau kategori yang berbeda</p>
+                            <button class="btn btn-primary" onclick="resetFilters()">
+                                <i class="bi bi-arrow-counterclockwise me-1"></i> Reset Filter
+                            </button>
+                        </div>
+                    </div>
+                `;
+          document.getElementById("pagination").innerHTML = "";
+          return;
+        }
+
+        announcementGrid.innerHTML = currentAnnouncements
+          .map(
+            (announcement) => `
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="${
+                  Math.random() * 100
+                }">
+                    <div class="announcement-card ${
+                      announcement.important
+                        ? "announcement-important"
+                        : "announcement-official"
+                    }">
+                        <div class="announcement-image">
+                            <img src="${announcement.image}" alt="${
+              announcement.title
+            }" class="img-fluid">
+                            ${
+                              announcement.important
+                                ? '<div class="official-seal"><i class="bi bi-file-earmark-lock2-fill"></i></div>'
+                                : ""
+                            }
+                            <div class="announcement-date">
+                                <span class="day">${new Date(
+                                  announcement.date
+                                ).getDate()}</span>
+                                <span class="month">${new Date(
+                                  announcement.date
+                                ).toLocaleDateString("id-ID", {
+                                  month: "short",
+                                })}</span>
+                            </div>
+                        </div>
+                        <div class="announcement-content">
+                            <div class="announcement-meta">
+                                <span class="badge ${getCategoryBadgeClass(
+                                  announcement.category
+                                )}">
+                                    ${announcement.category.toUpperCase()}
+                                </span>
+                            </div>
+                            <h5><a href="detail-pengumuman.html?id=${
+                              announcement.id
+                            }" class="text-decoration-none text-dark">${
+              announcement.title
+            }</a></h5>
+                            <p>${announcement.excerpt}</p>
+                            <div class="announcement-footer">
+                                <div>
+                                    <small class="text-muted me-3">
+                                        <i class="bi bi-eye me-1"></i>${
+                                          announcement.views
+                                        }
+                                    </small>
+                                    <small class="text-muted">
+                                        <i class="bi bi-person me-1"></i>${
+                                          announcement.author
+                                        }
+                                    </small>
+                                </div>
+                                <a href="detail-pengumuman.html?id=${
+                                  announcement.id
+                                }" class="btn btn-sm btn-outline-primary">
+                                    Detail <i class="bi bi-arrow-right ms-1"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `
+          )
+          .join("");
+
+        renderPagination();
+      }
+
+      // Render pagination
+      function renderPagination() {
+        const pagination = document.getElementById("pagination");
+        const totalPages = Math.ceil(
+          filteredAnnouncements.length / itemsPerPage
+        );
+
+        let paginationHTML = "";
+
+        // Previous button
+        paginationHTML += `
+                <li class="page-item ${currentPage === 1 ? "disabled" : ""}">
+                    <a class="page-link" href="#" onclick="changePage(${
+                      currentPage - 1
+                    })">
+                        <i class="bi bi-chevron-left"></i>
+                    </a>
+                </li>
+            `;
+
+        // Page numbers
+        for (let i = 1; i <= totalPages; i++) {
+          if (
+            i === 1 ||
+            i === totalPages ||
+            (i >= currentPage - 1 && i <= currentPage + 1)
+          ) {
+            paginationHTML += `
+                        <li class="page-item ${
+                          i === currentPage ? "active" : ""
+                        }">
+                            <a class="page-link" href="#" onclick="changePage(${i})">${i}</a>
+                        </li>
+                    `;
+          } else if (i === currentPage - 2 || i === currentPage + 2) {
+            paginationHTML += `<li class="page-item disabled"><span class="page-link">...</span></li>`;
+          }
+        }
+
+        // Next button
+        paginationHTML += `
+                <li class="page-item ${
+                  currentPage === totalPages ? "disabled" : ""
+                }">
+                    <a class="page-link" href="#" onclick="changePage(${
+                      currentPage + 1
+                    })">
+                        <i class="bi bi-chevron-right"></i>
+                    </a>
+                </li>
+            `;
+
+        pagination.innerHTML = paginationHTML;
+      }
+
+      // Change page
+      function changePage(page) {
+        const totalPages = Math.ceil(
+          filteredAnnouncements.length / itemsPerPage
+        );
+        if (page >= 1 && page <= totalPages) {
+          currentPage = page;
+          renderAnnouncementGrid();
+          window.scrollTo({
+            top: document.getElementById("announcementGrid").offsetTop - 100,
+            behavior: "smooth",
+          });
+        }
+      }
+
+      // Update the filterAnnouncements function to include sorting
+      function filterAnnouncements() {
+        const searchTerm = document
+          .getElementById("mainSearchInput")
+          .value.toLowerCase();
+        const sortBy = document.getElementById("sortSelect").value;
+
+        let currentCategoryFilter = '';
+        const activeTab = document.querySelector('.category-tabs .nav-link.active');
+        if (activeTab && activeTab.id !== 'all-tab') {
+            currentCategoryFilter = activeTab.textContent.trim();
+        }
+
+        filteredAnnouncements = announcementData.filter((announcement) => {
+          const matchesSearch =
+            announcement.title.toLowerCase().includes(searchTerm) ||
+            announcement.excerpt.toLowerCase().includes(searchTerm) ||
+            announcement.author.toLowerCase().includes(searchTerm);
+          
+          const matchesCategory = currentCategoryFilter === '' || announcement.category === currentCategoryFilter;
+
+          return matchesSearch && matchesCategory;
+        });
+
+        // Apply sorting
+        sortAnnouncements(sortBy);
+      }
+
+      // Add event listener for sort select
+      document
+        .getElementById("sortSelect")
+        .addEventListener("change", function () {
+          filterAnnouncements();
+        });
+
+      // Filter by category from tabs
+      function filterByCategory(category) {
+        // Clear search input when changing category
+        document.getElementById('mainSearchInput').value = '';
+
+        if (category === "") {
+          filteredAnnouncements = [...announcementData];
+        } else {
+          filteredAnnouncements = announcementData.filter(
+            (announcement) => announcement.category === category
+          );
+        }
+
+        currentPage = 1;
+        // Apply current sorting
+        const sortBy = document.getElementById("sortSelect").value;
+        sortAnnouncements(sortBy);
+
+        // Update active tab
+        document.querySelectorAll(".category-tabs .nav-link").forEach((tab) => {
+          tab.classList.remove("active");
+        });
+
+        // Add active class to clicked tab
+        const activeTab =
+          category === ""
+            ? document.getElementById("all-tab")
+            : document.getElementById(`${category.toLowerCase()}-tab`);
+
+        if (activeTab) {
+          activeTab.classList.add("active");
+        }
+      }
+
+      // Update the resetFilters function
+      function resetFilters() {
+        document.getElementById("mainSearchInput").value = "";
+        document.getElementById("sortSelect").value = "newest";
+        filteredAnnouncements = [...announcementData];
+        sortAnnouncements("newest");
+        currentPage = 1;
+        renderAnnouncementGrid();
+
+        // Reset active tab to 'All'
+        document.querySelectorAll(".category-tabs .nav-link").forEach((tab) => {
+          tab.classList.remove("active");
+        });
+        document.getElementById("all-tab").classList.add("active");
+      }
+
+      // Initialize with default sorting
+      document.addEventListener("DOMContentLoaded", function () {
+        // Sort by newest first initially
+        sortAnnouncements("newest");
+        renderAnnouncementGrid();
+
+        // Event listener untuk tombol cari (TETAP DIPERTAHANKAN)
+document
+  .getElementById("mainSearchBtn")
+  .addEventListener("click", filterAnnouncements);
+
+// --- PERBAIKAN ---
+// Ganti event 'keypress' (menunggu "Enter") dengan 'input' (live search)
+document
+  .getElementById("mainSearchInput")
+  .addEventListener("input", filterAnnouncements);
+
+        // Add the new sort select listener
+        document
+          .getElementById("sortSelect")
+          .addEventListener("change", function () {
+            filterAnnouncements();
+          });
+
+        // Animate counting numbers
+        const counters = document.querySelectorAll(".stat-number");
+        const speed = 200;
+
+        counters.forEach((counter) => {
+          const target = +counter.getAttribute("data-count");
+          const count = +counter.innerText;
+          const increment = target / speed;
+
+          if (count < target) {
+            counter.innerText = Math.ceil(count + increment);
+            setTimeout(updateCount, 1);
+          } else {
+            counter.innerText = target;
+          }
+
+          function updateCount() {
+            const count = +counter.innerText;
+            const increment = target / speed;
+
+            if (count < target) {
+              counter.innerText = Math.ceil(count + increment);
+              setTimeout(updateCount, 1);
+            } else {
+              counter.innerText = target;
+            }
+          }
+        });
+
+        // Back to top button
+        window.addEventListener("scroll", function () {
+          const backToTop = document.getElementById("backToTop");
+          if (window.pageYOffset > 300) {
+            backToTop.classList.add("show");
+          } else {
+            backToTop.classList.remove("show");
+          }
+        });
+
+        document
+          .getElementById("backToTop")
+          .addEventListener("click", function (e) {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          });
+
+       // Floating Action Button Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const fab = document.querySelector('.fab-main');
+    const fabOptions = document.querySelector('.fab-options');
+    
+    // Toggle FAB options
+    fab.addEventListener('click', function(e) {
+        e.stopPropagation();
+        fabOptions.classList.toggle('show');
+        fab.querySelector('i').classList.toggle('rotate');
+    });
+    
+    // Close FAB when clicking anywhere else
+    document.addEventListener('click', function() {
+        fabOptions.classList.remove('show');
+        fab.querySelector('i').classList.remove('rotate');
+    });
+    
+    // Prevent closing when clicking on FAB options
+    fabOptions.addEventListener('click', function(e) {
+        e.stopPropagation();
+    });
+});
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="assets/js/nav.js"></script>
+<script src="assets.js/script.js"></script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      const fab = document.querySelector('.fab-main');
+      const fabOptions = document.querySelector('.fab-options');
+
+      if (fab && fabOptions) {
+          // Fungsi untuk membuka/menutup opsi
+          fab.addEventListener('click', function(e) {
+              e.stopPropagation();
+              fabOptions.classList.toggle('show');
+              fab.querySelector('i').classList.toggle('rotate');
+          });
+
+          // Fungsi untuk menutup saat klik di luar area tombol
+          document.addEventListener('click', function() {
+              if (fabOptions.classList.contains('show')) {
+                  fabOptions.classList.remove('show');
+                  fab.querySelector('i').classList.remove('rotate');
+              }
+          });
+
+          // Mencegah penutupan saat mengklik salah satu opsi
+          fabOptions.addEventListener('click', function(e) {
+              e.stopPropagation();
+          });
+      }
+  });
+</script>
+
+</body>
+</html>

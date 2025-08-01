@@ -1,0 +1,1239 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title id="pageTitle">Detail Berita - Kelurahan Tanjungpinang Barat</title>
+    <meta
+      name="description"
+      content="Detail berita dari Kelurahan Tanjungpinang Barat"
+    />
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap Icons -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico" />
+
+    <style>
+      .article-content {
+        background: white;
+        border-radius: 15px;
+        padding: 2rem;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Mengubah semua warna biru (text-primary) di footer menjadi merah */
+      footer .text-primary {
+        color: #dc3545 !important; /* Warna merah */
+      }
+
+      .article-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        line-height: 1.2;
+        color: #212529;
+      }
+
+      .article-meta {
+        border-bottom: 1px solid #eee;
+        padding-bottom: 1rem;
+      }
+
+      .article-body {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: #495057;
+      }
+
+      .article-body h4 {
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        color: #212529;
+        font-weight: 600;
+      }
+
+      .article-body ul {
+        margin: 1.5rem 0;
+        padding-left: 2rem;
+      }
+
+      .article-body li {
+        margin-bottom: 0.5rem;
+      }
+
+      .share-buttons a,
+      .share-buttons button {
+        margin-bottom: 0.5rem;
+      }
+
+      .sidebar {
+        position: sticky;
+        top: 100px;
+      }
+
+      .sidebar-widget {
+        background: white;
+        border-radius: 15px;
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .widget-title {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+        color: #212529;
+        border-bottom: 2px solid #dc3545; /* DIUBAH */
+        padding-bottom: 0.5rem;
+      }
+
+      .related-news-item,
+      .popular-news-item {
+        padding: 1rem 0;
+        border-bottom: 1px solid #eee;
+      }
+
+      .related-news-item:last-child,
+      .popular-news-item:last-child {
+        border-bottom: none;
+      }
+
+      .related-news-item h6,
+      .popular-news-item h6 {
+        font-size: 0.9rem;
+        margin-bottom: 0.25rem;
+      }
+
+      .related-news-item a,
+      .popular-news-item a {
+        text-decoration: none;
+        color: #212529;
+      }
+
+      .related-news-item a:hover,
+      .popular-news-item a:hover {
+        color: #dc3545; /* DIUBAH */
+      }
+
+      .popular-number {
+        width: 30px;
+        height: 30px;
+        background: linear-gradient(
+          135deg,
+          #f44336 0%,
+          #ff6b35 100%
+        ); /* DIUBAH */
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        margin-right: 1rem;
+        flex-shrink: 0;
+        font-size: 0.9rem;
+      }
+
+      .quick-links {
+        list-style: none;
+        padding: 0;
+      }
+
+      .quick-links li {
+        margin-bottom: 0.75rem;
+      }
+
+      .quick-links a {
+        text-decoration: none;
+        color: #6c757d;
+        transition: color 0.3s ease;
+      }
+
+      .quick-links a:hover {
+        color: #dc3545; /* DIUBAH */
+      }
+
+      .contact-widget {
+        background: linear-gradient(
+          135deg,
+          #f44336 0%,
+          #ff6e40 100%
+        ); /* Latar menjadi MERAH */
+        color: #212529; /* Warna teks default menjadi HITAM */
+      }
+
+      .contact-widget .widget-title {
+        color: #212529; /* Warna judul menjadi HITAM */
+        border-bottom-color: rgba(
+          0,
+          0,
+          0,
+          0.1
+        ); /* Warna garis bawah disesuaikan */
+      }
+
+      .contact-widget .contact-info p {
+        margin-bottom: 0.75rem;
+        color: #495057; /* Warna teks detail menjadi ABU-ABU TUA */
+      }
+
+      /* Gallery styles */
+      /* Tambahkan CSS ini */
+      .gallery-item {
+        position: relative;
+        height: 200px;
+        cursor: pointer;
+        border-radius: 8px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+      }
+
+      .gallery-item:hover {
+        transform: scale(1.02);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+
+      .gallery-item .overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.7);
+        color: white;
+        padding: 10px;
+        font-size: 14px;
+      }
+
+      #imageModal .modal-content {
+        background: rgba(0, 0, 0, 0.9) !important;
+      }
+
+      #imageModal .btn-close {
+        filter: invert(1);
+        opacity: 1;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        z-index: 10;
+      }
+
+      @media (max-width: 768px) {
+        .article-title {
+          font-size: 1.8rem;
+        }
+
+        .sidebar {
+          position: static;
+          margin-top: 2rem;
+        }
+
+        .gallery-item {
+          height: 100px;
+        }
+      }
+      /* Lightbox Fullscreen Style */
+      #imageModal .modal-dialog {
+        margin: 0;
+        max-width: 100%;
+      }
+
+      #imageModal .modal-content {
+        height: 100vh;
+        background: transparent !important;
+      }
+
+      #imageModal img {
+        max-height: 90vh !important;
+        max-width: 90vw !important;
+        width: auto !important;
+        height: auto !important;
+        object-fit: contain !important;
+      }
+
+      #imageModal .btn-close {
+        font-size: 1.5rem;
+        padding: 0.5rem;
+        opacity: 1;
+        filter: invert(1);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <header id="navbar-placeholder"></header>
+
+    <!-- Article Content -->
+    <main class="detail-page-content">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8">
+            <!-- Breadcrumb -->
+            <nav aria-label="breadcrumb" class="mb-4">
+              <ol class="breadcrumb custom-breadcrumb-detail">
+                <li class="breadcrumb-item">
+                  <a href="index.html">Beranda</a>
+                </li>
+                <li class="breadcrumb-item">
+                  <a href="berita.html">Berita</a>
+                </li>
+                <li
+                  class="breadcrumb-item active"
+                  aria-current="page"
+                  id="breadcrumbTitle"
+                >
+                  Detail Berita
+                </li>
+              </ol>
+            </nav>
+
+            <!-- Article Header -->
+            <article class="article-content">
+              <div class="article-meta mb-3">
+                <span class="badge bg-danger" id="articleCategory"
+                  >Kategori</span
+                >
+                <span class="text-muted ms-3">
+                  <i class="bi bi-calendar me-1"></i>
+                  <span id="articleDate">Tanggal</span>
+                </span>
+                <span class="text-muted ms-3">
+                  <i class="bi bi-person me-1"></i>
+                  <span id="articleAuthor">Penulis</span>
+                </span>
+                <span class="text-muted ms-3">
+                  <i class="bi bi-eye me-1"></i>
+                  <span id="articleViews">0</span> views
+                </span>
+              </div>
+
+              <h1 class="article-title mb-4" id="articleTitle">Judul Berita</h1>
+
+              <div class="article-image mb-4">
+                <img
+                  id="articleImage"
+                  src=""
+                  alt=""
+                  class="img-fluid rounded"
+                />
+              </div>
+
+              <div class="article-body" id="articleBody">
+                <!-- Content will be loaded by JavaScript -->
+              </div>
+
+              <!-- Galeri Foto Terkait -->
+              <div class="gallery-section mt-5 pt-4 border-top">
+                <h5 class="gallery-title mb-4">Foto Terkait</h5>
+                <div class="row g-3" id="articleGallery">
+                  <!-- Galeri akan diisi oleh JavaScript -->
+                </div>
+              </div>
+
+              <!-- Lightbox Modal (Fullscreen) -->
+              <div
+                class="modal fade"
+                id="imageModal"
+                tabindex="-1"
+                aria-hidden="true"
+                style="background-color: rgba(0, 0, 0, 0.9)"
+              >
+                <div class="modal-dialog modal-fullscreen">
+                  <div class="modal-content bg-transparent border-0">
+                    <div
+                      class="modal-header border-0 position-absolute top-0 end-0 z-3"
+                    >
+                      <button
+                        type="button"
+                        class="btn-close btn-close-white bg-dark rounded-circle p-2"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                      ></button>
+                    </div>
+                    <div
+                      class="modal-body d-flex flex-column justify-content-center align-items-center p-0"
+                    >
+                      <div
+                        class="w-100 h-100 d-flex justify-content-center align-items-center"
+                      >
+                        <img
+                          id="modalImage"
+                          src=""
+                          alt=""
+                          class="img-fluid"
+                          style="
+                            max-height: 90vh;
+                            max-width: 90vw;
+                            object-fit: contain;
+                          "
+                        />
+                      </div>
+                      <div
+                        class="position-fixed bottom-0 start-0 end-0 bg-dark bg-opacity-75 text-white text-center p-3"
+                      >
+                        <h5 id="imageCaption" class="mb-1"></h5>
+                        <small id="imageCounter" class="opacity-75"></small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Share Buttons -->
+              <div class="share-section mt-5 pt-4 border-top">
+                <h6>Bagikan Berita Ini:</h6>
+                <div class="share-buttons">
+                  <a
+                    href="#"
+                    class="btn btn-outline-primary btn-sm me-2"
+                    id="shareWhatsapp"
+                  >
+                    <i class="bi bi-whatsapp me-1"></i>WhatsApp
+                  </a>
+                  <a
+                    href="#"
+                    class="btn btn-outline-primary btn-sm me-2"
+                    id="shareTwitter"
+                  >
+                    <i class="bi bi-twitter me-1"></i>Twitter
+                  </a>
+                  <a
+                    href="#"
+                    class="btn btn-outline-primary btn-sm me-2"
+                    id="shareFacebook"
+                  >
+                    <i class="bi bi-facebook me-1"></i>Facebook
+                  </a>
+                  <button class="btn btn-outline-primary btn-sm" id="copyLink">
+                    <i class="bi bi-link me-1"></i>Salin Link
+                  </button>
+                </div>
+              </div>
+
+              <!-- Tags -->
+              <div class="tags-section mt-4">
+                <h6>Tags:</h6>
+                <div id="articleTags">
+                  <!-- Tags will be loaded by JavaScript -->
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Sidebar -->
+          <div class="col-lg-4">
+            <div class="sidebar">
+              <!-- Related News -->
+              <div class="sidebar-widget">
+                <h5 class="widget-title">Berita Terkait</h5>
+                <div id="relatedNews">
+                  <!-- Related news will be loaded by JavaScript -->
+                </div>
+              </div>
+
+              <!-- Popular News -->
+              <div class="sidebar-widget">
+                <h5 class="widget-title">Berita Populer</h5>
+                <div id="popularNews">
+                  <!-- Popular news will be loaded by JavaScript -->
+                </div>
+              </div>
+
+              <!-- Quick Links -->
+              <div class="sidebar-widget">
+                <h5 class="widget-title">Link Cepat</h5>
+                <ul class="quick-links">
+                  <li>
+                    <a href="layanan-administrasi.html"
+                      ><i class="bi bi-arrow-right me-2"></i>Administrasi
+                      Kependudukan</a
+                    >
+                  </li>
+                  <li>
+                    <a href="layanan-izin-usaha.html"
+                      ><i class="bi bi-arrow-right me-2"></i>Surat Izin Usaha</a
+                    >
+                  </li>
+                  <li>
+                    <a href="layanan-kesehatan.html"
+                      ><i class="bi bi-arrow-right me-2"></i>Kesehatan
+                      Masyarakat</a
+                    >
+                  </li>
+                  <li>
+                    <a href="download-area.html"
+                      ><i class="bi bi-arrow-right me-2"></i>Download Area</a
+                    >
+                  </li>
+                  <li>
+                    <a href="galeri.html"
+                      ><i class="bi bi-arrow-right me-2"></i>Galeri Kegiatan</a
+                    >
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Contact Info -->
+              <div class="sidebar-widget contact-widget">
+                <h5 class="widget-title">Hubungi Kami</h5>
+                <div class="contact-info">
+                  <p>
+                    <i class="bi bi-geo-alt me-2"></i>Jl. Bali No. 2,
+                    Tanjungpinang Barat
+                  </p>
+                  <p><i class="bi bi-telephone me-2"></i>(0771) 123456</p>
+                  <p>
+                    <i class="bi bi-envelope me-2"></i
+                    >keltpbarat@tanjungpinangkota.go.id
+                  </p>
+                  <p>
+                    <i class="bi bi-clock me-2"></i>Senin-Jumat: 08:00-16:00 WIB
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="bg-dark text-light pt-5 pb-4">
+      <div class="container">
+        <div class="row justify-content-between align-items-start">
+          <!-- Hubungi Kami -->
+          <div class="col-md-4 mb-4">
+            <h5 class="fw-bold text-danger mb-3">Hubungi Kami</h5>
+            <div class="d-flex align-items-start mb-4">
+              <div class="me-3">
+                <img
+                  src="assets/images/logo-tanjungpinang.png"
+                  alt="Logo"
+                  style="width: 80px; height: auto"
+                  class="img-fluid"
+                />
+              </div>
+              <div class="small">
+                <p class="fw-bold mb-1">Kelurahan Tanjungpinang Kota</p>
+                <p class="mb-1">Kecamatan Tanjungpinang Kota</p>
+              </div>
+            </div>
+            <ul class="list-unstyled small">
+              <li class="mb-2">
+                <i class="bi bi-geo-alt-fill me-2 text-danger"></i>
+                Jl. Mesjid No.7, Tanjungpinang Kota, Kota Tanjungpinang,
+                Kepulauan Riau
+              </li>
+              <li class="mb-2">
+                <i class="bi bi-envelope-fill me-2 text-danger"></i>
+                tpitimurkotakel@tanjungpinangkota.go.id
+              </li>
+              <li class="mb-3">
+                <i class="bi bi-telephone-fill me-2 text-danger"></i>
+                (0771) 1234567
+              </li>
+              <li>
+                <div class="d-flex gap-2">
+                  <a
+                    href="#"
+                    class="btn btn-outline-light btn-sm rounded-circle"
+                  >
+                    <i class="bi bi-facebook"></i>
+                  </a>
+                  <a
+                    href="#"
+                    class="btn btn-outline-light btn-sm rounded-circle"
+                  >
+                    <i class="bi bi-instagram"></i>
+                  </a>
+                  <a
+                    href="#"
+                    class="btn btn-outline-light btn-sm rounded-circle"
+                  >
+                    <i class="bi bi-twitter"></i>
+                  </a>
+                  <a
+                    href="#"
+                    class="btn btn-outline-light btn-sm rounded-circle"
+                  >
+                    <i class="bi bi-youtube"></i>
+                  </a>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Menu Utama -->
+          <div class="col-md-3 mb-4">
+            <h5 class="fw-bold text-danger border-bottom pb-2 mb-3">
+              Menu Utama
+            </h5>
+            <ul class="list-unstyled small">
+              <li class="mb-2">
+                <a
+                  href="index.html"
+                  class="text-light text-decoration-none d-flex align-items-center"
+                >
+                  <i class="bi bi-house-door-fill me-2"></i> Beranda
+                </a>
+              </li>
+              <li class="mb-2">
+                <a
+                  href="berita.html"
+                  class="text-light text-decoration-none d-flex align-items-center"
+                >
+                  <i class="bi bi-newspaper me-2"></i> Berita
+                </a>
+              </li>
+              <li class="mb-2">
+                <a
+                  href="download-area.html"
+                  class="text-light text-decoration-none d-flex align-items-center"
+                >
+                  <i class="bi bi-download me-2"></i> Download
+                </a>
+              </li>
+              <li class="mb-2">
+                <a
+                  href="galeri.html"
+                  class="text-light text-decoration-none d-flex align-items-center"
+                >
+                  <i class="bi bi-images me-2"></i> Galeri
+                </a>
+              </li>
+              <li class="mb-2">
+                <a
+                  href="data-statistik.html"
+                  class="text-light text-decoration-none d-flex align-items-center"
+                >
+                  <i class="bi bi-bar-chart-fill me-2"></i> Data Statistik
+                </a>
+              </li>
+              <li class="mb-2">
+                <a
+                  href="peta-kelurahan.html"
+                  class="text-light text-decoration-none d-flex align-items-center"
+                >
+                  <i class="bi bi-map-fill me-2"></i> Peta Kelurahan
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Berita Populer -->
+          <div class="col-md-4 mb-4">
+            <h5 class="fw-bold text-danger border-bottom pb-2 mb-3">
+              Berita Populer
+            </h5>
+            <div class="mb-4">
+              <h6 class="fw-bold mb-1">
+                Selamat Datang di Website Kelurahan Tanjungpinang Kota
+              </h6>
+              <p class="text-secondary small mb-0">
+                <i class="bi bi-calendar me-2"></i>Rabu, 31 Agustus 2025
+              </p>
+            </div>
+            <div class="mb-4">
+              <h6 class="fw-bold mb-1">
+                Penghargaan Kepala Daerah Perempuan Inspiratif dari Tempo Media
+                Grup
+              </h6>
+              <p class="text-secondary small mb-0">
+                <i class="bi bi-calendar me-2"></i>Rabu, 28 September 2025
+              </p>
+            </div>
+            <div class="mb-4">
+              <h6 class="fw-bold mb-1">
+                Penyerahan Simbolis Kartu Identitas Anak (KIA)
+              </h6>
+              <p class="text-secondary small mb-0">
+                <i class="bi bi-calendar me-2"></i>Kamis, 15 Desember 2025
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer Bottom Tengah -->
+        <hr class="border-secondary" />
+        <div class="text-center pt-2">
+          <small
+            >Design by
+            <a href="#" class="text-danger fw-bold">Diskominfo Tanjungpinang</a>
+            &copy;2025</small
+          >
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Article Detail Script -->
+    <script>
+      // News data (same as in berita.html)
+      const newsData = [
+        {
+          id: 1,
+          title: "PENYERAHAN BINGKISAN DALAM RANGKA HARI LANJUT USIA NASIONAL",
+          excerpt:
+            "Kamis, 20 Juni 2024 Kelurahan Tanjungpinang menyalurkan Paket Bingkisan dalam rangka Hari Lanjut Usia Nasional Tahun 2024. Lurah, Kasi Pelayanan berserta staf ikut berpartisipasi dalam menyalurkan paket bingkisan tersebut...",
+          content: `
+                    <p>Kamis, 20 Juni 2024 Kelurahan Tanjungpinang menyalurkan Paket Bingkisan dalam rangka Hari Lanjut Usia Nasional Tahun 2024. Lurah, Kasi Pelayanan berserta staf ikut berpartisipasi dalam menyalurkan paket bingkisan tersebut</p>
+                `,
+          category: "Nasional",
+          date: "2024-06-21",
+          image:
+            "https://icms.tanjungpinangkota.go.id/image/posting/berita/7243000000/original/1718954728_47d9af74ec712bd51c9a.jpg",
+          views: 245,
+          author: "Admin Kelurahan",
+          tags: ["Nasional", "Sembako", "Lanjut Usia"],
+          gallery: [
+            {
+              id: 1,
+              title: "Penyerahan Bingkisan Lansia",
+              image:
+                "https://icms.tanjungpinangkota.go.id/image/posting/galeri/7243000000/thumb/thumb_1718954005_f747783895551781b02e.jpg",
+              date: "2024-06-20",
+            },
+            {
+              id: 2,
+              title: "Penyerahan Bingkisan Lansia",
+              image:
+                "https://icms.tanjungpinangkota.go.id/image/posting/galeri/7243000000/thumb/thumb_1718954056_d8ad3ecfe0494c04463f.jpg",
+              date: "2024-06-18",
+            },
+            {
+              id: 3,
+              title: "Penyerahan Bingkisan Lansia",
+              image:
+                "https://icms.tanjungpinangkota.go.id/image/posting/galeri/7243000000/thumb/thumb_1718954022_0bf4e65d09285d943a44.jpg",
+              date: "2024-06-15",
+            },
+          ],
+        },
+        {
+          id: 2,
+          title: "Posyandu Balita Rutin Dilaksanakan Setiap Bulan",
+          excerpt:
+            "Kegiatan posyandu balita dilaksanakan rutin setiap bulan untuk memantau tumbuh kembang anak...",
+          content: `
+                    <p>Kegiatan Posyandu (Pos Pelayanan Terpadu) balita di Kelurahan Tanjungpinang Barat dilaksanakan secara rutin setiap bulan pada minggu kedua. Kegiatan ini bertujuan untuk memantau tumbuh kembang anak balita serta memberikan pelayanan kesehatan dasar kepada ibu dan anak.</p>
+                    
+                    <p>Posyandu balita yang dilaksanakan pada 12 Januari 2025 ini dihadiri oleh 45 balita beserta orang tuanya. Kegiatan dipimpin oleh Tim Kesehatan Kelurahan bekerja sama dengan Puskesmas Tanjungpinang Barat.</p>
+                    
+                    <h4>Layanan yang Diberikan</h4>
+                    <ul>
+                        <li>Penimbangan berat badan dan pengukuran tinggi badan balita</li>
+                        <li>Pemberian vitamin A dan imunisasi sesuai jadwal</li>
+                        <li>Konsultasi gizi dan kesehatan anak</li>
+                        <li>Penyuluhan kesehatan untuk ibu-ibu</li>
+                        <li>Pemberian makanan tambahan (PMT) untuk balita</li>
+                    </ul>
+                    
+                    <p>Bidan Kelurahan, Ibu dr. Sari Dewi menjelaskan bahwa kegiatan posyandu sangat penting untuk deteksi dini masalah kesehatan pada balita. "Melalui posyandu, kami dapat memantau apakah pertumbuhan anak sesuai dengan standar atau ada masalah yang perlu ditangani lebih lanjut," ungkapnya.</p>
+                    
+                    <p>Hasil pemantauan menunjukkan bahwa 90% balita di wilayah kelurahan memiliki status gizi yang baik. Namun, masih terdapat 4 balita yang mengalami gizi kurang dan sedang mendapat perhatian khusus dari tim kesehatan.</p>
+                    
+                    <p>Para ibu yang hadir sangat antusias mengikuti kegiatan ini. Ibu Rina, salah satu peserta mengatakan, "Posyandu sangat membantu kami dalam memantau kesehatan anak. Selain itu, kami juga bisa bertukar informasi dengan ibu-ibu lainnya tentang cara merawat anak."</p>
+                    
+                    <p>Kelurahan Tanjungpinang Barat memiliki 5 titik posyandu yang tersebar di berbagai RT/RW untuk memudahkan akses masyarakat. Kegiatan posyandu ini didukung penuh oleh kader kesehatan yang telah dilatih khusus.</p>
+                `,
+          category: "kesehatan",
+          date: "2025-01-12",
+          image: "assets/images/news2.jpg",
+          views: 189,
+          author: "Tim Kesehatan",
+          tags: ["posyandu", "kesehatan", "balita", "gizi"],
+          gallery: [
+            {
+              id: 4,
+              title: "Posyandu Balita Januari 2025",
+              image: "assets/images/gallery4.jpg",
+              date: "2025-01-12",
+            },
+            {
+              id: 5,
+              title: "Pemeriksaan Kesehatan Balita",
+              image: "assets/images/gallery5.jpg",
+              date: "2025-01-12",
+            },
+            {
+              id: 6,
+              title: "Pemberian Vitamin A",
+              image: "assets/images/gallery6.jpg",
+              date: "2025-01-12",
+            },
+          ],
+        },
+        {
+          id: 3,
+          title: "Bantuan Sembako untuk Keluarga Kurang Mampu",
+          excerpt:
+            "Penyaluran bantuan sembako kepada 150 keluarga kurang mampu di wilayah kelurahan...",
+          content: `
+                    <p>Kelurahan Tanjungpinang Barat telah menyalurkan bantuan sembako kepada 150 keluarga kurang mampu pada hari Kamis, 8 Januari 2025. Program bantuan ini merupakan bagian dari upaya pemerintah kelurahan dalam meringankan beban ekonomi masyarakat, terutama di masa yang penuh tantangan ini.</p>
+                    
+                    <p>Bantuan sembako yang disalurkan berupa paket lengkap yang terdiri dari beras 10 kg, minyak goreng 2 liter, gula pasir 1 kg, teh 1 bungkus, mie instan 1 dus, dan sardines 5 kaleng. Total nilai bantuan mencapai Rp 75 juta yang bersumber dari dana kelurahan dan bantuan dari pihak swasta.</p>
+                    
+                    <h4>Kriteria Penerima Bantuan</h4>
+                    <ul>
+                        <li>Keluarga dengan penghasilan di bawah Rp 1.500.000 per bulan</li>
+                        <li>Keluarga dengan anggota yang memiliki disabilitas</li>
+                        <li>Janda/duda dengan anak yang masih sekolah</li>
+                        <li>Lansia yang tidak memiliki penghasilan tetap</li>
+                        <li>Keluarga yang terdampak PHK atau kehilangan pekerjaan</li>
+                    </ul>
+                    
+                    <p>Kepala Kelurahan Tanjungpinang Barat, Bapak Suryanto, S.Sos menyampaikan bahwa program bantuan ini akan dilaksanakan secara berkala sesuai dengan ketersediaan anggaran. "Kami berkomitmen untuk terus membantu masyarakat yang membutuhkan. Bantuan ini diharapkan dapat meringankan beban keluarga dalam memenuhi kebutuhan pokok sehari-hari," ujarnya.</p>
+                    
+                    <p>Proses penyaluran bantuan dilakukan dengan menerapkan protokol kesehatan yang ketat. Penerima bantuan dipanggil secara bertahap untuk menghindari kerumunan dan menjaga jarak aman.</p>
+                    
+                    <p>Ibu Mariam, salah satu penerima bantuan mengucapkan terima kasih kepada pemerintah kelurahan. "Alhamdulillah, bantuan ini sangat membantu keluarga kami. Semoga Allah membalas kebaikan bapak-bapak dan ibu-ibu yang telah membantu kami," katanya dengan mata berkaca-kaca.</p>
+                    
+                    <p>Selain bantuan sembako, kelurahan juga menyediakan program bantuan lainnya seperti bantuan pendidikan untuk anak-anak dari keluarga kurang mampu dan program pelatihan keterampilan untuk meningkatkan kemampuan ekonomi masyarakat.</p>
+                    
+                    <p>Masyarakat yang merasa memenuhi kriteria dan belum terdaftar sebagai penerima bantuan dapat mendaftarkan diri di kantor kelurahan dengan membawa dokumen pendukung seperti KTP, KK, dan surat keterangan penghasilan.</p>
+                `,
+          category: "sosial",
+          date: "2025-01-08",
+          image: "assets/images/news3.jpg",
+          views: 156,
+          author: "Bagian Sosial",
+          tags: ["bantuan", "sembako", "sosial", "keluarga kurang mampu"],
+          gallery: [
+            {
+              id: 7,
+              title: "Penyaluran Bantuan Sembako",
+              image: "assets/images/gallery7.jpg",
+              date: "2025-01-08",
+            },
+            {
+              id: 8,
+              title: "Proses Pendaftaran Penerima Bantuan",
+              image: "assets/images/gallery8.jpg",
+              date: "2025-01-05",
+            },
+            {
+              id: 9,
+              title: "Verifikasi Data Penerima Bantuan",
+              image: "assets/images/gallery9.jpg",
+              date: "2025-01-03",
+            },
+          ],
+        },
+      ];
+
+      // Gallery data for all news
+      const galleryData = [
+        {
+          id: 1,
+          title: "Penyerahan Bingkisan Lansia",
+          image:
+            "https://icms.tanjungpinangkota.go.id/image/posting/berita/7243000000/original/1718954728_47d9af74ec712bd51c9a.jpg",
+          date: "2024-06-20",
+          category: "sosial",
+        },
+        {
+          id: 2,
+          title: "Kegiatan Posyandu Lansia",
+          image: "assets/images/gallery2.jpg",
+          date: "2024-06-18",
+          category: "kesehatan",
+        },
+        {
+          id: 3,
+          title: "Pembagian Sembako Lansia",
+          image: "assets/images/gallery3.jpg",
+          date: "2024-06-15",
+          category: "sosial",
+        },
+        {
+          id: 4,
+          title: "Posyandu Balita Januari 2025",
+          image: "assets/images/gallery4.jpg",
+          date: "2025-01-12",
+          category: "kesehatan",
+        },
+        {
+          id: 5,
+          title: "Pemeriksaan Kesehatan Balita",
+          image: "assets/images/gallery5.jpg",
+          date: "2025-01-12",
+          category: "kesehatan",
+        },
+        {
+          id: 6,
+          title: "Pemberian Vitamin A",
+          image: "assets/images/gallery6.jpg",
+          date: "2025-01-12",
+          category: "kesehatan",
+        },
+        {
+          id: 7,
+          title: "Penyaluran Bantuan Sembako",
+          image: "assets/images/gallery7.jpg",
+          date: "2025-01-08",
+          category: "sosial",
+        },
+        {
+          id: 8,
+          title: "Proses Pendaftaran Penerima Bantuan",
+          image: "assets/images/gallery8.jpg",
+          date: "2025-01-05",
+          category: "sosial",
+        },
+        {
+          id: 9,
+          title: "Verifikasi Data Penerima Bantuan",
+          image: "assets/images/gallery9.jpg",
+          date: "2025-01-03",
+          category: "sosial",
+        },
+      ];
+
+      // Get URL parameter
+      function getUrlParameter(name) {
+        name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+        var regex = new RegExp("[\\?&]" + name + "=([^&#]*)");
+        var results = regex.exec(location.search);
+        return results === null
+          ? ""
+          : decodeURIComponent(results[1].replace(/\+/g, " "));
+      }
+
+      // Format date
+      function formatDate(dateString) {
+        const options = { year: "numeric", month: "long", day: "numeric" };
+        return new Date(dateString).toLocaleDateString("id-ID", options);
+      }
+
+      // Get category badge class
+      function getCategoryBadgeClass(category) {
+        const classes = {
+          pembangunan: "bg-primary",
+          kesehatan: "bg-success",
+          sosial: "bg-warning",
+          ekonomi: "bg-info",
+          lingkungan: "bg-success",
+          pendidikan: "bg-secondary",
+          nasional: "bg-danger",
+        };
+        return classes[category.toLowerCase()] || "bg-secondary";
+      }
+
+      // Update view count
+      function updateViewCount(newsId) {
+        const viewKey = `news_view_${newsId}`;
+        let currentViews = localStorage.getItem(viewKey);
+
+        if (!currentViews) {
+          // First time viewing this news
+          const news = newsData.find((n) => n.id == newsId);
+          if (news) {
+            currentViews = news.views + 1;
+            localStorage.setItem(viewKey, currentViews);
+          }
+        } else {
+          // Already viewed, increment
+          currentViews = parseInt(currentViews) + 1;
+          localStorage.setItem(viewKey, currentViews);
+        }
+
+        return currentViews;
+      }
+
+      // Get view count
+      function getViewCount(newsId) {
+        const viewKey = `news_view_${newsId}`;
+        let currentViews = localStorage.getItem(viewKey);
+
+        if (!currentViews) {
+          const news = newsData.find((n) => n.id == newsId);
+          return news ? news.views : 0;
+        }
+
+        return parseInt(currentViews);
+      }
+
+      // Load article content
+      function loadArticle() {
+        const newsId = getUrlParameter("id");
+        const news = newsData.find((n) => n.id == newsId);
+
+        if (!news) {
+          // Redirect to news page if article not found
+          window.location.href = "berita.html";
+          return;
+        }
+
+        // Update view count
+        const currentViews = updateViewCount(newsId);
+
+        // Update page content
+        document.getElementById("pageTitle").textContent =
+          news.title + " - Kelurahan Tanjungpinang Barat";
+        document.getElementById("breadcrumbTitle").textContent = news.title;
+        document.getElementById("articleCategory").textContent =
+          news.category.charAt(0).toUpperCase() + news.category.slice(1);
+        document.getElementById(
+          "articleCategory"
+        ).className = `badge ${getCategoryBadgeClass(news.category)}`;
+        document.getElementById("articleDate").textContent = formatDate(
+          news.date
+        );
+        document.getElementById("articleAuthor").textContent = news.author;
+        document.getElementById("articleViews").textContent = currentViews;
+        document.getElementById("articleTitle").textContent = news.title;
+        document.getElementById("articleImage").src = news.image;
+        document.getElementById("articleImage").alt = news.title;
+        document.getElementById("articleBody").innerHTML = news.content;
+
+        // Load tags
+        const tagsContainer = document.getElementById("articleTags");
+        tagsContainer.innerHTML = news.tags
+          .map(
+            (tag) =>
+              `<span class="badge bg-light text-dark me-2 mb-2">#${tag}</span>`
+          )
+          .join("");
+
+        // Load related gallery
+        loadArticleGallery(news);
+
+        // Setup share buttons
+        setupShareButtons(news);
+
+        // Load related and popular news
+        // Load related and popular news
+        loadRelatedNews(news);
+        loadPopularNews();
+      }
+
+      // Load article gallery
+      function loadArticleGallery(news) {
+        const galleryContainer = document.getElementById("articleGallery");
+
+        if (news.gallery && news.gallery.length > 0) {
+          galleryContainer.innerHTML = news.gallery
+            .map(
+              (item) => `
+                <div class="col-md-4">
+                    <div class="gallery-item">
+                        <img src="${item.image}" alt="${item.title}">
+                        <div class="overlay">${item.title}</div>
+                    </div>
+                </div>
+            `
+            )
+            .join("");
+        } else {
+          galleryContainer.innerHTML =
+            '<p class="text-muted">Tidak ada galeri foto terkait</p>';
+        }
+      }
+
+      // Setup share buttons
+      function setupShareButtons(news) {
+        const currentUrl = encodeURIComponent(window.location.href);
+        const shareText = encodeURIComponent(
+          `Baca berita "${news.title}" dari Kelurahan Tanjungpinang Barat: `
+        );
+
+        document.getElementById(
+          "shareWhatsapp"
+        ).href = `https://wa.me/?text=${shareText}${currentUrl}`;
+        document.getElementById(
+          "shareTwitter"
+        ).href = `https://twitter.com/intent/tweet?text=${shareText}&url=${currentUrl}`;
+        document.getElementById(
+          "shareFacebook"
+        ).href = `https://www.facebook.com/sharer/sharer.php?u=${currentUrl}`;
+
+        document
+          .getElementById("copyLink")
+          .addEventListener("click", function () {
+            navigator.clipboard.writeText(window.location.href).then(() => {
+              alert("Link berhasil disalin!");
+            });
+          });
+      }
+
+      // Load related news
+      function loadRelatedNews(currentNews) {
+        const relatedContainer = document.getElementById("relatedNews");
+        const relatedNews = newsData
+          .filter(
+            (news) =>
+              news.id !== currentNews.id &&
+              news.category === currentNews.category
+          )
+          .slice(0, 3);
+
+        if (relatedNews.length > 0) {
+          relatedContainer.innerHTML = relatedNews
+            .map(
+              (news) => `
+                <div class="related-news-item">
+                    <a href="detail-berita.html?id=${news.id}">
+                        <h6>${news.title}</h6>
+                        <small class="text-muted"><i class="bi bi-calendar me-1"></i>${formatDate(
+                          news.date
+                        )}</small>
+                    </a>
+                </div>
+            `
+            )
+            .join("");
+        } else {
+          relatedContainer.innerHTML =
+            '<p class="text-muted">Tidak ada berita terkait</p>';
+        }
+      }
+
+      // Load popular news
+      function loadPopularNews() {
+        const popularContainer = document.getElementById("popularNews");
+
+        // Sort news by views
+        const popularNews = [...newsData]
+          .sort((a, b) => getViewCount(b.id) - getViewCount(a.id))
+          .slice(0, 5);
+
+        if (popularNews.length > 0) {
+          popularContainer.innerHTML = popularNews
+            .map(
+              (news, index) => `
+                <div class="popular-news-item d-flex">
+                    <div class="popular-number">${index + 1}</div>
+                    <div>
+                        <a href="detail-berita.html?id=${news.id}">
+                            <h6>${news.title}</h6>
+                            <small class="text-muted"><i class="bi bi-eye me-1"></i>${getViewCount(
+                              news.id
+                            )} views</small>
+                        </a>
+                    </div>
+                </div>
+            `
+            )
+            .join("");
+        } else {
+          popularContainer.innerHTML =
+            '<p class="text-muted">Tidak ada berita populer</p>';
+        }
+      }
+
+      function openLightbox(src, caption, currentIndex, totalImages) {
+        const modal = new bootstrap.Modal(
+          document.getElementById("imageModal")
+        );
+        const modalImage = document.getElementById("modalImage");
+
+        // Preload image to get dimensions
+        const img = new Image();
+        img.src = src;
+        img.onload = function () {
+          modalImage.src = src;
+
+          // Adjust for portrait images
+          if (img.height > img.width) {
+            modalImage.style.maxHeight = "90vh";
+            modalImage.style.maxWidth = "auto";
+          } else {
+            modalImage.style.maxHeight = "90vh";
+            modalImage.style.maxWidth = "90vw";
+          }
+
+          document.getElementById("imageCaption").textContent = caption;
+          document.getElementById(
+            "imageCounter"
+          ).textContent = `${currentIndex}/${totalImages}`;
+          modal.show();
+        };
+      }
+
+      // Fungsi untuk membuka lightbox (perbaikan)
+      function openLightbox(src, caption, currentIndex, totalImages) {
+        const modal = new bootstrap.Modal(
+          document.getElementById("imageModal")
+        );
+        const modalImage = document.getElementById("modalImage");
+
+        // Tampilkan loading terlebih dahulu
+        modalImage.src = "";
+        modalImage.alt = "Loading...";
+
+        // Coba load gambar
+        const img = new Image();
+        img.onload = function () {
+          modalImage.src = src;
+          document.getElementById("imageCaption").textContent = caption;
+          document.getElementById(
+            "imageCounter"
+          ).textContent = `${currentIndex}/${totalImages}`;
+          modal.show();
+        };
+
+        img.onerror = function () {
+          modalImage.alt = "Gambar tidak dapat dimuat";
+          document.getElementById("imageCaption").textContent =
+            "Gagal memuat gambar";
+          modal.show();
+        };
+
+        img.src = src;
+      }
+
+      // Pastikan gallery item memanggil fungsi dengan benar
+      function loadArticleGallery(news) {
+        const galleryContainer = document.getElementById("articleGallery");
+
+        if (news.gallery && news.gallery.length > 0) {
+          galleryContainer.innerHTML = news.gallery
+            .map(
+              (item, index) => `
+            <div class="col-md-4 mb-3">
+                <div class="gallery-item" onclick="openLightbox('${
+                  item.image
+                }', '${item.title}', ${index + 1}, ${news.gallery.length})">
+                    <img src="${item.image}" alt="${
+                item.title
+              }" class="img-fluid w-100 h-100 object-fit-cover">
+                    <div class="overlay">${item.title}</div>
+                </div>
+            </div>
+        `
+            )
+            .join("");
+        } else {
+          galleryContainer.innerHTML =
+            '<p class="text-muted">Tidak ada galeri foto terkait</p>';
+        }
+      }
+
+      // Initialize when DOM is loaded
+      document.addEventListener("DOMContentLoaded", function () {
+        loadArticle();
+      });
+    </script>
+    <script src="assets/js/nav.js"></script>
+  </body>
+</html>
